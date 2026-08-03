@@ -2,3 +2,15 @@ __pycache__/
 *.pyc
 .env
 .DS_Store
+
+# Photo originals. Not committed: they are the group's copyright, they are
+# large, and EXIF inside them can carry nest-precise GPS. Publish selected
+# annotated plates deliberately, never the whole store.
+photos/
+
+# Precise coordinates + absolute source paths, written by photo_intake.
+# This is the file that must never reach GitHub.
+private/
+
+# Scratch renders from comparison work.
+out/
