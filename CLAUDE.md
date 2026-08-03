@@ -9,6 +9,23 @@ monitoring) and the Nashua Ink Link story.
 
 ## STATUS (updated 2026-08-04)
 - Active file: none — checkpointed mid-session-2.
+- **`PLAYBOOK.md` IS NOW THE HEADLINE ARTIFACT.** David's call: this repo is the
+  template he will point future Claude Code sessions at to start new species
+  projects (New England **Snowy Owl**, **Short-eared Owl**, "whatever people are
+  into"). PLAYBOOK is species-agnostic: feasibility screen, order of operations
+  (**find the expert node FIRST** — the band code came from an email chain, not
+  from tooling), governance (open contribution / curated assertion), the
+  four-layer architecture, the confidence ladder, **§6 contamination** (AI
+  enhance / wrong provenance / absence-as-evidence / claims hardening as they
+  travel), privacy, where scale breaks, and what NOT to build. `photo_intake/`
+  is now species-agnostic and drops into a new repo unchanged — only
+  `band_visible`/`band_code` are marking-scheme specific.
+- **Repo is PUSHED and PUBLIC** (`git@github.com:davenakasone/nashua_nh_falcon_identifier`).
+  Verified anonymously readable. David keeps the gitignore as-is, so `private/`
+  (addresses, phone numbers, a private resident, the reporter's medical details,
+  the drone pilot's contacts, coordinates, share links) stays out. He believes
+  he is sharing only with the group — **he has been told it is world-readable**;
+  going private is Settings → visibility if he changes his mind.
 - **THE MISSION IS THE NEST.** David's framing: make sure the birds have a
   suitable nest that doesn't get disturbed, and see what else can be done for
   them. Individual ID serves that, not the other way round.

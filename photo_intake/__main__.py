@@ -1,6 +1,6 @@
 """Standalone CLI for photo_intake -- ``python -m photo_intake <command>``.
 
-    python -m photo_intake ingest ~/Downloads/falcons --site nashua-downtown \
+    python -m photo_intake ingest ~/Downloads/drop --site nashua-downtown \
         --observer david --perch white-bracket --store drive
     python -m photo_intake ingest one.jpg --dry-run   # look, don't write
     python -m photo_intake list --site nashua-downtown

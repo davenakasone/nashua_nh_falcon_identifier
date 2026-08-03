@@ -1,14 +1,16 @@
-"""photo_intake -- ingest falcon photos into a stable, de-duplicated CSV catalog.
+"""photo_intake -- ingest wildlife photos into a stable, de-duplicated CSV catalog.
 
-Standalone: ``python -m photo_intake ingest ~/Downloads/falcons --site nashua-downtown``.
+Standalone: ``python -m photo_intake ingest ~/Downloads/drop --site <site-label>``.
 Library: ``from photo_intake import ingest, load_catalog``.
 
-The tool is deliberately dumb about falcons. It reads pixels and EXIF, assigns
+The tool is deliberately dumb about the animal. It reads pixels and EXIF, assigns
 each photo a stable id, and writes two records: a **public** catalog row in
 ``data/photos.csv`` (safe to commit) and a **private** row in
 ``private/locations.csv`` holding GPS + the original absolute path (gitignored).
 Deciding *which bird* is in a photo is the analysis layer's job, not this
-tool's -- see ``docs/id_method.md``.
+tool's -- see ``docs/id_method.md``, and ``PLAYBOOK.md`` to reuse this
+elsewhere. Nothing here is species-specific except the ``band_visible`` and
+``band_code`` columns; rename those for a different marking scheme.
 """
 from . import core
 from .core import (

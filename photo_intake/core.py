@@ -9,9 +9,9 @@ Design notes that matter to anyone touching this file:
   control, and permissions on cold storage are somebody else's problem.
 * **GPS never enters the public catalog.** A committed row carries only
   ``has_gps`` and the coarse ``site`` label the ingester typed. Precise
-  coordinates go to ``private/locations.csv``, which is gitignored. Peregrine
-  nest-site precision is a judgment call and this repo is public -- see
-  ``CLAUDE.md``.
+  coordinates go to ``private/locations.csv``, which is gitignored. Nest- and
+  roost-site precision is a judgment call for sensitive species and this repo is
+  public -- see ``CLAUDE.md`` and ``PLAYBOOK.md``.
 * **Two hashes, two jobs.** ``sha256`` catches the same file arriving twice
   (the group re-sends a batch). ``dhash`` catches the *same frame* arriving in
   a different size or re-compression, and clusters burst frames. Together they
@@ -366,7 +366,7 @@ def _shutter(value) -> str | None:
 
     Deliberately does not go through :func:`_num` -- its 2-decimal rounding
     flattens every fast shutter (0.0005s) to zero, and fast shutters are the
-    whole point on a stooping falcon.
+    whole point on a fast-moving animal.
     """
     try:
         seconds = float(value)
