@@ -259,11 +259,21 @@ Mark for the originals.
 is this sighting. Enriched in place, not duplicated — worth noting as the first
 case of two independent sources landing on one event.
 
-**Redaction applied.** Committed: date, time, coarse site, behaviour, the public
-building names already present in the eBird record, the band code, and the
-attribution. Withheld to gitignored `private/`: all email addresses, the Gmail
-thread URL, the floor-and-window precision, and the name and residence of a
-private individual mentioned in the body who is not part of this project.
+**Redaction applied.** Committed: date, time, coarse site, behaviour, the band
+code, the attribution, and the building names — which are **already public in
+the eBird record at finer precision than this file uses**. eBird's own location
+string for this sighting carries the street number *and* decimal coordinates;
+the repo deliberately drops the coordinates and keeps the name.
+
+Withheld to gitignored `private/`: all email addresses, the Gmail thread URL,
+and **the name, floor, apartment side and daily habits of a private resident**
+mentioned in the body, who is not part of this project and did not consent to
+appear in a public repo. That resident's window-row detail is withheld too.
+
+Note the one thing this entry *does* state: the photographer's own vantage, "an
+upper floor at close range." That is a project participant describing his own
+position, deliberately kept vague, and is not the withheld detail above — an
+earlier version of this note was ambiguous about which floor reference it meant.
 
 ---
 
