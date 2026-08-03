@@ -16,6 +16,55 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-04 — BANDED AND NAMED: "Amos", band G/B 53/BS, downtown Nashua
+
+Mark's email of 2026-07-31 reports a Peregrine at **63A Front St, Nashua, Thu
+2026-07-30 at 19:30**, and titles it **"Amos G/B 53/BS."** That is a named,
+banded individual carrying a field-readable bi-color code.
+
+**This answers the project's #1 open question.** The downtown Nashua birds are
+banded, at least one has a known code, and somebody is already tracking it by
+name. Identification for that bird moves from photo comparison to lookup.
+
+**It also short-circuits the second question.** The thread already includes NH
+Audubon staff — their raptor programme people are on the recipient list. The
+"contact NH Audubon about banding" task is not a cold approach; the chain is
+live and David is already on it. Asking what `G/B 53/BS` resolves to — sex,
+hatch year, natal site — is now a reply, not an introduction.
+
+**What the email does NOT establish, and this matters.** The subject line
+asserts the identity; **the body never mentions reading a band.** It describes
+watching a peregrine carry prey in, perch on a window air-conditioner on a mill
+building, and feed for about twelve minutes before flying off past the
+smokestack and low over the Franklin St. lofts. Many photos were taken. Whether
+the band was read *on this occasion*, or the bird was attributed to Amos from
+prior familiarity, is not stated.
+
+So this sighting is logged **probable**, not confirmed. Per
+[`docs/id_method.md`](docs/id_method.md) only a legible band code in the frame
+earns `confirmed`, and what we have is a claim rather than a read. One question
+to Mark settles it.
+
+**The photos are the prize and we do not have them.** They did not survive the
+print-to-PDF — only the Gmail logo is embedded in the file. A bird standing on
+an air conditioner tearing prey for twelve minutes is **standing**, side-on,
+photographed from an upper floor at close range. That is exactly the posture the
+25-photo album never caught, and the best chance yet at a tarsus in frame. Ask
+Mark for the originals.
+
+**Same event as an existing row.** The eBird record already in
+`data/sightings.csv` as `20260730-01` (63A Front St, 2026-07-30 19:30, one bird)
+is this sighting. Enriched in place, not duplicated — worth noting as the first
+case of two independent sources landing on one event.
+
+**Redaction applied.** Committed: date, time, coarse site, behaviour, the public
+building names already present in the eBird record, the band code, and the
+attribution. Withheld to gitignored `private/`: all email addresses, the Gmail
+thread URL, the floor-and-window precision, and the name and residence of a
+private individual mentioned in the body who is not part of this project.
+
+---
+
 ## 2026-08-03 — the group's Google Photos album, reviewed: 25 photos, all adults, bands still unanswered
 
 David pointed at the group's shared album, **"2026 Nashua Falcons"**, date range

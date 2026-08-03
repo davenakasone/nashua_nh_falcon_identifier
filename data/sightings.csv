@@ -1,6 +1,6 @@
 sighting_id,date,time,site,count,age_classes,individuals,source,source_ref,photo_ids,confidence,notes
 20260802-01,2026-08-02,17:45,bedford-101-bridge,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
-20260730-01,2026-07-30,19:30,nashua-downtown,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260730-01,2026-07-30,19:30,nashua-downtown,1,1 adult (assumed; age not stated),nashua-01,ebird;email,"ebird US-NH-011 species feed, pulled 2026-08-03; email:mark 2026-07-31",,probable,"reported as Amos, band G/B 53/BS; carried prey in and fed ~12 min on a window AC unit on a millyard building, then flew past the smokestack and low over the Franklin St lofts. BAND NOT STATED AS READ on this occasion - identity asserted in the email subject, not evidenced in the body. Photos exist but were not attached; ask Mark."
 20260729-01,2026-07-29,10:21,nashua-downtown,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
 20260727-01,2026-07-27,16:15,manchester-cohas-brook,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
 20260723-01,2026-07-23,20:20,nashua-river-jackson-mills,2,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,"eBird count is birds seen, not birds identified; a 2 may be a pair, an adult with a fledgling, or one bird counted twice"
