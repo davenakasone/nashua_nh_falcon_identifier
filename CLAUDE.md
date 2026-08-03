@@ -43,14 +43,34 @@ monitoring) and the Nashua Ink Link story.
   eBird returned precise lat/lon for the downtown records; they were
   deliberately kept out of the repo pending David's ruling per the Git policy
   below.
+- **GROUP PHOTO ARCHIVE FOUND + REVIEWED (2026-08-03): a shared Google Photos
+  album, "2026 Nashua Falcons", 25 photos, 29 Jun – 24 Jul 2026.** David
+  supplied the link mid-session; it is recorded in `private/sources.md`
+  (gitignored — a share link is a live credential, it does NOT go in a public
+  repo). Every frame reviewed at full res. Findings: **all adults, no juvenile
+  in 25 photos** (evidence against `nashua-03`, logged there); three recurring
+  perches, the best being a white metal bracket on a brick roofline with sharp
+  frontal + profile views; **the band question is NOT answered** because the
+  sharp frames show a crouched bird with the tarsus hidden behind belly
+  feathers (toes only — wrong part of the leg) and the frames with legs exposed
+  are too soft to resolve a band past ~2x. Logged as "no band seen, no frame
+  tested the band zone" — explicitly NOT as an unbanded bird.
+- **NOT INGESTED YET — waiting on David.** Pulling the 25 originals out of
+  Google Photos is a file download, so it needs his explicit go-ahead. Once
+  given: download to a scratch dir, `python -m photo_intake ingest <dir>
+  --site nashua-downtown`, then write the baseline trait description for the
+  white-bracket adult.
 - Leaning: no compare tool yet — building pattern-matching before real photos
   exist would be guessing at the input. Intake first, method written, tool
-  when there are frames to test it on.
-- Next: (1) **the actual ask — inventory Jarrod's and Mark's archives and
-  ingest them**; (2) ask NH Audubon whether the downtown pair/2026 brood is
-  banded and whether they hold the codes (highest-leverage open question — a
-  code turns ID from comparison into lookup); (3) once photos exist, build the
-  normalised-crop compare tool (head profile / breast / spread wing).
+  when there are frames to test it on. The album confirms the call: with one
+  well-photographed adult and no second bird to compare it against, there is
+  nothing for a compare tool to do yet.
+- Next: (1) **David's go-ahead to download the album, then ingest it**;
+  (2) ask NH Audubon whether the downtown pair/2026 brood is banded and whether
+  they hold the codes (highest-leverage open question — a code turns ID from
+  comparison into lookup); (3) get the group the one missing shot: a **standing**
+  bird's lower leg, sharp, sun behind the photographer; (4) once there are two
+  birds to tell apart, build the normalised-crop compare tool.
 
 **STATUS discipline:** keep this block current; refresh before every session
 ends ("checkpoint"). A new session must resume cold from STATUS alone. Stale

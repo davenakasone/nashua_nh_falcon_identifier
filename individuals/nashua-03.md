@@ -37,12 +37,19 @@ here. Identity for this bird has to come from a band or from the juvenile
 streak pattern.
 
 ## Confidence
-**hypothesis.**
+**hypothesis, and now under active doubt.**
 
 - Raises it: any dated photo of a brown, vertically-streaked bird in the Nashua
   area. Age class is the one trait that reads clearly off a mediocre photo, so
   this file is the easiest of the three to establish.
 - Breaks it: no juvenile-plumaged bird turns up in the group's photos.
+- **2026-08-03 — the group's 25-photo album (29 Jun – 24 Jul) contains no
+  juvenile.** Every identifiable bird in it is an adult. That is exactly the
+  window a fledged juvenile should be most visible and most photographed, so
+  this is evidence against the file, not merely absence of evidence for it.
+  It does not kill the hypothesis — the group may simply not have pointed a
+  camera at the young bird — but the question now has to be asked out loud
+  rather than assumed. See [`INTEL.md`](../INTEL.md).
 - **Watch for more than one.** Peregrine broods are commonly 3–4 young. If two
   juveniles are ever in frame together, open `nashua-04` immediately rather
   than folding both into this file.

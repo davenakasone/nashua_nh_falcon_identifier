@@ -16,6 +16,63 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-03 — the group's Google Photos album, reviewed: 25 photos, all adults, bands still unanswered
+
+David pointed at the group's shared album, **"2026 Nashua Falcons"**, date range
+**29 Jun – 24 Jul 2026, 25 photos**. Reviewed every frame at full resolution.
+Nothing has been ingested into the catalogue yet — this entry is the survey.
+
+**Age class: every identifiable bird in the album is an adult.** Slate-grey
+upperparts, **horizontal** barring on the underparts, dark hood, yellow cere and
+feet. No frame shows an unambiguous brown, vertically-streaked juvenile. That is
+a real finding, and a surprising one for a June–July window in a territory that
+is supposed to have produced young: **either the group did not photograph this
+year's juvenile, or there wasn't one.** Worth asking the group directly before
+assuming the former.
+
+**Three distinct settings recur**, and the repetition is the useful part —
+a repeated perch gives us the standardised viewing angle that trait comparison
+needs:
+- **White metal bracket / flashing at a brick roofline** — the best material in
+  the album. Sharp, well lit, frontal and profile views of breast barring and
+  malar stripe. Almost certainly one bird, one session.
+- **Brick arch / parapet with a vertical pole** — bird standing upright, legs
+  exposed, but small in frame and soft.
+- **Grey metal box, heavily backlit** — near-silhouettes. Nearly useless for
+  plumage; still fine for behaviour and perch fidelity.
+
+**Bands: NOT ANSWERED, and the reason is instructive.** The two conditions never
+co-occurred in a single frame:
+- In the *sharp* frames the bird is crouched on the sloping flashing with the
+  **tarsus hidden behind belly feathers**. Only toes and talons are visible —
+  bright yellow, black claws — and the toes are the wrong part of the leg. A
+  band sits on the tarsus.
+- In the frames where the **tarsus is exposed**, the bird is too small and too
+  soft in frame; pushing past ~2x magnification produces interpolation, not
+  detail.
+
+So the honest statement is **"no band was seen, and no frame actually tested the
+band zone at usable resolution."** That is *not* evidence of an unbanded bird,
+and it must not be written down as one. It does convert the band question from
+"unknown" into a specific, cheap, achievable photo request — see below.
+
+**Quality notes for the group:** at least one frame is unusable from heavy
+high-ISO noise, and several are backlit into silhouette. Both are fixable by
+shooting the same perch earlier in the day with the sun behind the photographer.
+
+**What this album is actually good for right now:** establishing a baseline
+trait description — malar stripe geometry and breast-barring pattern — for the
+one well-photographed adult at the white-bracket perch. That is a legitimate
+`nashua-01`-or-`02` anchor, and it is the natural first entry once the photos
+are ingested.
+
+**Not yet done:** the photos live in Google Photos and have not been downloaded
+or catalogued. Per-photo capture timestamps were not read either — the album
+only exposes its overall range — and those timestamps are what the molt-window
+logic needs, so they should come from the originals rather than the web view.
+
+---
+
 ## 2026-08-03 — eBird baseline: there are two separate falcon areas, not one
 
 Pulled the last 30 days of Peregrine Falcon records for **Hillsborough County,
@@ -68,11 +125,21 @@ use it on every ingest.
 
 ## Standing asks of the group
 
+- **The one shot that matters most: a standing bird's LOWER LEG, sharp.** The
+  album's 25 photos could not answer the band question because the sharp frames
+  show a crouched bird with the tarsus buried in belly feathers, and the frames
+  with legs showing are too soft. **Wait for the bird to stand up**, fill more of
+  the frame, and shoot the leg between the feathered thigh and the toes. One
+  such frame plausibly ends the identification problem for that bird.
 - **Send originals, not screenshots** — see the photo protocol in
   [`docs/id_method.md`](docs/id_method.md). Stripped EXIF costs us the timestamp
   the molt-window logic runs on.
-- **Shoot the legs whenever a bird is perched.** One legible band ends the
-  ambiguity for that bird permanently.
+- **Shoot the same perch with the sun behind you.** Several album frames are
+  backlit into silhouette; the white-bracket perch is clearly a reliable spot,
+  so the lighting is a schedulable problem, not a luck problem.
+- **Is there a 2026 juvenile at all?** No brown, streaked bird appears in 25
+  photos spanning late June to late July. Ask before assuming it was simply
+  missed.
 - **Say where.** "Nashua" and "Bedford" are different birds until proven
   otherwise.
 
