@@ -16,6 +16,49 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-04 (later) — album expanded to 30; best band frame yet; perch fidelity is dead
+
+David added five photos and **set a project rule: no AI enhancement on Nashua
+falcon photos going forward.** That rule is the single most valuable thing to
+happen to the ID method today — see the contamination section in
+[`docs/id_method.md`](docs/id_method.md). Frames shot from here on are
+admissible for trait scoring; the earlier ones are not, unless he can say which
+were left alone.
+
+### The best band frame anyone has produced
+A bird on the **radio-tower crossbar**, hunched, with the tarsus fully clear of
+the belly feathers. At a 5000 px rendition the band is many times larger in
+frame than in the February flight shot: an unambiguous **silver federal band**,
+cylindrical, with a dark lower edge. Surface texture is visible but **no
+characters resolve** — the frame is soft, and this is still the federal band
+rather than the bi-color one that carries a readable code.
+
+Two useful things follow. First, **that perch produces the posture we need** —
+the bird sits high on the bar with legs exposed rather than crouched on a
+sloping ledge. Every other perch in the archive hides the tarsus. Second, the
+softness rather than the framing is now the limit, which is a lens-and-distance
+problem, not a luck problem.
+
+### New: a falcon on the ground
+Two frames show a peregrine **down in dry grass, standing over prey** — a
+setting absent from everything before. Legs are out of the feathers and the
+visible tarsus is **bare**. Worth chasing the rest of that sequence: a bird on
+the ground is at eye level, stationary and preoccupied, which is the best
+band-reading geometry available short of a nest box.
+
+### Perch fidelity does not separate the adults — scratch it
+The banded bird above is on the **same crossbar** that Jarrod captioned as the
+**female** on 2026-07-22, and the group holds that the female is unbanded. So
+either both adults use that perch, or one of those two claims is wrong. Either
+way, **"which structure it is sitting on" cannot be used to tell the pair
+apart.**
+
+That matters because perch fidelity was the last discriminator left standing
+after AI enhancement knocked out plumage comparison. It is now also gone. What
+remains for separating the two adults is the tarsus and nothing else.
+
+---
+
 ## 2026-08-04 — the email chain: three birds confirmed, Amos traced to Manchester, and the nest is the real mission
 
 Four threads reviewed (22–31 Jul), plus 15 images. This entry supersedes several

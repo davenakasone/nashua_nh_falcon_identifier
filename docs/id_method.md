@@ -157,6 +157,18 @@ nothing; a wrong `confirmed` poisons every record downstream of it.
 
 ## Photo protocol for the group
 
+**Project rule, set 2026-08-04: no AI enhancement on Nashua falcon photos.**
+Crop if you like — cropping only discards pixels. Do not run "enhance",
+denoise, or upscale on anything that might be used for identification. If a
+frame has already been enhanced, say so at hand-over; it stays useful for age,
+band presence, behaviour and date, just not for plumage.
+
+**Where to stand.** Two settings have been shown to expose the tarsus, which
+almost nothing else does: the **radio-tower crossbar** (the bird perches high on
+the bar with its legs clear of the belly rather than crouched on a slope) and a
+bird **down on the ground with prey** (eye level, stationary, preoccupied). Both
+beat the ledge and bracket perches, where the tarsus is buried every time.
+
 Ordered by how much the shot is worth, not by how easy it is:
 
 1. **The legs.** A perched bird, both legs visible, sharp. Preening and
