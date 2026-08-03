@@ -75,7 +75,7 @@ _GPS_TAGS = {v: k for k, v in ExifTags.GPSTAGS.items()}
 PHOTO_COLUMNS = [
     "photo_id", "captured_at", "site", "perch", "observer",
     "individual", "id_confidence", "age", "sex",
-    "band_visible", "band_code", "traits_seen", "quality", "notes",
+    "band_visible", "band_code", "traits_seen", "quality", "processing", "notes",
     "store", "store_ref", "source_name", "date_source", "ingested_at",
     "camera", "lens", "focal_mm", "shutter", "aperture", "iso",
     "width", "height", "has_gps", "readable", "sha256", "dhash",
@@ -90,6 +90,15 @@ SIGHTING_COLUMNS = [
 ]
 
 PRIVATE_COLUMNS = ["photo_id", "source_path", "lat", "lon"]
+
+#: Vocabulary for ``processing`` -- how much the pixels have been altered since
+#: the shutter fired. **Load-bearing for trait work.** AI "enhance" and upscaling
+#: warm the tone, smooth feather texture into wax, and harden soft markings into
+#: discrete blobs -- which is the exact signal malar geometry and breast-barring
+#: comparison depends on. An enhanced frame can look like a different bird.
+#: Nothing in this column can be recovered from the file, so it has to be asked.
+#: **Trait scoring uses ``out-of-camera`` frames only.**
+PROCESSING_VALUES = ("", "out-of-camera", "cropped", "ai-enhanced", "screenshot")
 
 #: Vocabulary for ``band_visible``. Empty means nobody has looked yet.
 #: ``not-tested`` means a human looked and the frame does not show the tarsus --
@@ -121,6 +130,7 @@ class PhotoRecord:
     band_code: str | None
     traits_seen: str | None
     quality: str | None
+    processing: str | None
     notes: str | None
     store: str | None
     store_ref: str | None
@@ -527,6 +537,7 @@ def ingest(
             band_code=None,
             traits_seen=None,
             quality=None,
+            processing=None,
             notes=None,
             store=store or ("local" if stored else None),
             store_ref=stored,

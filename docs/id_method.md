@@ -83,6 +83,41 @@ one, it outranks everything except a band read.
 
 ---
 
+## The contamination problem — read this before scoring any trait
+
+**AI "enhance" and upscaling destroy the exact signal this method depends on.**
+
+Learned the hard way on 2026-08-04. Two groups of photos in the group's album
+looked like two different birds: one warm and buff with discrete round breast
+spots, the other cool grey with fine even barring. It was a clean, convincing
+split — and it evaporated the moment the photographer mentioned that some frames
+had been cropped and AI-enhanced and others hadn't.
+
+Enhancers do three things, and every one of them lands on a trait in the ladder
+above:
+
+- **warm and saturate the tone** → destroys colour-wash comparison
+- **smooth noise into waxy texture** → destroys fine barring
+- **harden soft markings into discrete blobs** → turns bars into spots
+
+So an enhanced frame of one bird can look like a different individual from an
+untouched frame of the same bird. The signal and the artefact are the same shape.
+
+**Nothing in the file tells you which happened.** EXIF does not record it, and a
+re-saved JPEG looks like any other JPEG. It has to be *asked*, which is why
+`processing` is a column in `data/photos.csv` and why the vocabulary is
+`out-of-camera` / `cropped` / `ai-enhanced` / `screenshot`.
+
+**The rule that follows: score traits on `out-of-camera` frames only.** Enhanced
+frames are still useful — for age class, for band presence, for behaviour, for
+perch, for "there was a falcon here on this date." They are not admissible for
+plumage comparison, ever.
+
+Corollary for the photo protocol: **ask contributors for originals, and ask them
+explicitly whether they enhanced anything.** Most people do not think of a
+denoise-and-sharpen pass as altering the evidence, because for every other
+purpose they have, it isn't.
+
 ## What does not work
 
 **Off-the-shelf image similarity will not identify these birds.** Perceptual
