@@ -16,6 +16,114 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-04 — the email chain: three birds confirmed, Amos traced to Manchester, and the nest is the real mission
+
+Four threads reviewed (22–31 Jul), plus 15 images. This entry supersedes several
+earlier conclusions; the corrections are marked rather than quietly folded in.
+
+### Three birds, all three seen at once
+**2026-07-22, one afternoon:** the juvenile hunting over Mine Falls Oxbow Pond
+while both adults watched from separate high perches — the female on the radio
+tower (calling for the juvenile once it went out of sight), the male on the
+millyard stack. NH Audubon confirmed the fledgling the next day. Photographed;
+four frames now in the catalogue.
+
+**Correction to 2026-08-03.** The previous entry treated "no juvenile in 25
+album photos" as evidence against a 2026 fledgling. Wrong — the juvenile was
+being photographed inside that exact window by a different observer at Oxbow
+Pond rather than downtown. **Absence from one person's album is not absence in
+the field.** Logged in [`individuals/nashua-03.md`](individuals/nashua-03.md).
+
+### Amos is the MALE, and he came from Manchester
+**Correction to the 2026-08-04 entry below.** That entry anchored `nashua-01`
+to Amos while `nashua-01` was described as the presumed female. The group is
+consistent that **the banded bird is the male and the female is unbanded** —
+one observer notes a photo of her with a leg clearly bare.
+
+If the code read is right, Amos was **hatched and banded in 2017 at Brady
+Sullivan Tower, Manchester**, and is the same male recorded in Nashua before —
+so he is a ~9-year-old bird that dispersed roughly 20 km south from the
+well-known Manchester population. That is exactly the kind of link banding
+exists to make, and it means **the Bedford/Manchester cluster's value here is as
+Amos's origin, not as a research target** — those birds are already well known
+locally.
+
+**But the code is not read.** NH Audubon's own account is explicitly tentative:
+zooming into a photo, "sort of" making out a 3 and a 5 on the black band and a
+"very blurry" S on the green. The group has since adopted "Amos G/B 53/BS" as
+settled shorthand. It is a good bet, not a read — `possible`, not `confirmed`.
+
+A February 2026 in-flight frame (now `20260804-f3001faa`) **does** show a silver
+federal band on the tarsus, so *banded* is certain even though *which bird* is
+not. Magnified, the code is unresolvable: the band sits near edge-on at
+distance.
+
+### The nest has not been found, and finding it is the point
+Candidate structures, with what is actually known about each:
+
+- **Millyard smokestack** — NH Audubon's raptor biologist: if the tall chimneys
+  are inactive and capped, dust and vegetation accumulate on top and a scrape
+  could sit there. Cannot be confirmed from the ground.
+- **The circular chimney across the river**, near the apartments — in regular
+  use as a perch.
+- **The Clock Tower itself** — the strongest ground-level guess. It is central
+  to every confirmed sighting, the birds use its weathervane and rails, and
+  there may be an entry into the clock mechanism space, which humans visit only
+  for repairs. Checked on 2026-07-24 for a missing brick or roof gap: **no
+  ingress found.** Not ruled out — it is a long building with multiple turrets.
+- **Mill Building No 1 / Clocktower Apartments, north-facing alley side** —
+  little human traffic, many ledges; north aspect is a mark against it.
+- **99 Factory Street (abandoned)** — **ruled out.** Too many pigeons roosting
+  inside; falcons would not tolerate that at a nest.
+
+**The sharpest field observation in the whole chain:** pigeons are everywhere on
+the surrounding buildings but *never* on the clock tower. Prey species avoiding
+one structure in a pigeon-rich block is real negative evidence, and it points at
+the tower.
+
+### The drone question is solved, legally
+The area is **Class D airspace under Nashua tower control, on the direct landing
+approach** — a Part 107 certificate is not enough, it needs written permission
+from the tower for a specific one-hour block, with up to six weeks' lead. Flying
+without clearance has cost at least one person their drone to Nashua PD on the
+spot.
+
+The route through that: a local drone photographer already holds FAA permission
+through the City for the entire restricted area, believed good into October, and
+is willing. The plan on the chain is to use the **Nashua City GIS 2024 aerial
+imagery** (better resolution than Google) to shortlist rooftops, then send him to
+the shortlist looking for suitable substrate, wind shelter, prey remains and
+whitewash.
+
+**Timing note in this project's favour:** it is August. The young have fledged
+and the nest is no longer active, so a drone pass now carries far less
+disturbance risk than the same flight in April would. That ordering is doing a
+lot of work and should stay explicit — and it should remain NH Audubon's call,
+since they are on the thread.
+
+### Seasonal behaviour, from NH Audubon
+Urban pairs tend to stay at the nest area year-round because the food supply
+(pigeons) is constant; the Brady Sullivan pair is at its nest box all year.
+Pairs return to the same structure next season but may pick a different ledge.
+One observer's retrospective fits: red-tailed hawks occupied the radio tower in
+spring, which now reads as the period the female was sitting, and the falcons
+were much less visible March–April.
+
+### A nine-year archive exists
+One of the group photographs the area nearly every weekday, year round, and has
+kept an extensive catalogue over nine years — including falcon frames from
+January and February 2026. **That back catalogue is the cheapest multi-year
+continuity this project will ever get** and is worth asking for explicitly.
+
+### Redaction
+Committed: dates, times, coarse sites, public building names, behaviour, the
+band code and provenance, and attributions. Withheld to gitignored `private/`:
+all addresses and phone numbers, the third-party drone pilot's contact details,
+the reporter's scheduling and medical details, an observer's workplace and home
+floor, and the account-scoped Gmail links.
+
+---
+
 ## 2026-08-04 — BANDED AND NAMED: "Amos", band G/B 53/BS, downtown Nashua
 
 Mark's email of 2026-07-31 reports a Peregrine at **63A Front St, Nashua, Thu

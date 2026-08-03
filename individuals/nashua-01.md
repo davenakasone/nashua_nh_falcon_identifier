@@ -1,68 +1,69 @@
 # nashua-01
 
 - **alias:** **Amos**
-- **status:** established — a real, banded, named bird, not an inference
-- **first recorded:** 2026-07-30 (reported; see Sightings)
+- **status:** established
+- **first recorded (this project):** 2026-02 (photo `20260804-f3001faa`)
 - **last recorded:** 2026-07-30
-- **sex:** **unknown.** This file previously carried "female (presumed)" on no
-  evidence at all. That guess is withdrawn — a band code resolves sex through
-  the banding record, so there is no reason to guess and every reason not to.
-- **age class:** adult (presumed — the observer did not state age, but a named
-  banded bird holding a downtown territory in July is an adult on any reading)
-- **roles:** 2026 — resident adult, downtown Nashua millyard
+- **sex:** **male.** Three independent observers on the NH Audubon thread state
+  the banded downtown bird is the male and the female is unbanded.
+- **age class:** adult. If the band read is right, **hatched 2017** — nine years
+  old in 2026.
+- **roles:** 2026 — resident breeding male, downtown Nashua
 
 ## Bands
-- **banded:** **yes**
-- **code:** **G/B 53/BS** — bi-color, field-readable
-- **read from:** *not yet verified by us.* Reported in the subject line of
-  Mark's email of 2026-07-31 covering the 2026-07-30 sighting. The body of that
-  email does not say the band was read on that occasion, and we have not seen a
-  photograph showing it.
-- **traced:** not yet. **This is a one-question task now** — NH Audubon's raptor
-  staff are already on the email thread. `G/B 53/BS` should resolve to sex,
-  hatch year and natal site from the banding record.
+- **banded:** **yes** — confirmed visually, independent of the code question.
+  Photo `20260804-f3001faa` (Jarrod, Feb 2026, in flight from below) shows a
+  silver federal band on the visible tarsus, and the photographer reports both
+  legs banded in that frame.
+- **code:** **G/B 53/BS** — *reported*, see below.
+- **read from:** **not read cleanly by anyone yet.** NH Audubon's own account of
+  the read is explicitly tentative: zooming into a photo, "sort of" making out a
+  3 and a 5 on the black band and a "very blurry" S on the green. That is a
+  hypothesis good enough to bet on, not a code read off a frame.
+- **traced:** *if* `53/BS` is correct — **hatched and banded 2017 at Brady
+  Sullivan Tower, Manchester NH**, and the same male recorded in Nashua
+  previously. Source: NH Audubon, 2026-07-23.
 
 ## Stable traits
 - **malar stripe:** —
 - **hood / nape:** —
 - **underpart barring:** —
-- **injuries or deformities:** —
-
-No trait description yet: no photograph in the catalogue has been tied to this
-bird. The album's well-photographed white-bracket adult may or may not be Amos;
-nothing currently links them.
+- **injuries or deformities:** none noted
 
 ## Molt log
 | date | window | gaps observed | photo ids |
 |---|---|---|---|
+| 2026-02 | pre-breeding | not scored — full spread wing available in `20260804-f3001faa`, worth scoring | 20260804-f3001faa |
 
 ## Confidence
-**probable**, and deliberately not `confirmed`.
+**possible on identity, certain on bandedness.** Those are different claims and
+the file keeps them apart.
 
-Amos exists, is banded, and carries a known code — that much is solid. What is
-not established is that the 2026-07-30 bird was read rather than recognised.
-Per [`docs/id_method.md`](../docs/id_method.md), `confirmed` requires a legible
-band code in the frame.
+- *This bird is banded* — solid. A photograph shows it.
+- *This bird is Amos, 53/BS, from Brady Sullivan 2017* — a tentative read of a
+  blurry band by NH Audubon, adopted as shorthand by the group since. Plausible
+  and probably right; not established.
 
-- Raises it to **confirmed**: one photograph showing `G/B 53/BS` legibly. Mark
-  took many frames of a bird standing on an air conditioner for twelve minutes;
-  the shot may already exist.
-- Also raises it: NH Audubon confirming the code is theirs and matches a bird
-  known at this site.
-- Breaks it: the band code resolving to a bird known to be somewhere else, or
-  Mark confirming he named the bird from familiarity without a read.
+Raises it to **confirmed**: one frame with the bi-color band legible. Two
+existing chances — Mark's unshared 2026-07-30 frames of a bird standing on an
+air conditioner for twelve minutes, and Jarrod's nine-year back catalogue.
+
+Breaks it: the code resolving to a different bird, or a second banded adult
+turning up at the site.
 
 ## Sightings
-- **2026-07-30 19:30, 63A Front St, downtown Nashua** (`20260730-01`) — carried
-  prey in, fed for ~12 minutes on a window air-conditioner on a millyard
-  building, then flew past the smokestack and low over the Franklin St lofts.
-  Sources: eBird record + Mark's email 2026-07-31.
+- **2026-02** — in flight, both legs banded (`20260804-f3001faa`).
+- **2026-07-22 ~15:00** — on the millyard stack while the female was on the
+  radio tower and the juvenile hunted Oxbow Pond. Reported, not photographed
+  here.
+- **2026-07-30 19:30** — 63A Front St, fed ~12 min on a window air-conditioner
+  (`20260730-01`). Reported as Amos.
 
 ## Photos
-None assigned. **Outstanding: Mark's originals from 2026-07-30.**
+- `20260804-f3001faa` — Feb 2026, in flight, band visible, code not resolvable.
 
 ## Notes
-Feeding on an exposed perch for twelve minutes is the ideal band-reading
-opportunity — the bird is standing, side-on, stationary and preoccupied. If
-those frames show the tarsus, this file goes to `confirmed` and the project's
-central problem is solved for at least one bird.
+The bird is nine years old on the current reading, which makes him the stable
+subject in this project. Juveniles disperse; a resident adult male on an urban
+territory with constant prey does not. He is the one to build the trait
+description around.

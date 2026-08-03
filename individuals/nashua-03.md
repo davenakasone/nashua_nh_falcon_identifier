@@ -1,64 +1,69 @@
 # nashua-03
 
 - **alias:** —
-- **status:** hypothesis
-- **first recorded:** —
-- **last recorded:** —
-- **sex:** unknown (juveniles cannot be sexed by plumage; only by size against
-  a known adult, or by a band record from the nest)
+- **status:** **established.** This file was previously marked as doubtful on
+  the strength of a 25-photo album containing no juvenile. That reasoning was
+  wrong, and the correction is recorded below rather than quietly edited out.
+- **first recorded (this project):** 2026-07-22 (`20260722-e5e2cee9`)
+- **last recorded:** 2026-07-22
+- **sex:** unknown. The photographer suspects **female** from size — it is
+  already a large bird, and he had the male in view shortly afterward for
+  comparison. Juveniles cannot be sexed on plumage.
 - **age class:** juvenile, hatched 2026
-- **roles:** 2026 — dispersing juvenile, Nashua area
+- **roles:** 2026 — fledgling of the downtown pair, pre-dispersal
 
 ## Bands
 - **banded:** unknown
 - **code:** —
 - **read from:** —
-- **traced:** —
-
-If NH Audubon banded this year's brood, the nestling band code is on file and
-this bird's identity is already solved on paper — it only needs a leg photo to
-connect that record to our sightings. **This is the single highest-value ask of
-the season**, because the window closes: a dispersing juvenile leaves.
+- **traced:** — **worth one question to NH Audubon**: if the 2026 brood was
+  banded in the nest, this bird's code already exists on paper even though
+  nobody has found the nest.
 
 ## Stable traits
-- **malar stripe:** —
-- **hood / nape:** —
-- **underpart barring:** — (juvenile: expect **vertical** streaking, not the
-  adult's horizontal barring)
-- **injuries or deformities:** —
+- **underpart barring:** juvenile — expect **vertical** streaking rather than
+  the adult's horizontal barring
+- **injuries or deformities:** none noted
+
+Flight impression on 2026-07-22: "very deftly, showing some very good agility
+and speed", while being harried by a kingbird.
 
 ## Molt log
-| date | window | gaps observed | photo ids |
-|---|---|---|---|
-
-Note: a hatch-year bird is in fresh juvenile plumage and does **not** run a
-flight-feather molt in its first autumn, so the molt-gap method gives us nothing
-here. Identity for this bird has to come from a band or from the juvenile
-streak pattern.
+Not applicable. A hatch-year bird does not run a flight-feather molt in its
+first autumn, so the molt-gap method gives nothing here. Identity has to come
+from a band or from juvenile streak pattern.
 
 ## Confidence
-**hypothesis, and now under active doubt.**
+**established** — and the route there is worth keeping.
 
-- Raises it: any dated photo of a brown, vertically-streaked bird in the Nashua
-  area. Age class is the one trait that reads clearly off a mediocre photo, so
-  this file is the easiest of the three to establish.
-- Breaks it: no juvenile-plumaged bird turns up in the group's photos.
-- **2026-08-03 — the group's 25-photo album (29 Jun – 24 Jul) contains no
-  juvenile.** Every identifiable bird in it is an adult. That is exactly the
-  window a fledged juvenile should be most visible and most photographed, so
-  this is evidence against the file, not merely absence of evidence for it.
-  It does not kill the hypothesis — the group may simply not have pointed a
-  camera at the young bird — but the question now has to be asked out loud
-  rather than assumed. See [`INTEL.md`](../INTEL.md).
-- **Watch for more than one.** Peregrine broods are commonly 3–4 young. If two
-  juveniles are ever in frame together, open `nashua-04` immediately rather
-  than folding both into this file.
+- **2026-07-22:** all three falcons seen together in one afternoon — the
+  juvenile hunting over Mine Falls Oxbow Pond, both adults watching from the
+  radio tower and the millyard stack. Photographed.
+- **2026-07-23:** NH Audubon confirmed the fledgling on the strength of that
+  report.
+
+### Correction, 2026-08-04
+On 2026-08-03 this file recorded the absence of any juvenile across 25 album
+photos spanning 29 Jun – 24 Jul as *evidence against* this bird existing. The
+emails show that was simply a gap in what one album happened to contain — the
+juvenile was being seen and photographed inside that exact window, by a
+different observer, over at Oxbow Pond rather than downtown. **Absence in one
+person's photo set is not absence in the field**, and the earlier entry
+overreached by treating it as such. Logged as a lesson, not deleted.
+
+## Sightings
+- **2026-07-22 14:52** — hunting over Mine Falls Oxbow Pond, harried by a
+  kingbird; both adults monitoring from separate high perches
+  (`20260722-e5e2cee9`).
 
 ## Photos
-None assigned.
+- `20260722-e5e2cee9` — in flight, 2026-07-22, captioned "Juvenile on the Hunt".
 
 ## Notes
-Juvenile plumage is worn into the following spring, so brown-and-streaked
-remains a valid age cue through winter. What it does **not** survive is the
-first complete molt — after that this bird looks like any other adult, and if
-we never got a band read, continuity is lost.
+**Time-critical.** Post-fledging dependence runs roughly four to eight weeks;
+this bird fledged around mid-June, so dispersal is due somewhere between now and
+September. First-year peregrines can move hundreds of kilometres and rarely
+return to breed where they hatched. Whatever gets documented on this bird has to
+be documented in the next few weeks — and a leg shot matters more here than for
+either adult, because a band is the only thing that could ever link this
+individual to a future sighting somewhere else.

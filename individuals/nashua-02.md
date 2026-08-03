@@ -1,51 +1,60 @@
 # nashua-02
 
 - **alias:** — (**not** Amos; that is [`nashua-01`](nashua-01.md))
-- **status:** hypothesis
-- **first recorded:** —
-- **last recorded:** —
-- **sex:** unknown. Previously "male (presumed)" as the assumed second member of
-  a pair. Withdrawn for the same reason as in `nashua-01`: it rested on nothing,
-  and now that one downtown adult is banded and identifiable, sex will come from
-  records rather than assumption.
-- **age class:** adult (presumed)
-- **roles:** 2026 — second resident adult, downtown Nashua
+- **status:** established
+- **first recorded (this project):** 2026-07-22 (`20260722-5cf2df73`)
+- **last recorded:** 2026-07-22
+- **sex:** **female**, per the observers on the NH Audubon thread — from size
+  against the male, and from behaviour (she called for the juvenile). Not yet
+  verified by a two-birds-in-one-frame size comparison; see below.
+- **age class:** adult
+- **roles:** 2026 — resident breeding female, downtown Nashua
 
 ## Bands
-- **banded:** unknown
-- **code:** —
-- **read from:** —
-- **traced:** —
+- **banded:** **no** — and unlike most "no band seen" claims in this project,
+  this one has support. The group states the female is unbanded, and a
+  2026-07-22 photo of her shows at least one leg clearly bare.
+- **code:** n/a
+- **read from:** n/a
+- **traced:** n/a — an unbanded bird has no paper trail. **Her identity across
+  years depends entirely on the photo-comparison method**, which makes her the
+  bird this project's trait work actually exists for.
 
 ## Stable traits
-- **malar stripe:** —
+- **malar stripe:** — not yet scored; two good radio-tower frames are in the
+  catalogue and should be the starting point.
 - **hood / nape:** —
 - **underpart barring:** —
-- **injuries or deformities:** —
+- **injuries or deformities:** none noted
 
 ## Molt log
 | date | window | gaps observed | photo ids |
 |---|---|---|---|
 
 ## Confidence
-**hypothesis** — and now the weaker of the two files, since
-[`nashua-01`](nashua-01.md) is anchored to a real banded bird and this one rests
-on the assumption that a territory implies a pair.
+**probable.**
 
-- Raises it: one frame containing both adults. That single photo establishes
-  the pair *and* assigns sex to both by relative size, which no amount of
-  separate photos can do. A second band code would settle it outright.
-- Breaks it: evidence that the site holds one adult, or that the two-bird counts
-  were an adult with a fledged juvenile.
-- **Ask NH Audubon whether the second adult is banded too.** If the pair was
-  trapped, or this year's nestlings banded, a second code may already exist on
-  paper — the same reply that resolves Amos can answer this.
+- Solid: a second adult exists at this site alongside the banded male. A frame
+  in the group's material shows two adults on one roofline together.
+- Less solid: that she is female. That rests on observer judgement rather than
+  a measured comparison. The two-adults-in-one-frame photo does **not** settle
+  it — the roofline recedes, so the nearer bird looks bigger for reasons that
+  have nothing to do with sex.
+- Raises it: two adults at comparable distance in one frame, or NH Audubon
+  confirming the pair's composition.
+- Breaks it: a band turning up on her, which would make her a different bird
+  from the one the group has been calling the unbanded female.
+
+## Sightings
+- **2026-07-22 15:04** — radio tower in the field, calling for the juvenile
+  after it went out of sight (`20260722-5cf2df73`, `20260722-ec1dd230`).
 
 ## Photos
-None assigned.
+- `20260722-5cf2df73`, `20260722-ec1dd230` — radio tower, 2026-07-22, captioned
+  "Female" by the photographer.
 
 ## Notes
-Male peregrines are the smaller bird and typically the more active hunter of
-the pair; at an urban site the male often uses different loafing perches than
-the female. Perch fidelity is worth logging from the start — it is weak evidence
-alone, but it accumulates.
+**This is the bird the ID method matters for.** Amos can be looked up; she
+cannot. If the pair turns over in some future season, the only way anyone will
+know it happened is a trait description of this female, written now, from the
+frames we already have. That work is worth doing before the season ends.

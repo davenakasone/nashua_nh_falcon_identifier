@@ -7,8 +7,41 @@ bands if any, behavior/territory), so group sightings unify into one honest
 record — and feed local efforts (Cornell **eBird**, **NH Audubon** Peregrine
 monitoring) and the Nashua Ink Link story.
 
-## STATUS (updated 2026-08-03)
-- Active file: none — checkpointed. Session 1 shipped intake + method + log.
+## STATUS (updated 2026-08-04)
+- Active file: none — checkpointed mid-session-2.
+- **THE MISSION IS THE NEST.** David's framing: make sure the birds have a
+  suitable nest that doesn't get disturbed, and see what else can be done for
+  them. Individual ID serves that, not the other way round.
+- **THREE BIRDS CONFIRMED, all seen 2026-07-22 in one afternoon** — juvenile
+  hunting Oxbow Pond, female on the radio tower calling for it, male on the
+  millyard stack. NH Audubon confirmed the fledgling 2026-07-23.
+  **`nashua-01` = Amos, the banded MALE** (earlier session had him as presumed
+  female — corrected). If the read is right: hatched/banded **2017 at Brady
+  Sullivan Tower, Manchester**, ~9 years old, dispersed ~20 km south.
+  **`nashua-02` = the unbanded FEMALE** — she is the bird the photo-ID method
+  actually exists for, since she has no paper trail. `nashua-03` = the 2026
+  juvenile, dispersal due now through September.
+- **BAND: certain, CODE: not read.** A Feb-2026 in-flight frame shows a silver
+  federal band on the tarsus — `banded` is settled. But "G/B 53/BS" traces to
+  NH Audubon's explicitly tentative zoom ("sort of" a 3 and a 5, a "very
+  blurry" S), since adopted by the group as settled shorthand. Held at
+  `possible`. Two live chances at a clean read: Mark's unshared 2026-07-30
+  frames (bird STANDING on an AC unit, feeding, 12 minutes) and Jarrod's
+  nine-year back catalogue.
+- **CATALOGUE IS LIVE: 5 photos, 16 sightings.** First real ingest done from
+  Jarrod's Sony A7 IV files — tool auto-deduped a `(1)` copy by sha256 and
+  confirmed **his camera writes no GPS**, so DSLR contributions carry no
+  disclosure risk (phone photos still will).
+- **Nest candidates** (`INTEL.md`): millyard smokestack (NH Audubon: if capped
+  and inactive, dust+veg could hold a scrape), the circular chimney across the
+  river, the **Clock Tower** (strongest — central to all sightings, and pigeons
+  are everywhere nearby but *never* on that tower). Checked and negative:
+  Clocktower ingress 2026-07-24. **Ruled out:** 99 Factory St (pigeons roosting
+  inside). Drone: Class D airspace on the Nashua approach, needs written tower
+  permission — but a City-cleared pilot exists and is willing, into ~October.
+  August timing means the nest is inactive, so a pass now is low-disturbance;
+  keep it NH Audubon's call.
+- Session 1 shipped intake + method + log.
 - **`photo_intake/` DONE and green (29 tests).** Standalone tool
   (`python -m photo_intake ingest|list|show|stats`). Reads EXIF, assigns a
   stable id `YYYYMMDD-<8hex>`, sha256-dedupes exact repeats, dhash-flags burst
