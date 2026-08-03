@@ -16,6 +16,57 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-04 (later still) — the album is not a Nashua dataset, and geotags are unchecked
+
+David: **there is probably a New Jersey trip mixed into the album.** That is a
+third contamination vector on top of AI enhancement and unread band codes, and
+it retroactively undermines at least one finding logged an hour earlier.
+
+**Suspect frames.** Two show a falcon **on the ground in dry marsh grass**,
+standing over prey — a habitat that does not exist in the downtown Nashua
+millyard, and one that matches coastal New Jersey peregrine sites closely.
+Those were logged above as "the best band-reading geometry available." That may
+be true of some *other* bird in another state. Several hazy, flat-landscape
+lattice-tower frames are also unlike the crisp millyard shots and cannot be
+placed by eye.
+
+**Geotags: not checked, and not checkable from here.** The album is only visible
+through Google's web renditions, which are re-encoded and carry no EXIF at all,
+and a link viewer's info panel does not expose location. Every geotag statement
+in this log so far applies only to the **local** files, where it was verified
+properly: Jarrod's Sony ILCE-7M4 writes no GPS, and the emailed screenshots
+carry no EXIF whatsoever.
+
+**Why the geotags matter more than they first appear.** A photo's GPS locates
+the *photographer*, not the bird — which for this project is an asset rather
+than a limitation:
+
+1. **It partitions the album instantly.** Habitat and tower shots look alike;
+   coordinates do not. One pass over the originals sorts Nashua from New Jersey
+   with no judgement calls.
+2. **It may already contain the nest triangulation.** Phones commonly write
+   `GPSImgDirection`, the compass heading the camera was pointing. Standing
+   position plus heading is a **ray pointing at the perch**, and rays from two
+   positions intersect on it. If the phone frames are geotagged, the dusk-bearing
+   fieldwork proposed as a to-do may already exist retroactively in the camera
+   roll.
+3. **It is a disclosure question for the album, separate from the repo.** If
+   those frames are geotagged and the album link circulates, the coordinates
+   circulate with them.
+
+**What unblocks all three:** the originals, not the web view. Drive is mounted
+locally on this machine, so dropping the album originals into the Drive folder
+is enough — intake reads them off the mount with EXIF intact, writes coordinates
+to gitignored `private/locations.csv`, and `nest_map.py` now plots every
+geotagged frame, flagging anything more than 50 km from the downtown centroid as
+**NOT a Nashua photo**.
+
+**Discipline this reinforces:** `--site` on every ingest was designed for exactly
+this, and nothing in the album has been ingested yet. Until it is, the album is
+a shoebox, not a dataset.
+
+---
+
 ## 2026-08-04 (later) — album expanded to 30; best band frame yet; perch fidelity is dead
 
 David added five photos and **set a project rule: no AI enhancement on Nashua

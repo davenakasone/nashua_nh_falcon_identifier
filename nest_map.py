@@ -68,6 +68,37 @@ DUSK_BEARING_DEG = 45
 DUSK_RAY_KM = 2.0
 
 
+def read_photo_gps() -> list[dict]:
+    """Photo GPS from the gitignored intake sidecar, joined to the catalog.
+
+    **A photo's GPS locates the photographer, not the bird** -- which is more
+    useful here than it sounds. Combined with the compass heading some phones
+    write (``GPSImgDirection``), each geotagged frame is a ray pointing at the
+    perch, and rays from two standing positions triangulate it.
+
+    It is also the only reliable way to separate Nashua frames from photos taken
+    on trips elsewhere: habitat and tower shots look alike, coordinates do not.
+    """
+    priv = ROOT / "private" / "locations.csv"
+    if not priv.exists():
+        return []
+    with open(priv, newline="") as fh:
+        rows = [r for r in csv.DictReader(fh)]
+    cat = {}
+    if (ROOT / "data" / "photos.csv").exists():
+        with open(ROOT / "data" / "photos.csv", newline="") as fh:
+            cat = {r["photo_id"]: r for r in csv.DictReader(fh)}
+    out = []
+    for r in rows:
+        if not (r.get("lat") and r.get("lon")):
+            continue
+        meta = cat.get(r["photo_id"], {})
+        out.append({**r, "captured_at": meta.get("captured_at", ""),
+                    "site": meta.get("site", ""), "observer": meta.get("observer", ""),
+                    "individual": meta.get("individual", "")})
+    return out
+
+
 def read_coords() -> list[dict]:
     if not COORDS.exists():
         sys.exit(f"missing {COORDS.relative_to(ROOT)} — see the module docstring")
@@ -147,6 +178,33 @@ def main() -> int:
                "Peregrines usually roost at or near the nest, so where they go "
                "after dark is a lead on the scrape."),
     ).add_to(dusk)
+
+    # --- where the photos were taken -------------------------------------
+    photos = read_photo_gps()
+    if photos:
+        fg = folium.FeatureGroup(name=f"Photo positions ({len(photos)})").add_to(m)
+        far = 0
+        for p in photos:
+            lat, lon = float(p["lat"]), float(p["lon"])
+            away = _haversine(centre[0], centre[1], lat, lon)
+            if away > 50:
+                far += 1
+            folium.Marker(
+                (lat, lon), icon=folium.Icon(
+                    color="red" if away > 50 else "green", icon="camera", prefix="fa"),
+                popup=folium.Popup(
+                    f"<b>{p['photo_id']}</b><br>{p.get('captured_at','?')}"
+                    f"<br>site: {p.get('site') or '-'}"
+                    f"<br>observer: {p.get('observer') or '-'}"
+                    f"<br>{away:.1f} km from the downtown centroid"
+                    + ("<br><b style='color:#c00'>NOT A NASHUA PHOTO</b>" if away > 50 else ""),
+                    max_width=300),
+                tooltip=f"{p['photo_id']} ({away:.1f} km)",
+            ).add_to(fg)
+        print(f"  {len(photos)} geotagged photo(s)"
+              + (f", {far} more than 50 km away — NOT Nashua" if far else ""))
+    else:
+        print("  no geotagged photos yet — see read_photo_gps() docstring")
 
     # --- candidate structures -------------------------------------------
     colour = {"candidate": "#1a9850", "checked-negative": "#f0a30a",
