@@ -2,14 +2,21 @@
 
 Design notes that matter to anyone touching this file:
 
+* **The catalog is CSV, and the CSV is the durable record.** Not the photos.
+  Every row carries enough (``sha256``, ``dhash``, dimensions, timestamp,
+  traits) that losing the original loses the pixels but not the observation.
+  That is deliberate: originals live in cold storage the project does not
+  control, and permissions on cold storage are somebody else's problem.
 * **GPS never enters the public catalog.** A committed row carries only
   ``has_gps`` and the coarse ``site`` label the ingester typed. Precise
-  coordinates go to ``private/locations.jsonl``, which is gitignored. Peregrine
+  coordinates go to ``private/locations.csv``, which is gitignored. Peregrine
   nest-site precision is a judgment call and this repo is public -- see
   ``CLAUDE.md``.
 * **Two hashes, two jobs.** ``sha256`` catches the same file arriving twice
   (the group re-sends a batch). ``dhash`` catches the *same frame* arriving in
-  a different size or re-compression, and clusters burst frames.
+  a different size or re-compression, and clusters burst frames. Together they
+  let a photo be re-identified years later from a copy, which is what makes
+  cold storage safe.
 * **HEIC/RAW** cannot be opened by Pillow. On macOS we shell out to ``sips``
   for a cached JPEG derivative and read that. Off macOS those files are
   recorded as ``unreadable`` rather than dropped -- a photo we cannot parse is
@@ -17,12 +24,12 @@ Design notes that matter to anyone touching this file:
 """
 from __future__ import annotations
 
+import csv
 import hashlib
-import json
 import os
 import shutil
 import subprocess
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -32,6 +39,8 @@ __all__ = [
     "PhotoIntakeError",
     "PhotoRecord",
     "IMAGE_SUFFIXES",
+    "PHOTO_COLUMNS",
+    "SIGHTING_COLUMNS",
     "sha256_file",
     "dhash",
     "read_metadata",
@@ -39,6 +48,7 @@ __all__ = [
     "ingest",
     "load_catalog",
     "load_private",
+    "load_sightings",
 ]
 
 
@@ -58,24 +68,65 @@ CACHE_DIR = Path(os.path.expanduser("~/.cache/photo_intake"))
 _EXIF_TAGS = {v: k for k, v in ExifTags.TAGS.items()}
 _GPS_TAGS = {v: k for k, v in ExifTags.GPSTAGS.items()}
 
+#: Column order for ``data/photos.csv``. Field columns first so the useful part
+#: is visible without scrolling in a spreadsheet or on GitHub; machine-written
+#: technical columns trail behind. Append new columns at the end -- adding a
+#: column is free, renaming one is not.
+PHOTO_COLUMNS = [
+    "photo_id", "captured_at", "site", "perch", "observer",
+    "individual", "id_confidence", "age", "sex",
+    "band_visible", "band_code", "traits_seen", "quality", "notes",
+    "store", "store_ref", "source_name", "date_source", "ingested_at",
+    "camera", "lens", "focal_mm", "shutter", "aperture", "iso",
+    "width", "height", "has_gps", "readable", "sha256", "dhash",
+]
+
+#: Column order for ``data/sightings.csv`` -- one row per observation event,
+#: photographed or not. A sighting can exist with no photo (eBird, an email
+#: report); a photo is evidence *for* a sighting. Joined via ``photo_ids``.
+SIGHTING_COLUMNS = [
+    "sighting_id", "date", "time", "site", "count", "age_classes",
+    "individuals", "source", "source_ref", "photo_ids", "confidence", "notes",
+]
+
+PRIVATE_COLUMNS = ["photo_id", "source_path", "lat", "lon"]
+
+#: Vocabulary for ``band_visible``. Empty means nobody has looked yet.
+#: ``not-tested`` means a human looked and the frame does not show the tarsus --
+#: which is where a band sits. The distinction is the whole point: 25 photos of
+#: a crouched bird are 25 frames that never tested the band zone, and recording
+#: them as "no" would invent evidence for an unbanded bird.
+BAND_VISIBLE_VALUES = ("", "yes", "no", "not-tested")
+
 
 @dataclass
 class PhotoRecord:
     """One photo, as it appears in the public catalog.
 
-    Fields left empty at ingest (``individual``, ``bands``, ``traits``) are the
-    hooks the ID work fills in later; intake never guesses at them.
+    Intake fills only what it can read off the file. The identification
+    columns (``individual``, ``age``, ``sex``, ``band_visible``, ...) are left
+    empty for a human to fill in -- this tool never guesses at the bird.
     """
 
-    id: str
-    sha256: str
-    dhash: str
-    source_name: str
-    stored_path: str | None
+    photo_id: str
     captured_at: str | None
-    captured_source: str
     site: str | None
+    perch: str | None
     observer: str | None
+    individual: str | None
+    id_confidence: str | None
+    age: str | None
+    sex: str | None
+    band_visible: str | None
+    band_code: str | None
+    traits_seen: str | None
+    quality: str | None
+    notes: str | None
+    store: str | None
+    store_ref: str | None
+    source_name: str
+    date_source: str
+    ingested_at: str
     camera: str | None
     lens: str | None
     focal_mm: float | None
@@ -86,14 +137,15 @@ class PhotoRecord:
     height: int | None
     has_gps: bool
     readable: bool
-    ingested_at: str
-    individual: str | None = None
-    bands: str | None = None
-    traits: dict = field(default_factory=dict)
-    notes: str | None = None
+    sha256: str
+    dhash: str
 
     def as_row(self) -> dict:
-        return asdict(self)
+        """Flatten to strings the way the CSV stores them."""
+        row = asdict(self)
+        row["has_gps"] = _bool_out(row["has_gps"])
+        row["readable"] = _bool_out(row["readable"])
+        return {k: ("" if v is None else v) for k, v in row.items()}
 
 
 # --------------------------------------------------------------------------
@@ -171,7 +223,7 @@ def _exif_datetime(raw: dict) -> str | None:
     """EXIF ``DateTimeOriginal`` (fall back to ``DateTime``) as ISO-8601 local.
 
     EXIF timestamps carry no zone, so we emit a naive ISO string and say so in
-    ``captured_source``. Do not pretend to a UTC offset we were not given.
+    ``date_source``. Do not pretend to a UTC offset we were not given.
     """
     for tag in ("DateTimeOriginal", "DateTimeDigitized", "DateTime"):
         value = raw.get(tag)
@@ -213,7 +265,7 @@ def read_metadata(path: str | Path) -> dict:
     path = Path(path)
     out: dict = {
         "readable": False, "dhash": None, "width": None, "height": None,
-        "captured_at": None, "captured_source": "none", "camera": None,
+        "captured_at": None, "date_source": "none", "camera": None,
         "lens": None, "focal_mm": None, "shutter": None, "aperture": None,
         "iso": None, "gps": None,
     }
@@ -222,7 +274,7 @@ def read_metadata(path: str | Path) -> dict:
     if path.suffix.lower() in CONVERT_SUFFIXES:
         derived = _derivative(path)
         if derived is None:
-            out["captured_source"] = "file-mtime"
+            out["date_source"] = "file-mtime"
             out["captured_at"] = _mtime_iso(path)
             return out
         target = derived
@@ -235,7 +287,7 @@ def read_metadata(path: str | Path) -> dict:
             out["readable"] = True
             exif = img.getexif()
     except (OSError, ValueError) as exc:  # truncated, unsupported, corrupt
-        out["captured_source"] = "file-mtime"
+        out["date_source"] = "file-mtime"
         out["captured_at"] = _mtime_iso(path)
         out["error"] = str(exc)
         return out
@@ -257,10 +309,10 @@ def read_metadata(path: str | Path) -> dict:
     captured = _exif_datetime(raw)
     if captured:
         out["captured_at"] = captured
-        out["captured_source"] = "exif"
+        out["date_source"] = "exif"
     else:
         out["captured_at"] = _mtime_iso(path)
-        out["captured_source"] = "file-mtime"
+        out["date_source"] = "file-mtime"
 
     gps_ifd = exif.get_ifd(_EXIF_TAGS["GPSInfo"]) if _EXIF_TAGS.get("GPSInfo") else {}
     if gps_ifd:
@@ -317,6 +369,15 @@ def _shutter(value) -> str | None:
     return f"1/{round(1 / seconds)}"
 
 
+def _bool_out(value) -> str:
+    """Booleans as yes/no -- this file gets read by people, not just code."""
+    return "yes" if value else "no"
+
+
+def _bool_in(value) -> bool:
+    return str(value).strip().lower() in {"yes", "true", "1", "y"}
+
+
 # --------------------------------------------------------------------------
 # catalog
 # --------------------------------------------------------------------------
@@ -325,43 +386,57 @@ def photo_id(captured_at: str | None, sha: str) -> str:
     """Stable, sortable, collision-resistant: ``YYYYMMDD-<8 hex>``.
 
     Derived only from capture date + content, so re-ingesting the same file
-    after a rename produces the same id.
+    after a rename produces the same id. The leading digits plus a hyphen keep
+    spreadsheets from helpfully reinterpreting it as a date or a number.
     """
     day = (captured_at or "unknown")[:10].replace("-", "") or "unknown"
     return f"{day}-{sha[:8]}"
 
 
-def load_catalog(catalog_path: str | Path) -> list[dict]:
-    """Read a JSONL catalog. Missing file is an empty catalog, not an error."""
-    path = Path(catalog_path)
+def read_csv(path: str | Path) -> list[dict]:
+    """Read a CSV into dicts. A missing file is empty, not an error."""
+    path = Path(path)
     if not path.exists():
         return []
-    rows = []
-    with open(path) as fh:
-        for lineno, line in enumerate(fh, 1):
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                rows.append(json.loads(line))
-            except ValueError as exc:
-                raise PhotoIntakeError(
-                    f"{path}:{lineno} is not valid JSON: {exc}") from exc
-    return rows
+    try:
+        with open(path, newline="", encoding="utf-8") as fh:
+            return [dict(row) for row in csv.DictReader(fh)]
+    except OSError as exc:
+        raise PhotoIntakeError(f"cannot read {path}: {exc}") from exc
 
 
-def load_private(private_path: str | Path) -> dict[str, dict]:
-    """Read the gitignored id -> {gps, source_path} sidecar, keyed by photo id."""
-    return {r["id"]: r for r in load_catalog(private_path)}
+def load_catalog(root: str | Path) -> list[dict]:
+    """Rows of ``data/photos.csv`` under ``root``."""
+    return read_csv(Path(root) / "data" / "photos.csv")
 
 
-def _append(path: Path, rows: list[dict]) -> None:
+def load_sightings(root: str | Path) -> list[dict]:
+    """Rows of ``data/sightings.csv`` under ``root``."""
+    return read_csv(Path(root) / "data" / "sightings.csv")
+
+
+def load_private(root: str | Path) -> dict[str, dict]:
+    """The gitignored photo_id -> {lat, lon, source_path} sidecar."""
+    return {r["photo_id"]: r
+            for r in read_csv(Path(root) / "private" / "locations.csv")}
+
+
+def append_csv(path: Path, columns: list[str], rows: list[dict]) -> None:
+    """Append rows, writing the header first if the file is new.
+
+    Unknown keys are dropped and missing ones blank-filled, so a catalog
+    written by an older column set still loads and re-saves cleanly.
+    """
     if not rows:
         return
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "a") as fh:
+    new = not path.exists()
+    with open(path, "a", newline="", encoding="utf-8") as fh:
+        writer = csv.DictWriter(fh, fieldnames=columns, extrasaction="ignore")
+        if new:
+            writer.writeheader()
         for row in rows:
-            fh.write(json.dumps(row, sort_keys=True) + "\n")
+            writer.writerow({c: row.get(c, "") for c in columns})
 
 
 def iter_images(paths) -> list[Path]:
@@ -386,7 +461,9 @@ def ingest(
     root: str | Path,
     site: str | None = None,
     observer: str | None = None,
-    copy: bool = True,
+    perch: str | None = None,
+    store: str | None = None,
+    copy: bool = False,
     dry_run: bool = False,
 ) -> dict:
     """Ingest photos into the catalog under ``root``.
@@ -395,14 +472,18 @@ def ingest(
     ``duplicates`` are exact sha256 repeats (skipped). ``near`` are new photos
     whose dhash is within 5 bits of something already catalogued -- reported,
     not skipped, because burst frames are legitimately separate photos.
+
+    ``copy`` defaults to **off**: the catalog row is the durable record, and
+    originals are expected to live in cold storage elsewhere. Pass ``copy=True``
+    only when this machine should also keep the bytes.
     """
     root = Path(root)
-    catalog_path = root / "data" / "catalog.jsonl"
-    private_path = root / "private" / "locations.jsonl"
+    catalog_path = root / "data" / "photos.csv"
+    private_path = root / "private" / "locations.csv"
 
-    existing = load_catalog(catalog_path)
-    seen_sha = {r["sha256"] for r in existing}
-    seen_dhash = [(r["dhash"], r["id"]) for r in existing if r.get("dhash")]
+    existing = load_catalog(root)
+    seen_sha = {r["sha256"] for r in existing if r.get("sha256")}
+    seen_dhash = [(r["dhash"], r["photo_id"]) for r in existing if r.get("dhash")]
 
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     added: list[PhotoRecord] = []
@@ -433,15 +514,25 @@ def ingest(
             stored = _store(src, root, pid, meta["captured_at"])
 
         record = PhotoRecord(
-            id=pid,
-            sha256=sha,
-            dhash=meta["dhash"] or "",
-            source_name=src.name,
-            stored_path=stored,
+            photo_id=pid,
             captured_at=meta["captured_at"],
-            captured_source=meta["captured_source"],
             site=site,
+            perch=perch,
             observer=observer,
+            individual=None,
+            id_confidence=None,
+            age=None,
+            sex=None,
+            band_visible=None,
+            band_code=None,
+            traits_seen=None,
+            quality=None,
+            notes=None,
+            store=store or ("local" if stored else None),
+            store_ref=stored,
+            source_name=src.name,
+            date_source=meta["date_source"],
+            ingested_at=now,
             camera=meta["camera"],
             lens=meta["lens"],
             focal_mm=meta["focal_mm"],
@@ -452,7 +543,8 @@ def ingest(
             height=meta["height"],
             has_gps=meta["gps"] is not None,
             readable=meta["readable"],
-            ingested_at=now,
+            sha256=sha,
+            dhash=meta["dhash"] or "",
         )
         added.append(record)
 
@@ -460,15 +552,15 @@ def ingest(
         # public catalog -- this file is gitignored on purpose. Written for
         # every photo, GPS or not, so the trail back to the original survives.
         private_rows.append({
-            "id": pid,
+            "photo_id": pid,
             "source_path": str(src.resolve()),
-            "lat": meta["gps"][0] if meta["gps"] else None,
-            "lon": meta["gps"][1] if meta["gps"] else None,
+            "lat": meta["gps"][0] if meta["gps"] else "",
+            "lon": meta["gps"][1] if meta["gps"] else "",
         })
 
     if not dry_run:
-        _append(catalog_path, [r.as_row() for r in added])
-        _append(private_path, private_rows)
+        append_csv(catalog_path, PHOTO_COLUMNS, [r.as_row() for r in added])
+        append_csv(private_path, PRIVATE_COLUMNS, private_rows)
 
     return {"added": added, "duplicates": duplicates, "near": near}
 

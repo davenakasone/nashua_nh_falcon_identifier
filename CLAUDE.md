@@ -9,16 +9,32 @@ monitoring) and the Nashua Ink Link story.
 
 ## STATUS (updated 2026-08-03)
 - Active file: none — checkpointed. Session 1 shipped intake + method + log.
-- **`photo_intake/` DONE and green (26 tests).** Standalone tool
+- **`photo_intake/` DONE and green (29 tests).** Standalone tool
   (`python -m photo_intake ingest|list|show|stats`). Reads EXIF, assigns a
   stable id `YYYYMMDD-<8hex>`, sha256-dedupes exact repeats, dhash-flags burst
-  frames (≤5 bits) without dropping them, copies originals into
-  `photos/YYYY/MM/`. **HEIC/RAW handled** via a cached macOS `sips` derivative
-  (verified live on a real .heic); unreadable files are catalogued, not
-  dropped. **Privacy split is the load-bearing design:** GPS + absolute source
-  paths go to gitignored `private/locations.jsonl`, the committed
-  `data/catalog.jsonl` carries only `has_gps` + the coarse `--site` label. A
-  test asserts no coordinates ever reach the public file.
+  frames (≤5 bits) without dropping them. **HEIC/RAW handled** via a cached
+  macOS `sips` derivative (verified live on a real .heic); unreadable files are
+  catalogued, not dropped. **Privacy split is the load-bearing design:** GPS +
+  absolute source paths go to gitignored `private/locations.csv`, the committed
+  `data/photos.csv` carries only `has_gps` + the coarse `--site` label. A test
+  asserts no coordinates ever reach the public file.
+- **DATABASE IS CSV, TWO TABLES (David's call 2026-08-03, schema in
+  `data/README.md`).** `photos.csv` = one row per photo (31 cols);
+  `sightings.csv` = one row per observation event, joined via `photo_ids`.
+  Two tables because a sighting can have no photo (all the eBird/email intel)
+  or many (a burst is one sighting). CSV because three humans read it and
+  GitHub renders it as a table. **`sightings.csv` seeded with the 13 eBird
+  records.** `photos.csv` is header-only — nothing ingested yet.
+- **The CSV is the durable record, NOT the photos.** Every row carries sha256 +
+  dhash + dimensions + timestamp, so a lost original loses pixels but not the
+  observation, and a copy resurfacing later can be matched back. `--copy` is
+  now **off by default**: originals are expected to live in cold storage
+  (David's plan: a Drive folder) that this repo does not control.
+- **`band_visible` vocabulary is load-bearing:** empty = nobody looked;
+  `not-tested` = looked, frame doesn't show the tarsus; `no` = tarsus visible
+  and unbanded; `yes` = band seen. Recording a crouched bird's toe-only frame
+  as `no` would manufacture evidence for an unbanded bird. All 25 album photos
+  would be `not-tested`.
 - **ID method decided — `docs/id_method.md`.** Verdict: bands and molt gaps
   carry nearly all the signal; plumage pattern-matching is a real but secondary
   tier. **Generic AI image-matching does NOT work here** and we say so in the
@@ -79,13 +95,15 @@ STATUS = bug.
 ## Layout
 ```
 photo_intake/        the intake tool (core.py + __init__.py + __main__.py)
-tests_photo_intake/  26 offline tests; ~/dkn314/bin/python -m pytest
+tests_photo_intake/  29 offline tests; ~/dkn314/bin/python -m pytest
 docs/id_method.md    how a Peregrine can and cannot be identified; photo protocol
 individuals/         one file per bird + the schema (README.md)
 INTEL.md             running log: sites, open questions, sources
-data/catalog.jsonl   the public photo catalogue (committed, GPS-free)
-private/             GPS + source paths (GITIGNORED — must never reach GitHub)
-photos/              originals copied in by intake (GITIGNORED)
+data/photos.csv      one row per photo (committed, GPS-free)
+data/sightings.csv   one row per observation event (committed, GPS-free)
+data/README.md       the schema + the two rules that don't bend
+private/             GPS + source paths + share links (GITIGNORED)
+photos/              originals, only if --copy is passed (GITIGNORED)
 ```
 
 ## Git policy — THIS PROJECT DIFFERS FROM ITS SIBLINGS

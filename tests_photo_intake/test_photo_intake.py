@@ -1,7 +1,7 @@
 """Offline tests for photo_intake. No network, no real falcons."""
 from __future__ import annotations
 
-import json
+import csv
 from pathlib import Path
 
 import pytest
@@ -19,6 +19,16 @@ def _img(path: Path, size=(120, 90), seed=0, fmt="JPEG") -> Path:
                  for y in range(size[1]) for x in range(size[0])])
     path.parent.mkdir(parents=True, exist_ok=True)
     img.save(path, fmt, quality=95)
+    return path
+
+
+def _with_exif(path: Path, **tags) -> Path:
+    """Re-save an image carrying the given EXIF tag names."""
+    with Image.open(path) as img:
+        exif = img.getexif()
+        for name, value in tags.items():
+            exif[core._EXIF_TAGS[name]] = value
+        img.save(path, "JPEG", exif=exif)
     return path
 
 
@@ -62,25 +72,18 @@ def test_read_metadata_without_exif_falls_back_to_mtime(tmp_path):
     meta = core.read_metadata(_img(tmp_path / "bare.jpg"))
     assert meta["readable"] is True
     assert meta["width"] == 120 and meta["height"] == 90
-    assert meta["captured_source"] == "file-mtime"
+    assert meta["date_source"] == "file-mtime"
     assert meta["captured_at"] is not None
     assert meta["gps"] is None
 
 
 def test_read_metadata_parses_exif_datetime_and_camera(tmp_path):
-    from PIL import Image as PILImage
-    path = tmp_path / "exif.jpg"
-    _img(path, seed=9)
-    with PILImage.open(path) as img:
-        exif = img.getexif()
-        exif[core._EXIF_TAGS["Model"]] = "EOS R7"
-        exif[core._EXIF_TAGS["Make"]] = "Canon"
-        exif[core._EXIF_TAGS["DateTimeOriginal"]] = "2026:08:03 06:41:12"
-        img.save(path, "JPEG", exif=exif)
-
+    path = _with_exif(_img(tmp_path / "exif.jpg", seed=9),
+                      Model="EOS R7", Make="Canon",
+                      DateTimeOriginal="2026:08:03 06:41:12")
     meta = core.read_metadata(path)
     assert meta["captured_at"] == "2026-08-03T06:41:12"
-    assert meta["captured_source"] == "exif"
+    assert meta["date_source"] == "exif"
     assert meta["camera"] == "Canon EOS R7"
 
 
@@ -89,7 +92,7 @@ def test_read_metadata_on_a_non_image_is_recorded_not_raised(tmp_path):
     junk.write_bytes(b"this is not a jpeg")
     meta = core.read_metadata(junk)
     assert meta["readable"] is False
-    assert meta["captured_source"] == "file-mtime"
+    assert meta["date_source"] == "file-mtime"
 
 
 def test_gps_decoding_signs_western_longitude():
@@ -131,47 +134,77 @@ def test_ingest_writes_public_and_private_rows(tmp_path):
     root = tmp_path / "repo"
 
     result = core.ingest([src], root=root, site="nashua-downtown",
-                         observer="david")
+                         observer="david", perch="white-bracket", store="drive")
     assert len(result["added"]) == 1
 
-    public = core.load_catalog(root / "data" / "catalog.jsonl")
+    public = core.load_catalog(root)
     assert len(public) == 1
     row = public[0]
     assert row["site"] == "nashua-downtown" and row["observer"] == "david"
-    assert row["individual"] is None  # intake never guesses at the bird
+    assert row["perch"] == "white-bracket" and row["store"] == "drive"
+    assert row["individual"] == ""   # intake never guesses at the bird
+    assert row["band_visible"] == ""  # nor at whether a band was visible
     assert "lat" not in row and "lon" not in row
 
-    private = core.load_private(root / "private" / "locations.jsonl")
-    assert private[row["id"]]["source_path"].endswith("one.jpg")
+    private = core.load_private(root)
+    assert private[row["photo_id"]]["source_path"].endswith("one.jpg")
+
+
+def test_catalog_header_matches_declared_columns(tmp_path):
+    src = tmp_path / "src"
+    _img(src / "one.jpg", seed=12)
+    root = tmp_path / "repo"
+    core.ingest([src], root=root)
+
+    with open(root / "data" / "photos.csv", newline="") as fh:
+        header = next(csv.reader(fh))
+    assert header == core.PHOTO_COLUMNS
 
 
 def test_public_catalog_never_contains_coordinates(tmp_path):
     """The load-bearing privacy guarantee: no coords in the committed file."""
-    from PIL import Image as PILImage
     src = tmp_path / "src"
     path = _img(src / "geo.jpg", seed=21)
-    with PILImage.open(path) as img:
+    with Image.open(path) as img:
         exif = img.getexif()
-        gps = {
+        exif[core._EXIF_TAGS["GPSInfo"]] = {
             core._GPS_TAGS["GPSLatitude"]: (42.0, 45.0, 0.0),
             core._GPS_TAGS["GPSLatitudeRef"]: "N",
             core._GPS_TAGS["GPSLongitude"]: (71.0, 27.0, 0.0),
             core._GPS_TAGS["GPSLongitudeRef"]: "W",
         }
-        exif[core._EXIF_TAGS["GPSInfo"]] = gps
         img.save(path, "JPEG", exif=exif)
 
     root = tmp_path / "repo"
     core.ingest([src], root=root, site="nashua-downtown")
 
-    raw = (root / "data" / "catalog.jsonl").read_text()
-    assert '"has_gps": true' in raw
+    raw = (root / "data" / "photos.csv").read_text()
     assert "42.75" not in raw and "71.45" not in raw
+    assert core.load_catalog(root)[0]["has_gps"] == "yes"
 
-    private = core.load_private(root / "private" / "locations.jsonl")
+    private = core.load_private(root)
     (row,) = private.values()
-    assert row["lat"] == pytest.approx(42.75, abs=1e-6)
-    assert row["lon"] == pytest.approx(-71.45, abs=1e-6)
+    assert float(row["lat"]) == pytest.approx(42.75, abs=1e-6)
+    assert float(row["lon"]) == pytest.approx(-71.45, abs=1e-6)
+
+
+def test_notes_with_commas_and_quotes_survive_the_round_trip(tmp_path):
+    """CSV is only a good database if free text cannot corrupt a row."""
+    src = tmp_path / "src"
+    _img(src / "one.jpg", seed=22)
+    root = tmp_path / "repo"
+    core.ingest([src], root=root)
+
+    rows = core.load_catalog(root)
+    rows[0]["notes"] = 'crouched, tarsus hidden; observer said "no band seen"'
+    rows[0]["traits_seen"] = "malar;breast;legs"
+    (root / "data" / "photos.csv").unlink()
+    core.append_csv(root / "data" / "photos.csv", core.PHOTO_COLUMNS, rows)
+
+    back = core.load_catalog(root)
+    assert back[0]["notes"] == 'crouched, tarsus hidden; observer said "no band seen"'
+    assert back[0]["traits_seen"] == "malar;breast;legs"
+    assert len(back) == 1
 
 
 def test_reingesting_the_same_file_is_a_no_op(tmp_path):
@@ -184,7 +217,7 @@ def test_reingesting_the_same_file_is_a_no_op(tmp_path):
 
     assert again["added"] == []
     assert len(again["duplicates"]) == 1
-    assert len(core.load_catalog(root / "data" / "catalog.jsonl")) == 1
+    assert len(core.load_catalog(root)) == 1
 
 
 def test_burst_frames_are_flagged_but_both_kept(tmp_path):
@@ -201,38 +234,45 @@ def test_burst_frames_are_flagged_but_both_kept(tmp_path):
     assert len(result["near"]) == 1
 
 
-def test_copy_stores_originals_under_year_month(tmp_path):
-    from PIL import Image as PILImage
-    src = tmp_path / "src"
-    path = _img(src / "one.jpg", seed=51)
-    with PILImage.open(path) as img:
-        exif = img.getexif()
-        exif[core._EXIF_TAGS["DateTimeOriginal"]] = "2026:08:03 06:41:12"
-        img.save(path, "JPEG", exif=exif)
-
-    root = tmp_path / "repo"
-    (record,) = core.ingest([src], root=root)["added"]
-    assert record.stored_path == f"photos/2026/08/{record.id}.jpg"
-    assert (root / record.stored_path).exists()
-
-
-def test_no_copy_leaves_stored_path_empty(tmp_path):
+def test_originals_are_not_copied_by_default(tmp_path):
+    """The CSV row is the durable record; the bytes live in cold storage."""
     src = tmp_path / "src"
     _img(src / "one.jpg", seed=61)
     root = tmp_path / "repo"
-    (record,) = core.ingest([src], root=root, copy=False)["added"]
-    assert record.stored_path is None
+    (record,) = core.ingest([src], root=root)["added"]
+    assert record.store_ref is None
     assert not (root / "photos").exists()
+
+
+def test_copy_stores_originals_under_year_month(tmp_path):
+    src = tmp_path / "src"
+    _with_exif(_img(src / "one.jpg", seed=51),
+               DateTimeOriginal="2026:08:03 06:41:12")
+
+    root = tmp_path / "repo"
+    (record,) = core.ingest([src], root=root, copy=True)["added"]
+    assert record.store_ref == f"photos/2026/08/{record.photo_id}.jpg"
+    assert record.store == "local"
+    assert (root / record.store_ref).exists()
 
 
 def test_dry_run_writes_nothing(tmp_path):
     src = tmp_path / "src"
     _img(src / "one.jpg", seed=71)
     root = tmp_path / "repo"
-    result = core.ingest([src], root=root, dry_run=True)
+    result = core.ingest([src], root=root, dry_run=True, copy=True)
     assert len(result["added"]) == 1
-    assert not (root / "data" / "catalog.jsonl").exists()
+    assert not (root / "data" / "photos.csv").exists()
     assert not (root / "photos").exists()
+
+
+def test_append_csv_tolerates_a_shorter_older_row(tmp_path):
+    """A row written before a column existed must still load and re-save."""
+    path = tmp_path / "photos.csv"
+    core.append_csv(path, core.PHOTO_COLUMNS, [{"photo_id": "20260803-abcdef01"}])
+    rows = core.read_csv(path)
+    assert rows[0]["photo_id"] == "20260803-abcdef01"
+    assert rows[0]["perch"] == ""
 
 
 def test_iter_images_skips_non_images_in_a_directory(tmp_path):
@@ -256,14 +296,22 @@ def test_iter_images_rejects_a_missing_path(tmp_path):
 
 
 def test_load_catalog_of_missing_file_is_empty(tmp_path):
-    assert core.load_catalog(tmp_path / "nothing.jsonl") == []
+    assert core.load_catalog(tmp_path) == []
+    assert core.load_sightings(tmp_path) == []
+    assert core.load_private(tmp_path) == {}
 
 
-def test_load_catalog_reports_the_bad_line(tmp_path):
-    path = tmp_path / "catalog.jsonl"
-    path.write_text('{"id": "ok"}\nnot json\n')
-    with pytest.raises(core.PhotoIntakeError, match="catalog.jsonl:2"):
-        core.load_catalog(path)
+def test_sightings_round_trip(tmp_path):
+    """Sightings are their own table -- an eBird or email report has no photo."""
+    root = tmp_path / "repo"
+    core.append_csv(root / "data" / "sightings.csv", core.SIGHTING_COLUMNS, [{
+        "sighting_id": "20260723-01", "date": "2026-07-23",
+        "site": "nashua-river-jackson-mills", "count": "2",
+        "source": "ebird", "photo_ids": "", "confidence": "unknown",
+    }])
+    (row,) = core.load_sightings(root)
+    assert row["count"] == "2" and row["source"] == "ebird"
+    assert row["photo_ids"] == ""
 
 
 # --------------------------------------------------------------------------
@@ -279,7 +327,7 @@ def test_cli_ingest_then_list_then_show(tmp_path, capsys):
 
     assert main(["--root", str(root), "ingest", str(src),
                  "--site", "nashua-downtown", "--observer", "mark"]) == 0
-    pid = core.load_catalog(root / "data" / "catalog.jsonl")[0]["id"]
+    pid = core.load_catalog(root)[0]["photo_id"]
 
     assert main(["--root", str(root), "list"]) == 0
     assert pid in capsys.readouterr().out
@@ -288,7 +336,7 @@ def test_cli_ingest_then_list_then_show(tmp_path, capsys):
     assert "nashua-downtown" in capsys.readouterr().out
 
     assert main(["--root", str(root), "stats"]) == 0
-    assert "unassigned" in capsys.readouterr().out
+    assert "band question" in capsys.readouterr().out
 
 
 def test_cli_show_unknown_id_exits_nonzero(tmp_path):
@@ -296,7 +344,7 @@ def test_cli_show_unknown_id_exits_nonzero(tmp_path):
     assert main(["--root", str(tmp_path), "show", "nope"]) == 1
 
 
-def test_cli_list_unassigned_filter(tmp_path, capsys):
+def test_cli_list_filters(tmp_path, capsys):
     from photo_intake.__main__ import main
 
     src = tmp_path / "src"
@@ -304,13 +352,14 @@ def test_cli_list_unassigned_filter(tmp_path, capsys):
     root = tmp_path / "repo"
     core.ingest([src], root=root)
 
-    catalog = root / "data" / "catalog.jsonl"
-    row = json.loads(catalog.read_text().strip())
-    row["individual"] = "nashua-female"
-    catalog.write_text(json.dumps(row, sort_keys=True) + "\n")
+    rows = core.load_catalog(root)
+    rows[0]["individual"] = "nashua-01"
+    rows[0]["band_visible"] = "not-tested"
+    (root / "data" / "photos.csv").unlink()
+    core.append_csv(root / "data" / "photos.csv", core.PHOTO_COLUMNS, rows)
 
     assert main(["--root", str(root), "list", "--unassigned"]) == 0
     assert "no photos match" in capsys.readouterr().out
-    assert main(["--root", str(root), "list", "--individual",
-                 "nashua-female"]) == 0
-    assert "nashua-female" in capsys.readouterr().out
+
+    assert main(["--root", str(root), "list", "--band-untested"]) == 0
+    assert "nashua-01" in capsys.readouterr().out

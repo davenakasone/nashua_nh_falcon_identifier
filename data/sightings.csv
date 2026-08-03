@@ -1,0 +1,14 @@
+sighting_id,date,time,site,count,age_classes,individuals,source,source_ref,photo_ids,confidence,notes
+20260802-01,2026-08-02,17:45,bedford-101-bridge,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260730-01,2026-07-30,19:30,nashua-downtown,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260729-01,2026-07-29,10:21,nashua-downtown,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260727-01,2026-07-27,16:15,manchester-cohas-brook,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260723-01,2026-07-23,20:20,nashua-river-jackson-mills,2,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,"eBird count is birds seen, not birds identified; a 2 may be a pair, an adult with a fledgling, or one bird counted twice"
+20260722-01,2026-07-22,20:45,nashua-mine-falls,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260717-01,2026-07-17,11:36,bedford-101-bridge,2,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,"eBird count is birds seen, not birds identified; a 2 may be a pair, an adult with a fledgling, or one bird counted twice"
+20260715-01,2026-07-15,16:34,bedford-101-bridge,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260715-02,2026-07-15,11:02,bedford-101-bridge,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260715-03,2026-07-15,06:50,nashua-mine-falls,2,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,"eBird count is birds seen, not birds identified; a 2 may be a pair, an adult with a fledgling, or one bird counted twice"
+20260710-01,2026-07-10,06:50,manchester-moores-crossing,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260709-01,2026-07-09,10:42,bedford-101-bridge,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
+20260707-01,2026-07-07,07:50,bedford-101-bridge,1,,,ebird,"ebird US-NH-011 species feed, pulled 2026-08-03",,unknown,
