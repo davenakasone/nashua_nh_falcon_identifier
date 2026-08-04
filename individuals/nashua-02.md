@@ -11,9 +11,15 @@
 - **roles:** 2026 — resident breeding female, downtown Nashua
 
 ## Bands
-- **banded:** **no** — and unlike most "no band seen" claims in this project,
-  this one has support. The group states the female is unbanded, and a
-  2026-07-22 photo of her shows at least one leg clearly bare.
+- **banded:** **probably not** — and unlike most "no band seen" claims in this
+  project, this one has real support. The group states the female is unbanded,
+  and a 2026-07-22 photo shows one tarsus clearly bare.
+  **Why one bare leg is more informative than it sounds:** the eastern nestling
+  rig puts a band on *both* legs (silver federal right, bi-colour left), so a
+  single clearly-bare tarsus is evidence against her having been banded as a
+  nestling in that programme at all. The caveat: birds banded later in life
+  (rehab release, trapped adult) can carry a federal band only — so this is
+  "probably unbanded", not proof.
 - **code:** n/a
 - **read from:** n/a
 - **traced:** n/a — an unbanded bird has no paper trail. **Her identity across

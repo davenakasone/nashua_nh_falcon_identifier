@@ -69,12 +69,12 @@ monitoring) and the Nashua Ink Link story.
   `data/photos.csv` carries only `has_gps` + the coarse `--site` label. A test
   asserts no coordinates ever reach the public file.
 - **DATABASE IS CSV, TWO TABLES (David's call 2026-08-03, schema in
-  `data/README.md`).** `photos.csv` = one row per photo (31 cols);
+  `data/README.md`).** `photos.csv` = one row per photo (32 cols);
   `sightings.csv` = one row per observation event, joined via `photo_ids`.
   Two tables because a sighting can have no photo (all the eBird/email intel)
   or many (a burst is one sighting). CSV because three humans read it and
   GitHub renders it as a table. **`sightings.csv` seeded with the 13 eBird
-  records.** `photos.csv` is header-only — nothing ingested yet.
+  records**, and `photos.csv` now carries 5 ingested photos.
 - **The CSV is the durable record, NOT the photos.** Every row carries sha256 +
   dhash + dimensions + timestamp, so a lost original loses pixels but not the
   observation, and a copy resurfacing later can be matched back. `--copy` is
@@ -83,8 +83,8 @@ monitoring) and the Nashua Ink Link story.
 - **`band_visible` vocabulary is load-bearing:** empty = nobody looked;
   `not-tested` = looked, frame doesn't show the tarsus; `no` = tarsus visible
   and unbanded; `yes` = band seen. Recording a crouched bird's toe-only frame
-  as `no` would manufacture evidence for an unbanded bird. All 25 album photos
-  would be `not-tested`.
+  as `no` would manufacture evidence for an unbanded bird. Most album frames are
+  `not-tested`; at least one does show a band.
 - **ID method decided — `docs/id_method.md`.** Verdict: bands and molt gaps
   carry nearly all the signal; plumage pattern-matching is a real but secondary
   tier. **Generic AI image-matching does NOT work here** and we say so in the
@@ -97,8 +97,8 @@ monitoring) and the Nashua Ink Link story.
 - **Individuals schema live — `individuals/`.** Slugs are permanent opaque
   numbers (`nashua-01/02/03`), NOT roles, so a territory turnover can't
   silently inherit a predecessor's record; `roles` is a dated timeline.
-  All three seeded as `status: hypothesis` — zero photos in the catalogue yet,
-  nothing fabricated.
+  All three are now `status: established` with photos attached — see the
+  corrections below.
 - **`INTEL.md` seeded from live eBird** (composed `../birds/ebird_api`, not
   rebuilt). Hillsborough County 30d = 13 Peregrine records splitting into
   **two clusters ~20 km apart**: downtown Nashua (Clocktower Pl / Front St /
@@ -107,36 +107,38 @@ monitoring) and the Nashua Ink Link story.
   different birds until proven otherwise — hence `--site` on every ingest.
 - Location call made: **place names only in committed files, no coordinates.**
   eBird returned precise lat/lon for the downtown records; they were
-  deliberately kept out of the repo pending David's ruling per the Git policy
-  below.
-- **GROUP PHOTO ARCHIVE FOUND + REVIEWED (2026-08-03): a shared Google Photos
-  album, "2026 Nashua Falcons", 25 photos, 29 Jun – 24 Jul 2026.** David
-  supplied the link mid-session; it is recorded in `private/sources.md`
-  (gitignored — a share link is a live credential, it does NOT go in a public
-  repo). Every frame reviewed at full res. Findings: **all adults, no juvenile
-  in 25 photos** (evidence against `nashua-03`, logged there); three recurring
-  perches, the best being a white metal bracket on a brick roofline with sharp
-  frontal + profile views; **the band question is NOT answered** because the
-  sharp frames show a crouched bird with the tarsus hidden behind belly
-  feathers (toes only — wrong part of the leg) and the frames with legs exposed
-  are too soft to resolve a band past ~2x. Logged as "no band seen, no frame
-  tested the band zone" — explicitly NOT as an unbanded bird.
-- **NOT INGESTED YET — waiting on David.** Pulling the 25 originals out of
-  Google Photos is a file download, so it needs his explicit go-ahead. Once
-  given: download to a scratch dir, `python -m photo_intake ingest <dir>
-  --site nashua-downtown`, then write the baseline trait description for the
-  white-bracket adult.
-- Leaning: no compare tool yet — building pattern-matching before real photos
-  exist would be guessing at the input. Intake first, method written, tool
-  when there are frames to test it on. The album confirms the call: with one
-  well-photographed adult and no second bird to compare it against, there is
-  nothing for a compare tool to do yet.
-- Next: (1) **David's go-ahead to download the album, then ingest it**;
-  (2) ask NH Audubon whether the downtown pair/2026 brood is banded and whether
-  they hold the codes (highest-leverage open question — a code turns ID from
-  comparison into lookup); (3) get the group the one missing shot: a **standing**
-  bird's lower leg, sharp, sun behind the photographer; (4) once there are two
-  birds to tell apart, build the normalised-crop compare tool.
+  deliberately kept out of the repo. Ruling made: they stay out; `nest_map.py`
+  reads them from gitignored `private/` and renders to gitignored `out/`.
+- **GROUP PHOTO ARCHIVE — a shared Google Photos album, "2026 Nashua Falcons",
+  now 30 photos.** Link is in gitignored `private/sources.md` (a share link is a
+  bearer credential). Every frame reviewed at full res. **Best band frame in the
+  project is in there:** a bird on the radio-tower crossbar with the tarsus fully
+  clear of the belly, silver federal band unambiguous at a 5000 px rendition —
+  code still unreadable, but the limit is now sharpness/distance rather than
+  posture. Also two frames of a bird on the ground over prey.
+  **CORRECTED — the 2026-08-03 reading of this album was wrong twice:** "no
+  juvenile in 25 photos" was treated as evidence against `nashua-03` (the
+  juvenile was being photographed that same week by another observer at Oxbow
+  Pond), and an apparent two-birds plumage split turned out to be an artefact of
+  AI enhancement. Both corrections are in `INTEL.md` and `individuals/`.
+- **THE ALBUM IS NOT A CLEAN DATASET — nothing from it is ingested.** Three
+  contamination vectors: some frames are AI-enhanced (David has since banned
+  enhancement going forward, but not retroactively flagged which), a **New
+  Jersey trip is probably mixed in**, and geotags are unverifiable through
+  Google's web renditions (re-encoded, EXIF stripped). **Unblock:** drop the
+  originals into the locally-mounted Drive folder
+  (`~/Library/CloudStorage/GoogleDrive-.../My Drive/birds/nashua_nh_falcon_tracking/`)
+  and ingest off the mount — no download step needed.
+- Leaning: still no compare tool. Photos now exist, but plumage comparison is
+  blocked upstream by enhancement contamination, and the two adults are
+  currently separable only by the tarsus.
+- Next: (1) **album originals into the Drive folder, then ingest with `--site`**
+  — that also sorts the NJ frames out by coordinates; (2) the six open todos,
+  all ask-a-human: Mark's 2026-07-30 originals (standing bird, best band
+  chance), Jarrod's nine-year back catalogue, flagging that the code was never
+  read, the nest-box question to NH Audubon, the female's trait description,
+  dusk bearings for the roost; (3) compare tool only once there are
+  out-of-camera frames of both adults.
 
 **STATUS discipline:** keep this block current; refresh before every session
 ends ("checkpoint"). A new session must resume cold from STATUS alone. Stale
@@ -157,9 +159,8 @@ photos/              originals, only if --copy is passed (GITIGNORED)
 ```
 
 ## Git policy — THIS PROJECT DIFFERS FROM ITS SIBLINGS
-**This is a TRUE public-facing repo: a GitHub remote and pushes are ALLOWED —
-the plan is to push once there's something worth showing** (David's call on
-when). This deliberately overrides the house local-only rule (RULES.md
+**This repo IS public and IS pushed** — `github.com/davenakasone/nashua_nh_falcon_identifier`,
+verified anonymously readable 2026-08-04. This deliberately overrides the house local-only rule (RULES.md
 Hygiene) for this project, like `book_test`. Consequences every session must
 respect:
 - **Never commit secrets** (no API keys, no `.env`) and **no personal/private
@@ -168,7 +169,9 @@ respect:
 - Location sensitivity: peregrine NEST-site precision is a judgment call —
   urban sites are usually public knowledge, but check with David before
   committing exact nest coordinates; the group + NH Audubon norms win.
-- Commit per meaningful change as usual. Push only when David says push.
+- Commit per meaningful change. Pushing is now routine — David green-lit it
+  2026-08-04. **Every commit is immediately world-readable**, so the redaction
+  discipline in `data/README.md` is not advisory.
 
 ## House rules (local context; readers on GitHub can ignore this section)
 - Read `../RULES.md` (package/tool conventions — small, standalone, composable

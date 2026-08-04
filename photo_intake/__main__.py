@@ -110,12 +110,22 @@ def cmd_list(args) -> int:
 
 
 def cmd_show(args) -> int:
-    rows = {r["photo_id"]: r for r in core.load_catalog(args.root)}
-    match = rows.get(args.id) or next(
-        (r for k, r in rows.items() if k.startswith(args.id)), None)
+    catalog = core.load_catalog(args.root)
+    rows = {r["photo_id"]: r for r in catalog}
+    if len(rows) != len(catalog):
+        console.print("[yellow]warning: duplicate photo_ids in the catalog — "
+                      "some rows are unreachable by id[/yellow]")
+    match = rows.get(args.id)
     if match is None:
-        console.print(f"[red]no photo with id starting {args.id!r}[/red]")
-        return 1
+        hits = [r for k, r in rows.items() if k.startswith(args.id)]
+        if not hits:
+            console.print(f"[red]no photo with id starting {args.id!r}[/red]")
+            return 1
+        if len(hits) > 1:
+            console.print(f"[red]{args.id!r} is ambiguous — {len(hits)} matches:[/red] "
+                          + ", ".join(h["photo_id"] for h in hits[:10]))
+            return 1
+        match = hits[0]
 
     table = Table(title=match["photo_id"], show_header=False)
     table.add_column("field", style="bold")

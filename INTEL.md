@@ -5,7 +5,7 @@ first.** Every entry says where it came from; a claim with no source is a
 rumour and gets marked as one.
 
 Sightings tied to specific birds live in [`individuals/`](individuals/).
-Photos live in the catalogue (`data/catalog.jsonl`, built by `photo_intake`).
+Photos live in the catalogue (`data/photos.csv`, built by `photo_intake`).
 This file is for everything else: site patterns, open questions, who to ask,
 what the public record already says.
 
@@ -144,7 +144,11 @@ locally.
 
 **But the code is not read.** NH Audubon's own account is explicitly tentative:
 zooming into a photo, "sort of" making out a 3 and a 5 on the black band and a
-"very blurry" S on the green. The group has since adopted "Amos G/B 53/BS" as
+"very blurry" S on the green. (Note the colour order: eastern bi-colour bands
+are **black over green**, and that description puts the digits on black — so the
+code is more likely **B/G 53/BS** than the "G/B" the thread uses. Confirm with
+the observer; do not quietly rewrite a quoted subject line.)
+The group has since adopted "Amos G/B 53/BS" as
 settled shorthand. It is a good bet, not a read — `possible`, not `confirmed`.
 
 A February 2026 in-flight frame (now `20260804-f3001faa`) **does** show a silver
@@ -352,8 +356,10 @@ River, 23 Jul; Mine Falls Park, 15 Jul).
 train trestle, Moores Crossing Railroad Bridge. Records run 2026-07-07 through
 2026-08-02, including a two-bird count on 17 Jul.
 
-**Why this matters to the ID work:** ~20 km is well inside a peregrine's
-foraging range but far outside a nesting territory. These are almost certainly
+**Why this matters to the ID work:** ~20 km is at the *outer edge* of a breeding
+peregrine's foraging range — they typically hunt within ~5 km of the nest — and
+far beyond normal nest spacing, which can be as little as 0.5–2 km between urban
+pairs. These are almost certainly
 **different birds holding different sites** — a downtown-Nashua mill-district
 group and a Merrimack-bridge group. Any photo the group contributes from Bedford
 or Manchester must not be filed against the Nashua individuals without
@@ -372,10 +378,11 @@ use it on every ingest.
 
 ## Open questions — the ones worth spending a session on
 
-1. **Is the current downtown pair banded, and does NH Audubon hold the codes?**
-   This is the highest-leverage question in the whole project. A band code turns
-   identity from a photo-comparison problem into a lookup. Ask the NH Audubon
-   peregrine monitoring project; they band nestlings and keep site histories.
+1. ~~**Is the current downtown pair banded, and does NH Audubon hold the codes?**~~
+   **ANSWERED 2026-07-23, partly.** The male is banded, the female is not, and NH
+   Audubon is already on the group's email thread. What remains is narrower and
+   still the highest-leverage question in the project: **nobody has actually read
+   the code.** "G/B 53/BS" is a tentative zoom, not a read. Get a legible frame.
 2. **Was a 2026 brood produced downtown, and how many young fledged?** Decides
    whether `nashua-03` is one juvenile or the first of several.
 3. **What does the group already have?** Nobody has inventoried Jarrod's and
@@ -398,9 +405,12 @@ use it on every ingest.
 - **Shoot the same perch with the sun behind you.** Several album frames are
   backlit into silhouette; the white-bracket perch is clearly a reliable spot,
   so the lighting is a schedulable problem, not a luck problem.
-- **Is there a 2026 juvenile at all?** No brown, streaked bird appears in 25
-  photos spanning late June to late July. Ask before assuming it was simply
-  missed.
+- ~~**Is there a 2026 juvenile at all?**~~ **ANSWERED — yes.** Seen and
+  photographed 2026-07-22 hunting Oxbow Pond; NH Audubon confirmed the fledgling
+  2026-07-23. The earlier "absent from 25 album photos" reasoning was wrong and
+  is corrected in [`individuals/nashua-03.md`](individuals/nashua-03.md). What
+  is still open is **how many** young fledged, and whether any were banded in
+  the nest.
 - **Say where.** "Nashua" and "Bedford" are different birds until proven
   otherwise.
 
@@ -410,5 +420,6 @@ use it on every ingest.
   `ebird_api` client in `../birds/`; key lives in that project's gitignored
   `.env`. Peregrine records for Hillsborough County are not location-suppressed.
 - **NH Audubon peregrine monitoring** — banding records, nest-site histories,
-  productivity data. Not yet contacted.
+  productivity data. **Already on the group's email thread**; confirmed the 2026
+  fledgling and supplied the tentative `53/BS` read. Not a cold contact.
 - **Nashua Ink Link** — local coverage; the story this project eventually feeds.

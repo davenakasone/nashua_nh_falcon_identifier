@@ -34,7 +34,9 @@ first autumn, so the molt-gap method gives nothing here. Identity has to come
 from a band or from juvenile streak pattern.
 
 ## Confidence
-**established** — and the route there is worth keeping.
+**probable** — and the route there is worth keeping. (The bird's *existence* is
+not in doubt; `probable` is the tier for tying a given photo to *this*
+individual, since a second juvenile would be indistinguishable.)
 
 - **2026-07-22:** all three falcons seen together in one afternoon — the
   juvenile hunting over Mine Falls Oxbow Pond, both adults watching from the
@@ -60,10 +62,15 @@ overreached by treating it as such. Logged as a lesson, not deleted.
 - `20260722-e5e2cee9` — in flight, 2026-07-22, captioned "Juvenile on the Hunt".
 
 ## Notes
-**Time-critical.** Post-fledging dependence runs roughly four to eight weeks;
-this bird fledged around mid-June, so dispersal is due somewhere between now and
-September. First-year peregrines can move hundreds of kilometres and rarely
-return to breed where they hatched. Whatever gets documented on this bird has to
+**Time-critical, but not as tight as first logged.** Post-fledging dependence
+runs roughly **five to ten weeks** (published mean ~47 days; urban birds at the
+longer end), so a mid-June fledge puts independence late July to late August and
+dispersal **August into October** — a wider window than the "next few weeks"
+this file originally claimed. First-year peregrines can move hundreds of kilometres and rarely
+return to breed where they hatched — the New England banding study gives natal
+dispersal averaging **152.6 km for females and 88.0 km for males** (J. Raptor
+Res. 47:3), which incidentally makes Amos's ~20 km Manchester-to-Nashua move a
+*short* dispersal, well inside the normal male range. Whatever gets documented on this bird has to
 be documented in the next few weeks — and a leg shot matters more here than for
 either adult, because a band is the only thing that could ever link this
 individual to a future sighting somewhere else.

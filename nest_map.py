@@ -82,16 +82,18 @@ def read_photo_gps() -> list[dict]:
     priv = ROOT / "private" / "locations.csv"
     if not priv.exists():
         return []
-    with open(priv, newline="") as fh:
+    with open(priv, newline="", encoding="utf-8-sig") as fh:
         rows = [r for r in csv.DictReader(fh)]
     cat = {}
     if (ROOT / "data" / "photos.csv").exists():
-        with open(ROOT / "data" / "photos.csv", newline="") as fh:
+        with open(ROOT / "data" / "photos.csv", newline="", encoding="utf-8-sig") as fh:
             cat = {r["photo_id"]: r for r in csv.DictReader(fh)}
     out = []
     for r in rows:
-        if not (r.get("lat") and r.get("lon")):
-            continue
+        try:
+            float(r.get("lat") or ""), float(r.get("lon") or "")
+        except ValueError:
+            continue  # blank or malformed coordinate: skip, do not crash the map
         meta = cat.get(r["photo_id"], {})
         out.append({**r, "captured_at": meta.get("captured_at", ""),
                     "site": meta.get("site", ""), "observer": meta.get("observer", ""),
@@ -102,14 +104,14 @@ def read_photo_gps() -> list[dict]:
 def read_coords() -> list[dict]:
     if not COORDS.exists():
         sys.exit(f"missing {COORDS.relative_to(ROOT)} — see the module docstring")
-    with open(COORDS, newline="") as fh:
+    with open(COORDS, newline="", encoding="utf-8-sig") as fh:
         return [r for r in csv.DictReader(fh)]
 
 
 def read_sightings() -> list[dict]:
     if not SIGHTINGS.exists():
         return []
-    with open(SIGHTINGS, newline="") as fh:
+    with open(SIGHTINGS, newline="", encoding="utf-8-sig") as fh:
         return [r for r in csv.DictReader(fh)]
 
 
@@ -126,14 +128,23 @@ def destination(lat: float, lon: float, bearing_deg: float, km: float):
 
 def main() -> int:
     coords = read_coords()
-    sightings = {(s["date"][:10], s["site"]): s for s in read_sightings()}
 
     downtown = [c for c in coords if c["cluster"] == "nashua-downtown"]
     if not downtown:
         sys.exit("no downtown Nashua records — nothing to map")
 
-    lats = [float(c["lat"]) for c in downtown]
-    lons = [float(c["lon"]) for c in downtown]
+    def _f(rows, key):
+        out = []
+        for r in rows:
+            try:
+                out.append(float(r[key]))
+            except (KeyError, ValueError):
+                pass
+        return out
+
+    lats, lons = _f(downtown, "lat"), _f(downtown, "lon")
+    if not lats or not lons:
+        sys.exit("downtown records carry no usable coordinates")
     centre = (sum(lats) / len(lats), sum(lons) / len(lons))
 
     m = folium.Map(location=centre, zoom_start=16, tiles=None)
@@ -144,7 +155,10 @@ def main() -> int:
     # --- sightings -------------------------------------------------------
     obs = folium.FeatureGroup(name="Peregrine sightings (eBird, 30d)").add_to(m)
     for c in coords:
-        lat, lon = float(c["lat"]), float(c["lon"])
+        try:
+            lat, lon = float(c["lat"]), float(c["lon"])
+        except ValueError:
+            continue
         n = c["count"] or "?"
         near = c["cluster"] == "nashua-downtown"
         folium.CircleMarker(
@@ -234,7 +248,7 @@ def main() -> int:
     print(f"wrote {OUT.relative_to(ROOT)}")
     print(f"  {len(downtown)} downtown record(s), "
           f"{len(coords) - len(downtown)} Bedford/Manchester")
-    print(f"  activity envelope ~{span_km*1000:.0f} m radius")
+    print(f"  activity envelope ~{max(span_km, 0.4)*1000:.0f} m radius (as drawn)")
     print("  NOT committed — this file carries coordinates (see .gitignore)")
     return 0
 

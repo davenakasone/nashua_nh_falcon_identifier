@@ -15,7 +15,11 @@
   Photo `20260804-f3001faa` (Jarrod, Feb 2026, in flight from below) shows a
   silver federal band on the visible tarsus, and the photographer reports both
   legs banded in that frame.
-- **code:** **G/B 53/BS** — *reported*, see below.
+- **code:** **`53/BS`** — *reported*, see below. Written "G/B 53/BS" in the
+  group's emails, but note the colour order looks transposed: eastern bands are
+  **black over green**, and the same message describes reading digits off *the
+  black band* and a letter off *the green* — so it should read **B/G**. Worth
+  confirming rather than silently rewriting someone's quoted subject line.
 - **read from:** **not read cleanly by anyone yet.** NH Audubon's own account of
   the read is explicitly tentative: zooming into a photo, "sort of" making out a
   3 and a 5 on the black band and a "very blurry" S on the green. That is a
@@ -65,5 +69,5 @@ turning up at the site.
 ## Notes
 The bird is nine years old on the current reading, which makes him the stable
 subject in this project. Juveniles disperse; a resident adult male on an urban
-territory with constant prey does not. He is the one to build the trait
+territory with constant prey usually does not. He is the one to build the trait
 description around.

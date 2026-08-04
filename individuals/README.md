@@ -48,12 +48,15 @@ number** and leave a tombstone in the higher one. Never delete a slug.
 |---|---|---|---|
 
 ## Confidence
-Current tier for this individual's identity: confirmed | probable | possible |
-hypothesis. State what would raise it, and what would break it.
+Current tier for this individual's identity: **confirmed | probable | possible |
+unknown** — the four tiers from `docs/id_method.md`, and only those. `hypothesis`
+and `established` are `status:` values describing the *file*; they are not
+confidence tiers and must not be used here. State what would raise the tier, and
+what would break it.
 
 ## Photos
 Catalog ids assigned to this bird. Keep this in sync with the `individual`
-field in `data/catalog.jsonl`.
+field in `data/photos.csv`.
 
 ## Notes
 ```

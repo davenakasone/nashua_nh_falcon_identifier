@@ -193,8 +193,30 @@ def dhash(img: Image.Image, size: int = 8) -> str:
 
 
 def hamming(a: str, b: str) -> int:
-    """Bit distance between two dhash strings. <= 5 reads as 'same frame'."""
+    """Bit distance between two dhash strings. <= 5 reads as 'same frame'.
+
+    Raises :class:`PhotoIntakeError` on anything that is not a 16-hex-digit
+    hash. A spreadsheet round-trip turns an all-digit dhash into scientific
+    notation (``1.04869E+15``), and that must not surface as a raw traceback.
+    """
+    for name, value in (("a", a), ("b", b)):
+        if len(value) != 16 or any(c not in "0123456789abcdefABCDEF" for c in value):
+            raise PhotoIntakeError(
+                f"{name}={value!r} is not a 16-hex-digit dhash. If this came from "
+                f"the catalog, a spreadsheet probably reformatted the column.")
     return bin(int(a, 16) ^ int(b, 16)).count("1")
+
+
+def is_degenerate_dhash(value: str) -> bool:
+    """True when a dhash carries no information and must not be matched on.
+
+    :func:`dhash` only compares *horizontal* neighbours, so anything without
+    horizontal contrast collapses to all-zeros — a uniform frame, but also a
+    smooth vertical gradient. An overcast sky behind a perched bird is exactly
+    that, and it is a common frame in this archive. Matching on it would report
+    every flat-sky photo as a burst duplicate of the first one.
+    """
+    return (not value) or set(value) <= {"0"} or set(value.lower()) <= {"f"}
 
 
 # --------------------------------------------------------------------------
@@ -258,9 +280,23 @@ def _gps(raw_gps: dict) -> tuple[float, float] | None:
         lon = deg(raw_gps["GPSLongitude"])
     except (KeyError, TypeError, ValueError, ZeroDivisionError):
         return None
-    if str(raw_gps.get("GPSLatitudeRef", "N")).upper().startswith("S"):
+
+    # An all-zero block is a camera saying "no fix", not a position in the Gulf
+    # of Guinea. Accepting it puts has_gps=yes in the public catalog and plots
+    # Null Island on the map.
+    if lat == 0 and lon == 0:
+        return None
+
+    # Never default the hemisphere. Without the ref tags the magnitude is known
+    # and the sign is not -- and guessing "E" turns Nashua's 71.45 W into
+    # 71.45 E, which is a different continent. Some exports drop the refs.
+    lat_ref = str(raw_gps.get("GPSLatitudeRef", "")).strip().upper()
+    lon_ref = str(raw_gps.get("GPSLongitudeRef", "")).strip().upper()
+    if not lat_ref.startswith(("N", "S")) or not lon_ref.startswith(("E", "W")):
+        return None
+    if lat_ref.startswith("S"):
         lat = -lat
-    if str(raw_gps.get("GPSLongitudeRef", "E")).upper().startswith("W"):
+    if lon_ref.startswith("W"):
         lon = -lon
     return lat, lon
 
@@ -409,7 +445,7 @@ def read_csv(path: str | Path) -> list[dict]:
     if not path.exists():
         return []
     try:
-        with open(path, newline="", encoding="utf-8") as fh:
+        with open(path, newline="", encoding="utf-8-sig") as fh:
             return [dict(row) for row in csv.DictReader(fh)]
     except OSError as exc:
         raise PhotoIntakeError(f"cannot read {path}: {exc}") from exc
@@ -432,18 +468,42 @@ def load_private(root: str | Path) -> dict[str, dict]:
 
 
 def append_csv(path: Path, columns: list[str], rows: list[dict]) -> None:
-    """Append rows, writing the header first if the file is new.
+    """Append rows, migrating the file if its header predates ``columns``.
 
     Unknown keys are dropped and missing ones blank-filled, so a catalog
     written by an older column set still loads and re-saves cleanly.
+
+    **The header is checked, not assumed.** Appending a 32-field row to a file
+    whose header has 6 names writes the overflow into no column at all, and
+    ``DictReader`` then buries it under the ``None`` key -- which silently
+    breaks sha256 de-duplication and starts producing duplicate catalog rows.
+    Adding a column is meant to be free (see ``data/README.md``), so when the
+    header differs the whole file is rewritten with the union of both, old rows
+    preserved and blank-filled.
     """
     if not rows:
         return
     path.parent.mkdir(parents=True, exist_ok=True)
-    new = not path.exists()
+
+    existing_header: list[str] = []
+    if path.exists():
+        with open(path, newline="", encoding="utf-8-sig") as fh:
+            existing_header = next(csv.reader(fh), [])
+
+    if existing_header and existing_header != list(columns):
+        # Union, preserving the declared order first so the layout stays stable.
+        merged = list(columns) + [c for c in existing_header if c not in columns]
+        old_rows = read_csv(path)
+        with open(path, "w", newline="", encoding="utf-8") as fh:
+            writer = csv.DictWriter(fh, fieldnames=merged, extrasaction="ignore")
+            writer.writeheader()
+            for row in old_rows + list(rows):
+                writer.writerow({c: row.get(c, "") or "" for c in merged})
+        return
+
     with open(path, "a", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=columns, extrasaction="ignore")
-        if new:
+        if not existing_header:
             writer.writeheader()
         for row in rows:
             writer.writerow({c: row.get(c, "") for c in columns})
@@ -500,6 +560,7 @@ def ingest(
     private_rows: list[dict] = []
     duplicates: list[tuple[Path, str]] = []
     near: list[tuple[str, str, int]] = []
+    pending_copies: list[tuple[PhotoRecord, Path]] = []
 
     for src in iter_images(paths):
         sha = sha256_file(src)
@@ -511,17 +572,16 @@ def ingest(
         meta = read_metadata(src)
         pid = photo_id(meta["captured_at"], sha)
 
-        if meta["dhash"]:
+        if meta["dhash"] and not is_degenerate_dhash(meta["dhash"]):
             for other_hash, other_id in seen_dhash:
-                distance = hamming(meta["dhash"], other_hash)
+                try:
+                    distance = hamming(meta["dhash"], other_hash)
+                except PhotoIntakeError:
+                    continue  # a mangled catalog row must not kill the run
                 if distance <= 5:
                     near.append((pid, other_id, distance))
                     break
             seen_dhash.append((meta["dhash"], pid))
-
-        stored = None
-        if copy and not dry_run:
-            stored = _store(src, root, pid, meta["captured_at"])
 
         record = PhotoRecord(
             photo_id=pid,
@@ -539,8 +599,8 @@ def ingest(
             quality=None,
             processing=None,
             notes=None,
-            store=store or ("local" if stored else None),
-            store_ref=stored,
+            store=store,
+            store_ref=None,
             source_name=src.name,
             date_source=meta["date_source"],
             ingested_at=now,
@@ -558,6 +618,7 @@ def ingest(
             dhash=meta["dhash"] or "",
         )
         added.append(record)
+        pending_copies.append((record, src))
 
         # Precise location and the original absolute path stay out of the
         # public catalog -- this file is gitignored on purpose. Written for
@@ -568,6 +629,14 @@ def ingest(
             "lat": meta["gps"][0] if meta["gps"] else "",
             "lon": meta["gps"][1] if meta["gps"] else "",
         })
+
+    # Copying happens only after every file has been read successfully. Doing it
+    # inside the loop meant an error on photo N of 500 left N-1 originals in
+    # photos/ with zero catalog rows pointing at them, and discarded the rest.
+    if copy and not dry_run:
+        for record, src in pending_copies:
+            record.store_ref = _store(src, root, record.photo_id, record.captured_at)
+            record.store = record.store or "local"
 
     if not dry_run:
         append_csv(catalog_path, PHOTO_COLUMNS, [r.as_row() for r in added])

@@ -36,8 +36,13 @@ off-the-shelf embeddings cluster by background and pose, not by individual.
 
 **A caution that cost this project a day:** do not carry one species' verdict to
 the next. Snowy Owl barring is high-contrast dark-on-white on a relatively flat
-surface — closer to the conditions where matching *does* work. Re-run the screen
-per species; do not inherit the answer.
+surface — closer to the conditions where matching *does* work, and photo-ID of
+individual Snowy Owls from spread-wing bar patterns is **already published**
+(Solheim 2016, *J. Raptor Res.* 50(4), which tracked residence to 117 days).
+One caveat that shapes the whole design: **adult male Snowy Owls go nearly pure
+white**, so the method works on females and immatures and fails on the very
+birds it would be most satisfying to track. Re-run the screen per species; do
+not inherit the answer.
 
 **Also screen for disclosure risk now, not later.** Nest sites, roosts and
 wintering sites for sensitive species are the kind of information that cannot be
@@ -55,8 +60,8 @@ Somebody already studies this population. A state wildlife agency, an Audubon
 chapter, a banding coordinator, a university lab, a species-specific project.
 
 In this project the single most valuable piece of information — that the male is
-banded, that his code resolves to a bird hatched at a known tower in a known
-year — arrived in a forwarded email from a monitoring biologist who was *already
+banded, and that a *tentative* read of his code points to a bird hatched at a
+known tower in a known year — arrived in a forwarded email from a monitoring biologist who was *already
 on a thread the group was already on*. No amount of tooling would have produced
 it. It was a lookup that existed on somebody else's desk.
 
@@ -186,7 +191,8 @@ them is how a guess becomes a fact.
 
 ## 6. Contamination — the section that earns this document
 
-Three vectors surfaced in a single day, on thirty photographs of three birds.
+Four vectors surfaced in a single day, on a few dozen photographs of three
+birds.
 They do not get rarer at scale. Anyone building a product here will treat these
 as data-quality cleanup; they are the core problem.
 
@@ -213,9 +219,11 @@ it doesn't.
 
 ### Wrong provenance
 A shared album labelled for one site will contain photographs from somewhere
-else. In this project a trip to another state got mixed in — and a marsh-habitat
-frame that had already been logged as the project's best evidence turned out to
-be a candidate for an out-of-state bird.
+else. In this project a trip to another state probably got mixed in — and a
+marsh-habitat frame already logged as the project's best evidence became a
+candidate for an out-of-state bird. Note the hedge: at time of writing the
+geotags were still unchecked, because a web-album view serves re-encoded copies
+with the EXIF stripped.
 
 **Habitat and structures look alike; coordinates do not.** Photo GPS is the only
 thing that partitions a mixed album without judgement calls, which is one of

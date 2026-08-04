@@ -53,8 +53,9 @@ bird.**
 The distinction between `not-tested` and `no` is the whole point. A bird
 crouched on a ledge shows toes and talons — the wrong part of the leg. Recording
 those frames as `no` would manufacture evidence for an unbanded bird out of
-photos that never asked the question. The group's 25-photo album is entirely
-`not-tested`; see [`../INTEL.md`](../INTEL.md).
+photos that never asked the question. Most of the group's album is
+`not-tested` for exactly this reason — though at least one frame does show a
+band; see [`../INTEL.md`](../INTEL.md).
 
 ## sightings.csv
 

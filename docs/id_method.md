@@ -24,7 +24,15 @@ is the eastern US colour combination. Codes read like `48/BD` or `*7/*Z`.
 
 - A legible code is an absolute identity, and it can be traced to hatch year
   and natal site through the banding coordinator or the USGS Bird Banding Lab.
-- Record **which leg** carries which band; it is part of the record.
+- **Which leg is standardised, and knowing it changes where you stand.** In the
+  eastern and midwestern programmes the silver federal band goes on the **right**
+  leg and the field-readable bi-colour on the **left**. So a photo of the right
+  leg can never carry a code, however sharp it is.
+- **The bi-colour band is readable on a perched bird with a spotting scope at up
+  to roughly 700 ft.** The federal band is not readable in the field at any
+  distance — its 9-digit inscription needs the bird in the hand. Stop chasing it.
+- Colour narrows origin but does not pin it: black-over-green is used by the
+  **midwestern** programme too, and the east used black-over-red from 1989–2004.
 - Limitation: plenty of adults are unbanded. An unbanded bird is not "a new
   bird" — it is a bird whose identity must come from the tiers below.
 
@@ -33,7 +41,11 @@ Adults run a complete flight-feather molt roughly March–October (females
 typically start during incubation). At any given moment a bird is missing or
 regrowing a specific set of primaries (P1–P10), secondaries, and tail feathers
 (R1–R6). Photographed from below with the wing and tail spread, those gaps are
-countable, and the combination is close to unique.
+countable. The combination is often distinctive within a season — but molt runs
+a **stereotyped sequence** (starting around P4 and S5, spreading in both
+directions, finishing P10/S1 in autumn), so two birds of the same age and sex on
+the same date can genuinely look alike. Treat a molt match as supporting
+evidence, not as decisive.
 
 - This is the workhorse for *"was Tuesday's bird also Thursday's bird?"*
 - It expires. A gap pattern links sightings **within a molt window of a few
@@ -42,10 +54,15 @@ countable, and the combination is close to unique.
 
 ### 3. Malar stripe geometry — *moderate, stable*
 The dark cheek wedge below the eye. Individuals differ in its width, how far it
-extends down the throat, and the shape of the pale cheek patch behind it. In
-adults it is reasonably stable across years, which makes it the best candidate
-for long-term identity in an unbanded bird — but it demands a clean, near-
-profile head shot and it lies to you at bad angles and in harsh light.
+extends down the throat, and the shape of the pale cheek patch behind it.
+
+It is widely *asserted* to be stable across years — agency and outreach pages
+call it fingerprint-like — but **this project could find no study demonstrating
+inter-annual persistence in individually-known birds**, and the malar region is
+feathered and replaced at every molt. Treat multi-year malar stability as an
+assumption being tested here, not a fact the project rests on. It is still the
+best candidate for long-term identity in an unbanded bird, but it demands a
+clean near-profile head shot and it lies to you at bad angles and in harsh light.
 
 ### 4. Underpart barring — *moderate, resets at molt*
 Fine horizontal barring on breast, belly and flanks. What varies between birds
@@ -65,7 +82,10 @@ female* — it can never separate one female from another female.
 
 ### 7. Age class — *classifies, and settles the juvenile question instantly*
 - **Juvenile / hatch-year:** brown above, **vertical** streaking below, bluish
-  cere and orbital ring, pale legs.
+  cere and orbital ring, and **blue-grey to greenish legs and feet** — *not*
+  pale, and emphatically not the adult's bright yellow. Cere, orbital ring and
+  legs turn yellow over the first winter, so a late-season juvenile is already
+  part-way there.
 - **Adult:** slate blue-grey above, **horizontal** barring below, yellow cere,
   orbital ring and legs.
 
@@ -125,13 +145,30 @@ hashes and generic embedding models cluster photos by background, pose, and
 lighting — you will get "all the shots against the sky" and "all the shots on
 the brick ledge," not "all the shots of the female."
 
-The wildlife re-identification systems that genuinely work — Wildbook and
-HotSpotter on zebra, whale shark, giraffe — succeed because those animals wear
+The wildlife re-identification systems that genuinely work — Wildbook on whale
+sharks, HotSpotter on zebra and giraffe — succeed because those animals wear
 high-contrast, near-planar patterns that can be photographed from a repeatable
 angle. A peregrine's barring is low-contrast, on a curved and deformable
-surface, and it changes at every molt. There is no trained peregrine re-ID model
-to borrow, and building one would need a labelled corpus we do not have and
-cannot bootstrap without solving the ID problem first.
+surface, and it changes at every molt.
+
+**But "nobody has ever done this for a raptor" would be wrong, and this document
+said something close to it until 2026-08-04.** Two things exist that a
+technically literate reader will know about:
+
+- **MiewID** (Wild Me's own multi-species re-ID model, ~49–64 species and
+  ~225k photos) is explicitly built for zero-shot transfer to species it was
+  never trained on. That is a trained model available to borrow.
+- **Individual ID of a wild raptor by deep learning is published** — white-tailed
+  eagle, *Ecological Informatics*, 2025: detection plus a classifier that
+  suppresses background and weights head and facial features. That is the
+  machine analogue of the malar-stripe tier above.
+
+So the honest statement is narrower than "impossible": *off-the-shelf* embeddings
+and perceptual hashes will not work here, purpose-trained raptor re-ID demonstrably
+can, and **Wildbook's MiewID is the thing to try before building anything**. What
+neither removes is the prerequisite — a labelled corpus of known individuals,
+which this project does not yet have. That is a reason to defer the tool, not a
+reason to call it out of reach.
 
 So the honest machine role here is **normalisation and retrieval assist, never
 a verdict**: standardise crops (head profile, breast, spread wing) so a human
