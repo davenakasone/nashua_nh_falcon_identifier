@@ -423,3 +423,8 @@ use it on every ingest.
   productivity data. **Already on the group's email thread**; confirmed the 2026
   fledgling and supplied the tentative `53/BS` read. Not a cold contact.
 - **Nashua Ink Link** — local coverage; the story this project eventually feeds.
+- **Primary sources are preserved locally, not committed.** The four Gmail
+  threads behind every `email:<name>` attribution in this log are held as PDFs
+  in gitignored `private/email/pdf/`, with their screenshots and GIS captures
+  in `private/email/images/`. If a claim here needs re-checking against what
+  was actually written, that is where to look.
