@@ -16,6 +16,77 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-10 — weaning behaviour, the best leg photo yet, and the sexes have come unstuck
+
+Jarrod's 08-10 thread. Two photographers on the same event from opposite sides
+of one building, and a photograph that settles one question while a second
+question comes apart.
+
+### What happened
+About 09:19, an adult killed a bird on the roof between 1 Chestnut St and 100
+Factory St — feathers visible from the street below. **The juvenile tried to
+land and was chased off**, then screamed and circled the block. A second adult
+watched the whole thing from the Clocktower weathervane. A second observer was
+on the far side of the same building, photographed the weathervane bird, then
+relocated to the Mine Falls cell tower and shot an adult eating the catch.
+
+**That refusal-to-share is the headline.** It is textbook weaning: the adults
+stop provisioning and the juvenile's begging stops working. It puts
+`nashua-03` squarely in the dispersal run-up, and it corroborates the widened
+August–October window rather than the "next few weeks" this log first claimed.
+A useful comparative from the same thread: at Brady Sullivan Tower in
+Manchester — Amos's natal site — the juvenile has stopped being fed and has not
+been seen for days.
+
+### The best tarsus photograph in the project
+The weathervane bird is shot in full sun with **both legs fully exposed and
+unobstructed**, gripping the wrought iron. They are **bright yellow and
+completely bare — no band on either leg.** No posture problem, no softness, no
+ambiguity. Catalogued as `20260810-08f56710` with `band_visible=no`, and it is
+the first frame in this project to earn that value on both legs at once.
+
+### The sex assignments have come unstuck — three accounts, three mappings
+Within this single thread:
+
+| account | banded bird | weathervane bird |
+|---|---|---|
+| observer A, 09:19 | "the banded **female**" (also "Mom") | "the unbanded **male**" |
+| observer A, 10:01 self-correction | — | "the unbanded **female**" |
+| observer B, 10:38 | — | "the **male** on the weather vane" |
+| **this repo, from the 07-22/23 thread** | **male** (Amos) | **female** |
+
+Observer A's first message **inverts the repo's mapping outright**, then his own
+correction flips the weathervane bird back to female — leaving the banded
+prey-catcher still labelled "female"/"Mom", which cannot both be true unless
+there are two females. Observer B then contradicts the correction.
+
+**What is actually settled:** the weathervane bird is unbanded. That is a
+photograph, not an opinion, and every account agrees on it anyway.
+
+**What is not settled:** which bird is which sex. The repo's `nashua-01 = banded
+male / nashua-02 = unbanded female` rests entirely on the 07-22/07-23 thread,
+and the same people have now said the opposite. **Individuals in the catalogue
+for this sighting were assigned on band evidence alone, never on the observers'
+sex calls.**
+
+This matters more than a labelling quibble: **sex is the only thing separating
+the two adults apart from the band.** If it is unstable, the pair is effectively
+distinguishable by one feature. It is also a clean demonstration of why the
+confidence ladder is worth the friction — a `probable` that flips between
+observers was never a `confirmed`.
+
+**One question to NH Audubon settles it**, and they are already on the thread:
+which sex is the banded downtown bird?
+
+### The drone question was raised properly
+The pilot with City clearance raised it himself rather than flying: peregrines
+are reactive to drones, he does not want to provoke a strike or stress the
+birds, and he asked whether the nest is already known and monitored so a flight
+would just be redundant disturbance. That is the right instinct and the right
+order — **ask the biologists first, fly second, if at all.**
+
+---
+
 ## 2026-08-04 (later still) — the album is not a Nashua dataset, and geotags are unchecked
 
 David: **there is probably a New Jersey trip mixed into the album.** That is a

@@ -81,11 +81,16 @@ the larger bird is the female. This reliably separates *the male from the
 female* — it can never separate one female from another female.
 
 ### 7. Age class — *classifies, and settles the juvenile question instantly*
-- **Juvenile / hatch-year:** brown above, **vertical** streaking below, bluish
-  cere and orbital ring, and **blue-grey to greenish legs and feet** — *not*
-  pale, and emphatically not the adult's bright yellow. Cere, orbital ring and
-  legs turn yellow over the first winter, so a late-season juvenile is already
-  part-way there.
+- **Juvenile / hatch-year:** brown above with buff feather edging, **vertical**
+  streaking on buff underparts, bluish cere and orbital ring. Legs and feet
+  start **blue-grey to greenish** and turn yellow over the first winter.
+  **Do not use leg colour as an age cue after midsummer.** A literature-sourced
+  edit on 2026-08-04 said juvenile legs are blue-grey "and emphatically not the
+  adult's bright yellow" — then a photograph taken that same week showed this
+  year's Nashua juvenile, ~8 weeks post-fledge, with plainly **yellow** feet.
+  The transition starts earlier than the tidy version implies. **Streaking
+  direction is the age cue that holds**: vertical on a juvenile, horizontal on
+  an adult, all year.
 - **Adult:** slate blue-grey above, **horizontal** barring below, yellow cere,
   orbital ring and legs.
 
