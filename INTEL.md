@@ -87,6 +87,77 @@ order — **ask the biologists first, fly second, if at all.**
 
 ---
 
+## 2026-08-10 — CURATOR RULING: no ID counted without a photo of a readable band
+
+David, after the contradictions below: **he will not count an individual
+identification until there is a photograph of a band.** That is `confirmed` on
+the ladder in [`docs/id_method.md`](docs/id_method.md), enforced strictly, and it
+is now the project's standing rule. Applied across `photos.csv`, `sightings.csv`
+and `individuals/` — the Amos linkage is demoted to **not counted**, and the
+2026-07-30 sighting no longer names an individual.
+
+Worth noting for [`PLAYBOOK.md`](PLAYBOOK.md): the curator arrived at the
+confidence ladder independently, under pressure, without reference to the
+document that defines it. That is the ladder earning its place rather than being
+imposed.
+
+### The morning that forced it
+**2026-08-10 ~09:19**, alley off Chestnut Street. An adult caught prey on a
+rooftop — feathers visible from the street. The **juvenile tried to land and was
+chased off**, then screamed and circled. A second adult watched from the
+clocktower weathervane. A second photographer was on the far side of the same
+building and independently shot the event, then relocated to the Mine Falls cell
+tower and photographed an adult eating the catch. **First time two contributors
+have covered one event.**
+
+### What the photographs actually establish
+**The weathervane bird is unbanded.** Both tarsi fully exposed, bright yellow,
+no band on either leg — the cleanest leg view the project has. Measured: 37 px
+of bare tarsus and foot. A band there would span ~12 px, a hard tonal break that
+is genuinely detectable; its characters would be ~4 px, which is nothing. So
+presence/absence yes, code no, **short by about 3.6×**.
+
+That ratio is the useful number. The frame came out of an emailed PDF at
+1083×722; the photographer's original is off a 33 MP body, roughly 5–6× larger
+linearly. **On a *banded* bird framed like that, the original may well carry a
+readable code.** The ask is no longer "better photos" — it is the full-resolution
+original of any frame showing a banded bird's leg.
+
+### The sex assignments contradict each other
+Three accounts, one morning, all first-hand — tabulated in
+[`individuals/nashua-01.md`](individuals/nashua-01.md). In short: Jarrod called
+the banded bird "the banded female"/"Mom" and the weathervane bird "the unbanded
+male", then corrected only the second to "unbanded female" — leaving two females
+and no male. Kevin then called the weathervane bird "the male" and the
+prey-catcher "the mother".
+
+**Two of the three call the banded bird female. On 2026-07-23 the same people
+were unanimous that the banded bird is the male.** That reversal matters beyond
+bookkeeping: the Amos identification assumes a male. If the banded Nashua adult
+is the female, it is not Amos, and the 2017 hatch year and Brady Sullivan natal
+site go with it.
+
+One question resolves it and it belongs to NH Audubon: **does the banding record
+for this territory show a male or a female?**
+
+### Other things this thread establishes
+- **The juvenile is still here at roughly eight weeks post-fledge, and being
+  refused food.** That is textbook weaning, and it fits the widened dispersal
+  window (August into October) rather than the "next few weeks" first logged.
+- **Comparative datapoint:** the Brady Sullivan juvenile in Manchester has
+  apparently stopped being fed and has not been seen for days.
+- **The drone question is being handled correctly.** The pilot raised it himself,
+  unprompted, citing peregrine reactivity to drones, strike risk to bird and
+  aircraft, and the possibility that a flight would be redundant disturbance if
+  the nest is already known — and he is waiting on NH Audubon before flying. That
+  is exactly the ordering this log argued for.
+- **A photo-verified correction to a literature-sourced correction:** the
+  juvenile's feet are plainly yellow at ~8 weeks, not the blue-grey the
+  references imply. Leg colour is not an age cue after midsummer; streaking
+  direction is. Fixed in `docs/id_method.md`.
+
+---
+
 ## 2026-08-04 (later still) — the album is not a Nashua dataset, and geotags are unchecked
 
 David: **there is probably a New Jersey trip mixed into the album.** That is a
