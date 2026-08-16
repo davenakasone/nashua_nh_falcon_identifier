@@ -16,6 +16,52 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-15 — album has roughly doubled and now spans a full year
+
+Re-pulled the shared album. **It is no longer the 30-photo, four-week set this
+log has been reasoning about.**
+
+- **Photo count: at least 74** (counted from the grid's own per-photo links).
+  I could render 48 of them; the rest defeated the scraper, see below.
+- **Date range now reads Aug 15 2025 – Aug 15 2026** — it was 29 Jun – 24 Jul.
+  A full year went in, which means **back-catalogue material is now in the
+  album**. That is the multi-year continuity this project has been asking for,
+  arriving through the album rather than as a separate hand-over.
+- **David confirms no AI enhancement on the new material.** So the recent frames
+  are admissible for trait scoring under the rule in `docs/id_method.md` — the
+  first frames in this project that are.
+
+**New settings not previously in the album:** close-range birds on a metal
+rail/ledge, birds on a mossy brick arch, a bird at close range on a stack top,
+and at least one video. Much tighter framing than the old white-bracket set.
+
+**Band status: still nothing.** Every close frame I checked (six of the most
+promising) shows the same hunched posture with the tarsus tucked under the
+body or hidden behind the rail. The posture problem that has blocked this
+project since day one is unchanged in the new material.
+
+### The web view is now the bottleneck, not a workaround
+Scraping a virtualised Google Photos grid was fine at 30 photos and is not fine
+at 74. Two hard limits hit today:
+
+1. **Enumeration is unreliable.** 74 photo links but only 48 renditions
+   recoverable; tiles load on dwell, the pane stalls, and there is no way to
+   verify completeness from inside the page.
+2. **The renditions carry no EXIF at all.** No capture date, no camera, no GPS.
+   That was tolerable for a four-week album where every frame was obviously
+   recent. **It is not tolerable for a year-spanning album**, where the date is
+   what tells us which season, which molt window, and — critically — which
+   frames are the suspected out-of-state trip.
+
+**Recommendation, and it is the same unblock as before:** put the originals in
+`My Drive/birds/…`. Drive is mounted locally, so intake reads them off the mount
+with EXIF intact in one pass — full enumeration, real dates, GPS sorted into the
+gitignored sidecar, and the out-of-state frames separated by coordinates rather
+than by guessing at habitat. Everything downstream of that is blocked until it
+happens.
+
+---
+
 ## 2026-08-10 — weaning behaviour, the best leg photo yet, and the sexes have come unstuck
 
 Jarrod's 08-10 thread. Two photographers on the same event from opposite sides
