@@ -191,8 +191,8 @@ them is how a guess becomes a fact.
 
 ## 6. Contamination — the section that earns this document
 
-Four vectors surfaced in a single day, on a few dozen photographs of three
-birds.
+Five vectors surfaced across two days, on a few dozen photographs of three
+birds and one modest pile of sightings records.
 They do not get rarer at scale. Anyone building a product here will treat these
 as data-quality cleanup; they are the core problem.
 
@@ -241,7 +241,33 @@ unmarked animal out of photographs that never asked the question. Hence
 `not-tested` as a distinct value from `no` — the single most useful column in
 this project.
 
-### And a fourth: claims harden as they travel
+### Measuring the observers instead of the animals
+**The one that fooled two independent analyses on the same day**, which is why
+it goes above the others in priority even though it is listed last.
+
+Both of these looked like spatial findings about birds. Neither was:
+
+- **eBird hotspot coordinates.** A checklist filed at a hotspot records where
+  the *observer stood*, not where the animal was — a birder at a park entrance
+  logs a falcon 400 m away on a tower to the entrance's coordinate. A "seasonal
+  dispersal" trend computed per-record turned out to be measuring
+  records-per-hotspot concentration: 19 records over 5 locations reads tight,
+  16 over 9 reads dispersed, and the animals never entered the calculation.
+  Recomputed over *distinct locations* the monotonic trend vanished into noise.
+- **Camera-bearing triangulation.** Rays from geotagged photos converge on the
+  most-*photographed* subject, which is a function of what is photogenic,
+  accessible and silhouetted against sky — not what is biologically important.
+
+**The diagnostic, and it is cheap:** *would this number change if the animals
+stayed put and only the observers moved?* If yes, you are measuring observers.
+Run it before believing any spatial result built on opportunistic sightings.
+
+The deeper point is that community-science data is **effort-biased by
+construction**. It records where people went, when they went, and what they
+bothered to report. That is not a flaw to correct away — it is the nature of
+the instrument, and every analysis has to carry it.
+
+### And a fifth: claims harden as they travel
 A biologist wrote that she was "putting bets" on a code, could "sort of" make
 out two digits and a "very blurry" letter. Within a week the group was using
 that code as the bird's settled name. She hedged correctly; the hedge did not

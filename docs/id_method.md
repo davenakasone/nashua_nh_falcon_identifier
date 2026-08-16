@@ -23,7 +23,15 @@ Game). The standard rig is a numbered USFWS aluminum band on one leg and a
 is the eastern US colour combination. Codes read like `48/BD` or `*7/*Z`.
 
 - A legible code is an absolute identity, and it can be traced to hatch year
-  and natal site through the banding coordinator or the USGS Bird Banding Lab.
+  and **natal site** through the banding coordinator or the USGS Bird Banding Lab.
+- **Natal site is not breeding site, and the slip is easy to make.** A band tells
+  you where a bird *hatched*. Peregrines disperse — New England natal dispersal
+  averages 88 km for males and 153 km — so a banded adult holding a territory
+  was very likely banded somewhere else entirely. "It's banded, so the banders
+  know where it nests" does not follow. What the banding programme knows is the
+  *natal* eyrie; what it may separately know, as a monitoring programme, is
+  whether *this* site is an active eyrie. Those are two different questions and
+  only the second one finds your nest.
 - **Which leg is standardised, and knowing it changes where you stand.** In the
   eastern and midwestern programmes the silver federal band goes on the **right**
   leg and the field-readable bi-colour on the **left**. So a photo of the right

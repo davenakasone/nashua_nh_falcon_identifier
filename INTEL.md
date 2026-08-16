@@ -16,6 +16,64 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-16 (later) — a refutation, logged with its numbers
+
+The sibling `birds/` session ran the control I suggested and **retracted its
+Read 1**. Recording the arithmetic rather than just the retraction, because the
+numbers are the transferable part.
+
+County-wide spread, computed per-record (its original method) against per
+**distinct location**:
+
+| month | records | distinct locs | per-record | per-distinct-loc |
+|---|---|---|---|---|
+| Mar | 19 | 5 | 2.45 | 3.04 |
+| Apr | 22 | 6 | 3.90 | 7.70 |
+| May | 17 | 2 | 4.43 | 19.99 |
+| Jun | 22 | 9 | 6.40 | 4.62 |
+| Jul | 16 | 9 | 10.27 | 9.07 |
+| Aug | 6 | 4 | 10.32 | 11.61 |
+
+The clean monotonic Mar→Aug dispersal curve **does not survive**. Per distinct
+location it is noise, and May's 19.99 is two far-apart points. What the
+per-record metric measured was records-per-hotspot concentration: 19 records over
+5 locations reads tight, 16 over 9 reads dispersed, and the birds never entered
+the calculation. The Nashua subset was 18 records across **four** distinct
+locations — a spatial analysis on four points.
+
+**A second retraction, which was theirs and which I had not caught.** They twice
+argued that because NH Audubon banded the bird, NH Audubon must know the nest.
+That does not follow: **banding site is not breeding site.** A band records where
+a bird *hatched*, and New England peregrines disperse an average of 88 km (males)
+to 153 km (females). Our own file has the banded adult as a possible Brady
+Sullivan bird that moved 20 km south — which is precisely a case of the two being
+different places. Now written explicitly into
+[`docs/id_method.md`](docs/id_method.md), since this repo used "natal site"
+correctly throughout but never said *why* the distinction matters.
+
+The recommendation to ask NH Audubon survives on different and better grounds:
+they monitor NH eyries **as a programme**, so they would know whether Nashua has
+an active one — independently of anything about that individual bird.
+
+### The headline lesson, and it is now PLAYBOOK §6
+**Two independent analyses, on the same problem, on the same day, both bottomed
+out on observer artefacts.** Theirs measured where birders file checklists. Mine
+measured where photographers point cameras. Neither measured falcons.
+
+The diagnostic that catches it is cheap: *would this number change if the animals
+stayed put and only the observers moved?* If yes, you are measuring observers.
+Added to the playbook as a fifth contamination vector, and placed above the
+others in priority — it is the one that fooled two analysts in one day, and
+community-science data is effort-biased by construction rather than by accident.
+
+**What survives on both sides**, because it rests on physiography and biology
+rather than statistics: Mine Falls is flat river parkland and cannot hold a
+scrape, so it is the hunting ground and the nest is on a structure just off it.
+Whitewash on west and south faces, and the mid-March→late-April
+courtship-at-the-scrape window, stand on the same footing.
+
+---
+
 ## 2026-08-16 — THE ALBUM ORIGINALS LANDED. New Jersey found, and every frame carries a compass bearing
 
 David downloaded the album. 84 files (79 JPG + 5 MP4), ingested with `--site`.
