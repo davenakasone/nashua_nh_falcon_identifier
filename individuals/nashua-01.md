@@ -2,7 +2,8 @@
 
 - **alias:** — (*reported* as "Amos" by the group; **not accepted** — see
   Confidence)
-- **status:** established as *a banded adult at this site*; its identity is not
+- **status:** established as *a banded adult holding this territory*. **Which
+  bird that is remains unidentified** — see Confidence.
 - **first recorded (this project):** 2026-02 (photo `20260804-f3001faa`)
 - **last recorded:** 2026-07-30
 - **sex:** **DISPUTED — recorded as unknown.** On 2026-07-23 three observers said
@@ -11,7 +12,7 @@
   size comparison in one frame. See Confidence.
 - **age class:** adult. (The "hatched 2017, nine years old" claim rode on the
   Amos identification and falls with it.)
-- **roles:** 2026 — resident breeding male, downtown Nashua
+- **roles:** 2026 — resident breeding adult, downtown Nashua (sex disputed)
 
 ## Bands
 - **banded:** **yes** — confirmed visually, independent of the code question.
@@ -27,9 +28,11 @@
   the read is explicitly tentative: zooming into a photo, "sort of" making out a
   3 and a 5 on the black band and a "very blurry" S on the green. That is a
   hypothesis good enough to bet on, not a code read off a frame.
-- **traced:** *if* `53/BS` is correct — **hatched and banded 2017 at Brady
-  Sullivan Tower, Manchester NH**, and the same male recorded in Nashua
-  previously. Source: NH Audubon, 2026-07-23.
+- **traced:** **not counted.** The reported chain — `53/BS` → "Amos" → hatched
+  and banded 2017 at Brady Sullivan Tower, Manchester → the same male recorded in
+  Nashua previously (NH Audubon, 2026-07-23) — is recorded here as a *hypothesis
+  to test*, not a finding. It rests on an unread code **and** on the banded bird
+  being male, which is now disputed.
 
 ## Stable traits
 - **malar stripe:** —
@@ -95,7 +98,11 @@ turning up at the site.
 - `20260804-f3001faa` — Feb 2026, in flight, band visible, code not resolvable.
 
 ## Notes
-The bird is nine years old on the current reading, which makes him the stable
-subject in this project. Juveniles disperse; a resident adult male on an urban
-territory with constant prey usually does not. He is the one to build the trait
-description around.
+Whatever its identity, **this is the stable subject in the project**: juveniles
+disperse, and a resident adult on an urban territory with constant prey usually
+does not. It is the bird to build a trait description around, and it will still
+be here when the identity question is finally settled.
+
+The age claim that used to sit here — nine years old, hatched 2017 — was
+downstream of the Amos identification and was withdrawn with it on 2026-08-10.
+Nothing about this bird's age is known beyond *adult*.
