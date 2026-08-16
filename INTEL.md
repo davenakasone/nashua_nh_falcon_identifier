@@ -16,6 +16,78 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-16 — THE ALBUM ORIGINALS LANDED. New Jersey found, and every frame carries a compass bearing
+
+David downloaded the album. 84 files (79 JPG + 5 MP4), ingested with `--site`.
+**Catalogue is now 87 photos spanning 2025-08-15 to 2026-08-15** — a full year,
+where yesterday it was five frames over three weeks. Originals copied to the
+Drive `_private` tree.
+
+### The New Jersey trip: found, and it is exactly two frames
+`39.4466, -74.4158`, **2025-11-08, 443 km from Nashua** — Forsythe NWR /
+Brigantine, coastal New Jersey. Catalogued as `--site nj-forsythe-brigantine`
+and **kept, not deleted**: they are real peregrine observations, just of a
+different population.
+
+Weeks of squinting at habitat, and coordinates answered it in seconds. Exactly
+the argument in [`PLAYBOOK.md`](PLAYBOOK.md) §6 — *habitat and structures look
+alike; coordinates do not.*
+
+### Every geotagged frame carries a compass bearing
+**65 of 79 have GPS** — all the Pixel frames; the Sony writes none, as
+established. And **all 65 carry `GPSImgDirection`**, the heading the camera was
+pointed. That is position *plus* aim: each frame is a ray at whatever the
+photographer was shooting.
+
+**They are MAGNETIC bearings** (`GPSImgDirectionRef: M`). Nashua's declination
+is about 14° west, so every ray needs rotating before use; skipping that
+silently smears the answer. `nest_map.triangulate()` now does it, with a unit
+test on the geometry.
+
+### Triangulation — a lead, and honest about being one
+63 Nashua rays → 262 well-conditioned intersections after rejecting
+near-parallel pairs. The densest cluster sits **26 m from the Mine Falls Spine
+Rd hotspot**, with secondary clusters 115–143 m north-east.
+
+**Read it carefully.** This says *what the group photographs*, which is not the
+same as *where the birds nest* — and its error bars are wide: phone compasses
+are ±10–20° and worse beside steel, which a millyard and a lattice tower supply
+in quantity. At 100 m that is ±26 m, about the size of the clusters themselves.
+It corroborates the radio tower as the most-photographed subject. It does not
+locate a scrape.
+
+### The intake tool earned its design
+Ingesting the originals over the top of the PDF-extracted screenshots, the
+perceptual hash **matched the weathervane screenshot to its own original at 0
+bits** (`20260810-706db497 ~ 20260810-08f56710`), plus four more burst pairs.
+A low-resolution copy re-identified against the full-resolution file, exactly
+what `dhash` is in the schema for.
+
+### Intel from the sibling `birds/` session (read-only, not written by them)
+That session swept eBird `historic_observations` for the county, Mar–Aug 2026,
+and passed over three things worth keeping:
+
+- **Whitewash is the off-season discriminator.** An occupied ledge accumulates
+  heavy white streaking below it, visible year-round with a scope. Prioritise
+  **west and south faces** — the ledge should overlook the hunting ground, and
+  Mine Falls is W/SW of the millyard. **This is the only method that works
+  right now**, with the nest inactive.
+- **Mid-March to late April is the window the birds give it away.** Courtship
+  ledge displays and male-to-female food transfers happen *at the scrape*.
+- **A candidate structure nobody here had listed:** the F. E. Everett Turnpike
+  bridge over the Nashua River. Bridge piers are a classic urban peregrine site.
+
+**One of their conclusions does not survive checking.** They report the Nashua
+birds showing near-zero seasonal dispersal (0.00–0.45 km) against Manchester's
+2.45→10.3 km, and read it as a pair tethered to a fixed structure. But 14 of
+their 18 Nashua records sit on a single eBird hotspot, and **a hotspot's
+coordinate is where the checklist was filed, not where the bird was.** A birder
+at the Spine Rd entrance logs a falcon 400 m away to that same point. The
+"0.00 km spread" measures observer convention, not bird movement. Their
+reads 2–4 stand; read 1 does not.
+
+---
+
 ## 2026-08-15 — album has roughly doubled and now spans a full year
 
 Re-pulled the shared album. **It is no longer the 30-photo, four-week set this

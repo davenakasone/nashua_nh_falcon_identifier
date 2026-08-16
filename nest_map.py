@@ -265,3 +265,59 @@ def _haversine(lat1, lon1, lat2, lon2) -> float:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+# --------------------------------------------------------------------------
+# bearing triangulation
+# --------------------------------------------------------------------------
+#: Magnetic declination for Nashua NH, 2026 (west is negative).
+#: **Phones write MAGNETIC bearings** (`GPSImgDirectionRef: M`), so every ray
+#: must be rotated by this before use. Skipping it silently smears the solution.
+DECLINATION_DEG = -14.3
+
+
+def triangulate(rays, min_angle=20, max_range_m=1500, cell_m=20):
+    """Where do the camera bearings converge?
+
+    ``rays`` is ``[(lat, lon, true_bearing_deg), ...]`` — a photographer's
+    position and where the camera was pointed. Each pair of rays that meet at a
+    usable angle gives a candidate subject position; dense clusters of those
+    are structures the group photographs repeatedly.
+
+    **This is a lead, not a location.** Three things bound it: phone compasses
+    are good to maybe ±10–20° and worse beside steel (a millyard and a lattice
+    tower are the worst case), the declination above is a model value not a
+    measurement, and near-parallel pairs are numerically unstable — which is
+    why ``min_angle`` rejects them. At 100 m a 15° error is ±26 m, so cluster
+    centres are about as precise as the cells they fall in.
+
+    Returns ``[((lat, lon), hits), ...]`` densest first.
+    """
+    import itertools
+    if len(rays) < 2:
+        return []
+    lat0 = sum(r[0] for r in rays) / len(rays)
+    lon0 = sum(r[1] for r in rays) / len(rays)
+    mlat, mlon = 111320.0, 111320.0 * math.cos(math.radians(lat0))
+    local = [(((lo - lon0) * mlon), ((la - lat0) * mlat), b) for la, lo, b in rays]
+
+    hits = []
+    for (x1, y1, b1), (x2, y2, b2) in itertools.combinations(local, 2):
+        sep = abs(((b1 - b2 + 180) % 360) - 180)
+        if sep < min_angle or sep > 180 - min_angle:
+            continue
+        d1 = (math.sin(math.radians(b1)), math.cos(math.radians(b1)))
+        d2 = (math.sin(math.radians(b2)), math.cos(math.radians(b2)))
+        den = d1[0] * -d2[1] - d1[1] * -d2[0]
+        if abs(den) < 1e-6:
+            continue
+        t = ((x2 - x1) * -d2[1] - (y2 - y1) * -d2[0]) / den
+        u = (d1[0] * (y2 - y1) - d1[1] * (x2 - x1)) / den
+        if not (5 < t < max_range_m and 5 < u < max_range_m):
+            continue          # forward along both rays only
+        hits.append((x1 + t * d1[0], y1 + t * d1[1]))
+
+    from collections import Counter
+    grid = Counter((round(x / cell_m), round(y / cell_m)) for x, y in hits)
+    return [((lat0 + gy * cell_m / mlat, lon0 + gx * cell_m / mlon), n)
+            for (gx, gy), n in grid.most_common()]
