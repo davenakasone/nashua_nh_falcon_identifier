@@ -47,6 +47,22 @@
 
 ## Confidence
 
+> **2026-08-16 — THIS FILE MAY NOT DESCRIBE A NASHUA BIRD, OR ANY DISTINCT BIRD.**
+> The observer with the highest detection rate in the project — a falcon on
+> essentially every visit, who routinely watches them until the legs show — has
+> **never seen a band**. The catalogue backs him: **one** frame shows a band,
+> **three** show bare tarsi, and the one is a single in-flight leg at 20–25 px
+> in a file with no EXIF, dated only by an email.
+>
+> Live hypothesis: **February is not the breeding season.** The banded bird may
+> be a wintering bird, a floater, or a passer-by from the Manchester population
+> 20 km north — not a member of this territory's pair at all. That would explain
+> the null result, the bare tarsi, and the 08-10 sex confusion in one stroke.
+>
+> **Deliberately not merged into [`nashua-02`](nashua-02.md).** Splitting a slug
+> later is far harder than merging one (`README.md`, rule on merging), so this
+> file stays open until the February original resolves it.
+
 **Curator ruling, 2026-08-10 (David): no individual identification is counted
 without a photograph of a readable band.** That is `confirmed` on the ladder in
 [`docs/id_method.md`](../docs/id_method.md), applied strictly. Everything below

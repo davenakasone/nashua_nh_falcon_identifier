@@ -16,6 +16,80 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-16 — the observer with the best detection rate has NEVER seen the band
+
+David, unprompted, after five weeks of near-daily visits:
+
+> "haven't ever seen the banded one; will usually get a shot, watch them, they
+> move and i see the legs, then they go about their business… almost want to
+> call bullshit on it"
+
+**This is the strongest evidence yet on the band question, and it points the
+other way.** He has the highest detection rate of anyone — a falcon on
+essentially every visit to Mine Falls, 13 Jul through 16 Aug — he routinely
+watches the birds until they shift and expose their legs, and he has never once
+seen a band.
+
+### The evidence tally, which nobody had actually run
+Frames in the catalogue where the tarsus was genuinely visible:
+
+| photo | band | date | provenance |
+|---|---|---|---|
+| `20260804-f3001faa` | **yes** | 2026-02 | **no EXIF** — date taken from an email |
+| `20260722-5cf2df73` | no | 2026-07-22 | EXIF |
+| `20260722-ec1dd230` | no | 2026-07-22 | EXIF |
+| `20260810-08f56710` | no | 2026-08-10 | manual |
+
+**One frame shows a band. Three show bare tarsi.** And the one is a single
+in-flight leg at 20–25 px, in a file carrying no EXIF at all, whose February
+date exists only because someone typed it in an email.
+
+**The attestation chain is also thinner than it reads.** Nobody in it claims to
+have seen a band themselves. One observer: *"I **think** the adult male is the
+only one that's banded."* Another: *"We **think** the male is banded… I
+**believe** Mark and Dave were able to establish that."* That is a belief being
+relayed, not an observation being reported.
+
+### A hypothesis nobody has raised: the banded bird may not be one of the pair
+**February is not the breeding season.** A banded peregrine photographed in
+flight in February is not necessarily a member of the summer territorial pair —
+it could be a wintering bird, a floater, or a passing individual from the
+well-studied Manchester population 20 km north.
+
+That single hypothesis explains every awkward fact at once: why the most
+frequent observer never sees a band, why every warm-season tarsus photo is
+bare, and why the sex assignment "flipped" on 08-10 — observers were attaching a
+remembered band to whichever adult was in front of them.
+
+It also means [`individuals/nashua-01.md`](individuals/nashua-01.md) may not be
+a resident bird at all, and possibly not a distinct individual from
+`nashua-02`. Flagged there; **not merged**, because per
+[`individuals/README.md`](individuals/README.md) splitting a slug later is far
+harder than merging one.
+
+### The test, and it is the same file as always
+**Jarrod's full-resolution original of the February frame.** At 33 MP instead of
+5.5 it settles whether that is a band or an artefact of 20 pixels. Second ask,
+free: *has anyone actually seen a band in the field, with their own eyes?*
+
+### Why every frame is soft — and the fix
+David: *"it usually gets too dark by the time I find the bird, then all bets are
+off."* He works the hour before sunset because that is when the birds are most
+active. That single fact explains the backlit silhouettes, the noise, and the
+softness that has blocked every band read in this project.
+
+**But near-100% detection dissolves the trade-off.** He does not need peak
+activity to *find* the birds — they are reliably there. So split the trips:
+**midday for the band** (loafing bird, stationary, full sun, scope on the left
+leg) and **dusk for behaviour** (hunting, interactions, the departure bearing).
+Trying to do both in one visit is why neither has worked.
+
+*(Also noted: David has never seen all three birds at once — only Jarrod has,
+on 2026-07-22. Consistent with three birds that rarely co-occur, and not itself
+alarming.)*
+
+---
+
 ## 2026-08-16 (later) — a refutation, logged with its numbers
 
 The sibling `birds/` session ran the control I suggested and **retracted its
