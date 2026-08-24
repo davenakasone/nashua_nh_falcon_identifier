@@ -16,6 +16,69 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-23 — A BI-COLOUR BAND AT READABLE SCALE. Code still not called.
+
+David watched one bird for over two hours and came away with 127 frames, and he
+saw with his own eyes what nobody in this project had confirmed: **a silver band
+on one leg and a green/black band on the other.** The photographs back him.
+
+### What the frames decisively establish
+**Five frames (`PXL_20260823_2146…`) show the bi-colour band on the tarsus at
+~250–360 px in a native 6144×8160 file.** Every previous attempt in this project
+had roughly **12 px** of band. This is a 20–30× improvement and the first time
+resolution has not been the binding constraint.
+
+They also settle two smaller things:
+
+- **The band is BLACK over GREEN.** That is the eastern US rig, and it confirms
+  the group's written "G/B" is transposed — it should be **B/G**.
+- **Engraved characters are plainly present** on both segments. Not a smudge, not
+  a highlight. Characters.
+
+### And the same evening: two adults, one banded, one not
+Two hours later at the clocktower weathervane (`PXL_20260823_2347…`), an adult
+with **both tarsi bare**. So on a single date: a banded adult on the radio-tower
+crossbar and an unbanded adult on the weathervane. **That is the cleanest
+evidence yet that the pair really is one banded bird plus one unbanded bird**,
+and it substantially answers the doubt raised on 2026-08-16 — the banded bird is
+not a February ghost, it is here in August.
+
+### The code is NOT called, and the reason is not resolution
+Deliberately left blank in `band_code`. Two things block it, and neither is
+pixels:
+
+1. **The paint is worn.** These bands have been on the bird for years and the
+   white infill is degraded.
+2. **A band is a cylinder.** Only part of the code faces the camera in any given
+   frame, and the rest wraps out of sight. The five frames catch it at different
+   rotations, which helps, but no single one shows the whole legend.
+
+There is a third reason, and it is the important one: **I know what code the
+group expects.** "53/BS" has been in every email for a month. Reading a worn,
+curved, partly-obscured legend while primed with the expected answer is precisely
+how a wrong `confirmed` gets manufactured — and this project has already
+recorded, in [`PLAYBOOK.md`](PLAYBOOK.md) §6, that a hedge does not survive being
+forwarded. I can see characters. I am not going to name them.
+
+### Who should call it
+**NH Audubon.** They read these codes professionally, they know how a decade-old
+band wears, and — decisively — **they hold the list of codes actually deployed in
+New Hampshire.** That turns an unconstrained reading problem into matching a
+partial against a known set. It is the same argument as `PLAYBOOK.md` §2 step 0:
+the expert node resolves in one reply what inference cannot.
+
+An evidence package is on David's Desktop at `falcon_band_20260823/` — the five
+best band crops at 4× plus the five untouched full-resolution originals. Send the
+originals, not the crops; let them do their own enlargement.
+
+### One thing worth asking David
+The filenames end `.RAW-01`, which is how a Pixel names a JPEG derived from a RAW
+capture. **If the DNGs are still on the phone, they may carry more recoverable
+detail in the worn paint than the JPEG does.** Worth checking before anyone
+concludes the code is unreadable.
+
+---
+
 ## 2026-08-16 — the observer with the best detection rate has NEVER seen the band
 
 David, unprompted, after five weeks of near-daily visits:
