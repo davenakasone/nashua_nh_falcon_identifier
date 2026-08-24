@@ -16,6 +16,48 @@ stay in the gitignored `private/`.
 
 ---
 
+## RULING (2026-08-24) — nobody in this group traps anything. Find the nest instead.
+
+Raised in session as a way to settle whether `nashua-03` is one bird. Recorded
+here because it will come up again, and because getting it wrong is expensive.
+
+**Legal.** Peregrines were delisted from the federal Endangered Species Act in
+1999 but remain fully protected under the **Migratory Bird Treaty Act**, and are
+**state-listed in New Hampshire** on top of that. Trapping one requires a USGS
+**Bird Banding Laboratory** permit with raptor authorization *plus* NH Fish and
+Game authorization. Without them it is a federal misdemeanor — up to $15,000 and
+six months, **per bird** — and the MBTA is a strict-liability statute, so good
+intentions and a survey notebook are not a defence.
+
+**The permits already exist inside this project's contact list.** Chris Martin at
+NH Audubon bands New Hampshire's peregrine chicks; that is his actual job.
+Mickayla Johnston works the same program. If a bird in this territory ever needs
+to be in a hand, it is one of theirs. Ask; do not do.
+
+**It would not even answer the question.**
+- `nashua-01` is already banded and photographed at 340–420 px. Handling it
+  returns nothing the 08-23 frames did not.
+- The unbanded adult's *sex* is the live question — and **one frame of both
+  adults together, size-compared**, settles that without touching a bird.
+- Free-flying juveniles are trapped with a bal-chatri or dho-gaza over a live
+  lure bird. Peregrines are banded as **nestlings at ~3 weeks** for good reason.
+- **Capture myopathy** is real: a struggling raptor can die days later from a
+  capture that looked clean.
+
+### The actual lever, and it is a big one
+An unbanded juvenile means **NH Audubon never reached this nest in 2026.** That
+is the root cause of every identification problem in this file. Find the nest,
+hand the location to NH Audubon, and next season they band the brood legally in
+about ten minutes at the ledge — after which **every Nashua juvenile is traceable
+for life** and nobody has to squint at a tarsus again.
+
+That converts a recurring, unsolvable problem into a one-time favour. The tool
+for it already exists here: [`nest_map.py`](nest_map.py) bearing triangulation.
+What it lacks is **bearings** — which is already on the standing todo list, and
+just became the highest-value item on it.
+
+---
+
 ## OPEN QUESTION (raised 2026-08-23) — can `nashua-03` be one bird?
 
 The juvenile is recorded as unbanded on the curator's determination, from
