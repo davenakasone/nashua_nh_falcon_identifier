@@ -16,6 +16,41 @@ stay in the gitignored `private/`.
 
 ---
 
+## OPEN QUESTION (raised 2026-08-23) — can `nashua-03` be one bird?
+
+The juvenile is recorded as unbanded on the curator's determination, from
+repeated close looks at the legs while it fed. That determination is sound. But
+it creates a gap the slug design does not cover, and it should be named before
+it hardens.
+
+**An unbanded bird is unidentifiable by definition.** "The juvenile is unbanded"
+and "it is the same juvenile every time" cannot both be established by the same
+observation — bare legs are what makes the first true and the second unprovable.
+A single brood commonly fledges two or three young. **Two unbanded siblings
+working the same pond and the same plucking post would look exactly like one
+bird seen repeatedly.**
+
+The permanent-opaque-slug rule in [`individuals/README.md`](individuals/README.md)
+was built to stop a *successor* silently inheriting a predecessor's record. It
+does not stop two *contemporaneous* unbanded birds collapsing into one slug, and
+that is the live risk here. `nashua-03` may be a bird or may be a brood.
+
+**What would separate them, cheaply, without a band:**
+- **Two at once in one frame** — settles it instantly, nothing else needed.
+- **A count at the nest earlier in the season** — how many fledged? Anyone in the
+  chain who watched in June answers this from memory.
+- **Molt/plumage gaps on out-of-camera frames** — juvenile feathers are fresh and
+  undamaged, so a broken or missing primary is individual and stable for months.
+  This is the one trait tier that works on a bird with no band.
+
+Until one of those lands, `nashua-03` should be read as *"the 2026 juvenile
+cohort on this territory"*, not as one animal. Nothing in the record breaks if
+it turns out to be two — but a trait description built by merging two birds
+would be quietly wrong, and that is the kind of error this project exists to
+avoid.
+
+---
+
 ## 2026-08-23 (ruling) — CODE CONFIRMED BY THE CURATOR: `53/BS`. Sex now contradicts it.
 
 **David has called it.** His standing rule since 2026-08-10 was *no individual
