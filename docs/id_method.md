@@ -151,6 +151,22 @@ explicitly whether they enhanced anything.** Most people do not think of a
 denoise-and-sharpen pass as altering the evidence, because for every other
 purpose they have, it isn't.
 
+### Phone RAW is NOT automatically better than the phone JPEG
+
+Tested 2026-08-23 and the result was the opposite of the assumption. A Pixel 10
+Pro writes a **50 MP JPEG (6144x8160)** and a **~8.8 MP DNG (2572x3414)** for the
+same shutter press — the RAW is the *binned* sensor readout, while the JPEG comes
+off the full-resolution path. **The JPEG has 2.4x the linear resolution**, and on
+a side-by-side crop of the same band the DNG is visibly softer and mushier.
+
+RAW still wins on bit depth and freedom from compression artefacts. But for
+**reading fine engraving, spatial resolution is the binding constraint**, and on
+a modern computational-photography phone the JPEG has more of it.
+
+Do not spend a contributor's effort chasing DNGs on a phone without testing one
+first. On a dedicated camera, where the RAW is the full sensor, the usual
+assumption holds and RAW is the file to ask for.
+
 ## What does not work
 
 **Off-the-shelf image similarity will not identify these birds.** Perceptual

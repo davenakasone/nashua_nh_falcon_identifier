@@ -16,6 +16,41 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-23 (later) — the DNG was a dead end; the JPEG is the best band evidence in the project
+
+David pulled three `.ORIGINAL.dng` files. **Tested, and the assumption behind the
+request was wrong — mine.**
+
+**The Pixel's DNG is 2572x3414 (~8.8 MP). Its JPEG is 6144x8160 (50 MP).** The
+RAW is the binned sensor readout; the 50 MP JPEG comes off the full-resolution
+path. **The JPEG has 2.4x the linear resolution**, and side by side on the same
+band the DNG is visibly softer. Written up in
+[`docs/id_method.md`](docs/id_method.md) as a transferable rule: on a
+computational-photography phone, do not assume RAW beats JPEG for fine detail —
+test one before asking anyone to export a hundred.
+
+*(Also: macOS `sips` silently hands back the DNG's embedded preview rather than
+demosaicing it. `rawpy` was installed into the shared venv to read it properly.)*
+
+### Where the read actually stands
+On the best JPEG frames, **four character positions are resolvable** on a band
+that is unambiguously **black over green**. The shapes are **consistent with
+`53/BS`, and nothing visible contradicts it.**
+
+That is a genuine advance and it is still not a code read. **It is a
+corroborating observation, not an independent one** — the expected answer has
+been in front of me for a month. Handed these pixels cold, the honest transcript
+is *"5-or-S, then 3 / S-or-5, then B-or-8"*. Recorded at `probable` with
+`band_code` still blank.
+
+**Why that is nevertheless enough — for somebody else.** NH Audubon holds the
+list of codes actually deployed in New Hampshire. "Consistent with 53/BS, four
+positions resolvable, black over green" is a *matching* problem against a known
+set for them, where it is an *open reading* problem for us. They can confirm or
+reject it in one look. Send the five originals.
+
+---
+
 ## 2026-08-23 — A BI-COLOUR BAND AT READABLE SCALE. Code still not called.
 
 David watched one bird for over two hours and came away with 127 frames, and he
