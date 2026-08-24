@@ -24,9 +24,15 @@ are that photograph, and he reads the code as **`53/BS`**. `band_code` is now
 written into `data/photos.csv` and [`individuals/nashua-01.md`](individuals/nashua-01.md)
 at `confirmed`, attributed to him and dated.
 
-Independent agreement: at the magnification of his final crop the **`3` is
-unambiguous**, the `5` is solid, and the green segment gives `B` and `S`. The
-project's own read matches.
+**This project's "agreement" is not corroboration and is recorded as such.**
+The read was made knowing the expected answer, and all four glyphs sit in the
+confusable set (`5↔S`, `3↔B↔8`) — a second reader holding the prior adds close to
+nothing. What the project *can* say without the prior is narrower and honest:
+the black segment carries two glyphs and the green segment two, the black pair
+is the sharper of the two, and **the green segment is the weak half** — green
+bands weather worse and the paint-to-substrate contrast is lower, so `B` and `S`
+are the glyphs most likely to be wrong. `3` vs `8` on a worn band is the other
+live failure. Only NH Audubon's deployed-code list settles it.
 
 He has also determined, from repeated close observation of the bird feeding on
 its plucking post, that **the juvenile is unbanded.** Recorded as a curator

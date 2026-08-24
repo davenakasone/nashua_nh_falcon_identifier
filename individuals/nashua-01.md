@@ -53,12 +53,20 @@ individual identification without a photograph of a readable band.* The
 340–420 px in a native 6144×8160 frame, four glyph positions resolvable across
 several rotations. He reads it as **`53/BS`** and has called it.
 
-`band_code` is now written. What remains outstanding is **not** the read but its
-independence: nobody has yet checked `53/BS` against NH Audubon's list of codes
-actually deployed in New Hampshire. All four glyphs sit in the systematically
-confusable set (5↔S, 3↔B↔8), and every reader in the chain — NH Audubon in July,
-this project in August — knew the expected answer before looking. The evidence
-package went to NH Audubon on 2026-08-23; their reply makes it independent.
+`band_code` is now written **on the curator's authority, not on a second
+reader's agreement.** Nobody has checked `53/BS` against NH Audubon's list of
+codes actually deployed in New Hampshire, and until someone does, the read has
+no independent support: every reader in the chain — NH Audubon in July, the
+group's emails since, this project in August — knew the expected answer before
+looking, and all four glyphs sit in the systematically confusable set
+(`5↔S`, `3↔B↔8`). Agreement under those conditions is not evidence.
+
+**Where the read is weakest, stated in advance so a correction is cheap:** the
+green segment. Green bands weather worse and run lower paint-to-substrate
+contrast than black, so `B` and `S` are the likelier errors; `3` vs `8` on a worn
+band is the other live failure. If NH Audubon comes back with a code differing
+in the green pair, that is the expected way for this to be wrong, not a
+surprise. The evidence package went to them 2026-08-23.
 
 ### ⚠ OPEN CONTRADICTION — sex versus identity
 David describes this bird as **"that female they banded."** The record does not
