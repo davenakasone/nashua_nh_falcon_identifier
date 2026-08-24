@@ -58,6 +58,21 @@ overreached by treating it as such. Logged as a lesson, not deleted.
   kingbird; both adults monitoring from separate high perches
   (`20260722-e5e2cee9`).
 
+## Behaviour — hunting, observed repeatedly (2026-08)
+Flies clumsily; goes to the pond, chases birds at length, eventually connects,
+then **carries prey to a tall square chimney and eats there**. Observed on every
+visit. Contrast the adults, which hunt pigeons quickly in the built-up streets.
+
+This is the classic post-fledging pattern: juvenile wing and tail proportions
+favour lift and agility over speed, so a first-year bird hunts by persistence in
+an easy arena rather than by efficiency. Open water gives prey no cover and makes
+a missed stoop free.
+
+**The square chimney is a plucking post in daily use** — a named structure, with
+prey remains and whitewash to be expected beneath it, and the best remaining
+opportunity to photograph this bird's legs: a peregrine that has just carried
+prey to a perch stands still and preoccupied for ten to twenty minutes.
+
 ## Photos
 - `20260722-e5e2cee9` — in flight, 2026-07-22, captioned "Juvenile on the Hunt".
 

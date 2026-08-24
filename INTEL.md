@@ -16,6 +16,61 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-23 (field) — the juvenile has a plucking post, and it is a structure
+
+David, from repeated observation — **"seen it every time I go":**
+
+> "the juvenile flys like an idiot, it goes to the pond, chases birds around for
+> a while, eventually gets one, then takes it to the tall square chimney and eats
+> it… the adults stay more in the city and just bop a pigeon real quick"
+
+### The competence split is now observed, not inferred
+This log hypothesised on 2026-08-16 that the adults were working the built
+environment while the juvenile worked the water. **That is now a direct
+observation across many visits, not a guess** — and the mechanism is textbook.
+
+A juvenile peregrine carries a longer tail and broader, rounder wings than an
+adult: more lift and agility, less speed and efficiency. It is built to learn,
+not to kill economically. So it does what David describes — many attempts, long
+chases, eventual success, over open water where prey has nowhere to take cover
+and a missed stoop costs nothing. The adults' "bop a pigeon real quick" is the
+opposite: a skilled bird spending as little energy as possible on abundant,
+predictable prey among the buildings.
+
+**Two birds, two hunting economies, two parts of town.** That is real natural
+history and it belongs in the Ink Link piece.
+
+### The line that matters operationally
+**"takes it to the tall square chimney and eats it."**
+
+That is a **plucking post**, identified, in daily use. Peregrines do not eat
+where they kill — they carry prey to habitual perches. Consequences:
+
+1. **A structure this bird uses every single day is now named.** Note it is
+   described as *square*, which distinguishes it from the **circular chimney
+   across the river** already on the candidate list. Worth pinning down whether
+   this is the **millyard smokestack** or a fourth structure nobody has listed.
+2. **There will be prey remains at its base** — feathers, bones, and whitewash.
+   That is collectable diet data, and a single primary or tail feather gives a
+   species ID that survives when a photograph does not. NH Audubon will want it.
+3. **It is the place to photograph the juvenile.** Every attempt so far has been
+   at a fast, erratic bird in flight. But a bird that has just carried prey to a
+   perch **stands still and eats for ten to twenty minutes**, preoccupied. That
+   is the same geometry that produced the 2026-08-23 band frames on the adult.
+
+### Why that third point is urgent
+**The juvenile's band status is completely unknown.** If NH Audubon banded this
+year's brood in the nest, its code exists on paper and has never been read in the
+field. And it is the bird where a band matters most: it disperses within weeks,
+first-year peregrines move hundreds of kilometres, and **a code is the only thing
+that could ever connect this individual to a sighting somewhere else.**
+
+Everything needed is already known — the place, the routine, the posture. What
+was missing on the adults for a month is, for this bird, simply a matter of
+being at the chimney when it arrives.
+
+---
+
 ## 2026-08-23 (later) — the DNG was a dead end; the JPEG is the best band evidence in the project
 
 David pulled three `.ORIGINAL.dng` files. **Tested, and the assumption behind the
