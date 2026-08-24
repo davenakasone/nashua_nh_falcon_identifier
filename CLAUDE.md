@@ -15,8 +15,8 @@ monitoring) and the Nashua Ink Link story.
   BLACK over GREEN** (eastern US rig), **340–420 px** of band in a native
   6144×8160 frame, with **four glyph positions resolvable**. Every prior attempt
   had ~12 px.
-- **CODE READ AS `53/BS` — HELD AT `probable`, NOT `confirmed`, `band_code`
-  BLANK.** Shapes are consistent and nothing contradicts them, but all four
+- **CODE CONFIRMED BY THE CURATOR (David, 2026-08-23): `53/BS`.** Written into
+  the catalogue at `confirmed`. Independent project read matches. BUT all four
   glyphs come from the systematically confusable set (5↔S, 3↔B↔8), so the live
   candidate space is `53/BS` / `S3/B5` / `53/85` / `S3/BS`. Also: every observer
   in the chain was primed — NH Audubon's July read went from partial glyphs to a

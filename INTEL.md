@@ -16,6 +16,50 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-23 (ruling) — CODE CONFIRMED BY THE CURATOR: `53/BS`. Sex now contradicts it.
+
+**David has called it.** His standing rule since 2026-08-10 was *no individual
+identification without a photograph of a readable band.* The 2026-08-23 frames
+are that photograph, and he reads the code as **`53/BS`**. `band_code` is now
+written into `data/photos.csv` and [`individuals/nashua-01.md`](individuals/nashua-01.md)
+at `confirmed`, attributed to him and dated.
+
+Independent agreement: at the magnification of his final crop the **`3` is
+unambiguous**, the `5` is solid, and the green segment gives `B` and `S`. The
+project's own read matches.
+
+He has also determined, from repeated close observation of the bird feeding on
+its plucking post, that **the juvenile is unbanded.** Recorded as a curator
+determination. See the entry above for what that implies — NH Audubon has never
+accessed this nest, and this year's fledgling is permanently untraceable.
+
+### The open question is no longer the code — it is the sex
+David describes the banded bird as **"that female they banded."** That collides
+with the identity, and the collision is material:
+
+| source | sex of the banded bird |
+|---|---|
+| 2026-07-23, three observers, unanimous | **male** |
+| 2026-08-10, two observers | **female** |
+| 2026-08-23, David | **female** |
+| NH Audubon's account of "Amos" | **male**, hatched Brady Sullivan 2017 |
+
+**If this bird is female, it is not Amos** — and the 2017 hatch year, the Brady
+Sullivan natal site and the whole Manchester-origin story fall with it. Either
+the sex calls are wrong, or `53/BS` belongs to a different bird, or NH Audubon's
+Amos record has the sex wrong. `sex` therefore stays unresolved on `nashua-01`
+even though `band_code` is confirmed, and the alias "Amos" is still **not**
+accepted.
+
+**So the message to NH Audubon carries two questions, not one:**
+1. Is `53/BS` a code you actually deployed?
+2. Is that bird male or female?
+
+Answer both and this territory has, for the first time, one identified
+individual with a known origin.
+
+---
+
 ## 2026-08-23 (field) — the juvenile has a plucking post, and it is a structure
 
 David, from repeated observation — **"seen it every time I go":**

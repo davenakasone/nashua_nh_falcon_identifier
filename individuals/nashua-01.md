@@ -1,6 +1,6 @@
 # nashua-01
 
-- **alias:** — (*reported* as "Amos" by the group; **not accepted** — see
+- **alias:** — ("Amos" reported by the group; the NAME is still not accepted — see
   Confidence)
 - **status:** established as *a banded adult holding this territory*. **Which
   bird that is remains unidentified** — see Confidence.
@@ -19,7 +19,7 @@
   Photo `20260804-f3001faa` (Jarrod, Feb 2026, in flight from below) shows a
   silver federal band on the visible tarsus, and the photographer reports both
   legs banded in that frame.
-- **code:** **NOT COUNTED.** Reported as `53/BS`, see below. Written "G/B 53/BS" in the
+- **code:** **`53/BS`** — confirmed by the curator 2026-08-23 from the frames below. Written "G/B 53/BS" in the
   group's emails, but note the colour order looks transposed: eastern bands are
   **black over green**, and the same message describes reading digits off *the
   black band* and a letter off *the green* — so it should read **B/G**. Worth
@@ -47,60 +47,39 @@
 
 ## Confidence
 
-> **2026-08-16 — THIS FILE MAY NOT DESCRIBE A NASHUA BIRD, OR ANY DISTINCT BIRD.**
-> The observer with the highest detection rate in the project — a falcon on
-> essentially every visit, who routinely watches them until the legs show — has
-> **never seen a band**. The catalogue backs him: **one** frame shows a band,
-> **three** show bare tarsi, and the one is a single in-flight leg at 20–25 px
-> in a file with no EXIF, dated only by an email.
->
-> Live hypothesis: **February is not the breeding season.** The banded bird may
-> be a wintering bird, a floater, or a passer-by from the Manchester population
-> 20 km north — not a member of this territory's pair at all. That would explain
-> the null result, the bare tarsi, and the 08-10 sex confusion in one stroke.
->
-> **Deliberately not merged into [`nashua-02`](nashua-02.md).** Splitting a slug
-> later is far harder than merging one (`README.md`, rule on merging), so this
-> file stays open until the February original resolves it.
+**CONFIRMED — curator ruling, David, 2026-08-23.** His standing rule was *no
+individual identification without a photograph of a readable band.* The
+2026-08-23 frames are that photograph: bi-colour band, **black over green**,
+340–420 px in a native 6144×8160 frame, four glyph positions resolvable across
+several rotations. He reads it as **`53/BS`** and has called it.
 
-**Curator ruling, 2026-08-10 (David): no individual identification is counted
-without a photograph of a readable band.** That is `confirmed` on the ladder in
-[`docs/id_method.md`](../docs/id_method.md), applied strictly. Everything below
-sits under it.
+`band_code` is now written. What remains outstanding is **not** the read but its
+independence: nobody has yet checked `53/BS` against NH Audubon's list of codes
+actually deployed in New Hampshire. All four glyphs sit in the systematically
+confusable set (5↔S, 3↔B↔8), and every reader in the chain — NH Audubon in July,
+this project in August — knew the expected answer before looking. The evidence
+package went to NH Audubon on 2026-08-23; their reply makes it independent.
 
-**unknown on identity, certain on bandedness.** Those are different claims and
-the file keeps them apart.
+### ⚠ OPEN CONTRADICTION — sex versus identity
+David describes this bird as **"that female they banded."** The record does not
+agree with itself on this point and the disagreement is *material*, not clerical:
 
-- *A banded adult holds this territory* — solid. A photograph shows the band.
-- *That bird is Amos, `53/BS`, from Brady Sullivan 2017* — **not counted.** It
-  rests on a tentative zoom that NH Audubon itself hedged, and it additionally
-  assumes the banded bird is **male**, which the group contradicted on
-  2026-08-10. If the banded Nashua adult is the female, it is not Amos at all
-  and the hatch year and natal site go with it.
+| source | sex of the banded bird |
+|---|---|
+| 2026-07-23 thread (three observers, unanimous) | **male** |
+| 2026-08-10, two observers | **female** ("the banded female", "the mother") |
+| 2026-08-23, David | **female** |
+| NH Audubon's account of "Amos" | **male**, hatched Brady Sullivan 2017 |
 
-### The 2026-08-10 conflict, recorded rather than resolved
-Three accounts in one morning, all from people who were there:
+**If this bird is female, it is not Amos** — and the hatch year, the natal site
+and the whole Manchester-origin story go with it. `53/BS` would then belong to
+some other bird, or the code is misread, or NH Audubon's Amos record has the sex
+wrong.
 
-| account | prey-catcher (banded) | weathervane bird (photographed **unbanded**) |
-|---|---|---|
-| Jarrod, 09:19 | "the banded **female**" / "Mom" | "the unbanded **male**" |
-| Jarrod, 10:01 (his correction) | unchanged | "the unbanded **female**" |
-| Kevin, 10:38 | "the **mother** eating her catch" | "the **male** on the weather vane" |
-
-Jarrod's correction fixed only the tower bird, leaving his account with two
-females and no male. Kevin's contradicts that correction outright. Two of the
-three call the *banded* bird female — the reverse of the 2026-07-23 consensus
-this file was built on.
-
-**One question settles it, and it is not ours to answer:** does NH Audubon's
-banding record for this territory show a male or a female?
-
-Raises it to **confirmed**: one frame with the bi-color band legible. Two
-existing chances — Mark's unshared 2026-07-30 frames of a bird standing on an
-air conditioner for twelve minutes, and Jarrod's nine-year back catalogue.
-
-Breaks it: the code resolving to a different bird, or a second banded adult
-turning up at the site.
+The code and the sex cannot both be right as currently recorded. `sex` therefore
+stays **unresolved** in the header above even though `band_code` is now
+confirmed, and the question for NH Audubon is two questions:
+**(1) is `53/BS` a code you deployed, and (2) is that bird male or female?**
 
 ## Sightings
 - **2026-02** — in flight, both legs banded (`20260804-f3001faa`).
