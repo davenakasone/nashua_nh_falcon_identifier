@@ -50,8 +50,20 @@ monitoring) and the Nashua Ink Link story.
   camera** — ~233 px/degree vs 111, so ~2.1× more pixels on the bird despite
   fewer megapixels. Main camera only in poor light.
 - **Biggest non-equipment lever: go at midday, not dusk.** Detection is ~100% at
-  Mine Falls, so peak activity is not needed to *find* the birds — and dusk is
-  what has made every frame in this project soft and backlit.
+  Mine Falls (David, 2026-08-24: *"i will see a falcon down there anytime i
+  want"*), so peak activity is not needed to *find* the birds — and dusk is what
+  has made every frame in this project soft and backlit.
+- **Do not plan photography off that ~100%.** It answers *should I go* (always)
+  and *must I time it to peak activity* (no). It answers nothing else. The real
+  yields, measured on the catalogue: **39%** of frames can be aged, **23%** tie
+  to an individual, **15%** resolve a tarsus, **6%** read a band — and 5 of those
+  6 are one 3-second burst. Best session ever was 5 usable band frames from 127.
+  **Plan for volume and for the moments a bird stands, steps or mantles**, which
+  is when tarsi appear.
+- **Observer effort is this project's standing confounder** — three strikes now
+  (a peer's dispersal finding, this project's triangulation, and the checklist
+  time series, whose density tracks David's attention since the band excitement
+  rather than the birds). Check it first on any pattern claim.
 - Session-1/2 infrastructure below still current: `photo_intake` (29 tests),
   CSV schema, `nest_map.py` with bearing triangulation, `PLAYBOOK.md`.
 

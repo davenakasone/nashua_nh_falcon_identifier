@@ -16,6 +16,72 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-24 — detection is ~100%, and that number has been doing the wrong job
+
+David, on the outstanding denominator question:
+
+> *"i will see a falcon down there anytime i want, it was so common, i didn't
+> even pay attention until people started getting excited about the bands"*
+
+**Accept it.** He is the observer, 24 peregrine-positive checklists at one site
+across a year support it, and no computed rate would be better evidence than the
+person who goes there. The `~100% detection at Mine Falls` line in `CLAUDE.md`
+stands.
+
+### But this project has been running three different rates as if they were one
+Finding a falcon was never the bottleneck. Measured against the catalogue:
+
+| what you want | rate | evidence |
+|---|---|---|
+| **see any peregrine** | **~100%** | David, 24/24 positive checklists |
+| get a frame that can be **aged** | **39%** | 37 of 94 photos |
+| get a frame tied to an **individual** | **23%** | 22 of 94 |
+| resolve a **tarsus** at all | **15%** | 14 of 94 |
+| **read a band** | **6%** | 6 of 94 — and 5 of those are one 3-second burst |
+
+On the best day this project has ever had — 127 frames, two hours, the right
+lens, a cooperative bird on an open crossbar — the yield was **5 readable-band
+frames, 3.9%**.
+
+**The ~100% figure has been used to plan photography.** It should only ever have
+been used to plan *attendance*. The two questions it does answer: is it worth
+driving over (yes, always), and does the trip need to be timed to peak activity
+(no). Everything past that — which bird, what age, is there a band, what does it
+say — runs on rates between 6% and 39%, and those are the numbers that should
+drive how long to stay and how many frames to take.
+
+### The record's density measures David's attention, not the falcons
+*"i didn't even pay attention until people started getting excited about the
+bands."* That single sentence is a warning label on the entire time series:
+
+- **The sparse pre-2026 record is absence of effort, not absence of birds.** No
+  question of the form *"how long has this pair held the territory?"* can be
+  answered from these checklists.
+- **The near-weekly July–August 2026 cadence is elevated attention**, not
+  elevated falcon activity. Any trend drawn through it measures interest.
+- This is the same class of error already caught twice here — the peer session's
+  zero-dispersal finding (an eBird hotspot-coordinate artifact) and this
+  project's own bearing triangulation. **Observer effort is the standing
+  confounder in this file.** Third strike; it should now be the first thing
+  checked on any pattern claim.
+- Concretely: the **six-day gap between the 08-16 and 08-22 checklists** is
+  unexplained and sits inside the juvenile's departure window. It may be a break
+  in attention rather than a break in presence, and it is the reason that window
+  cannot be closed.
+
+### The recoverable part, and it decays
+*"it was so common"* is real baseline data about years this project has no
+records for — and it exists only in memory. Two sources, both already on the
+standing todo list, both worth chasing before they fade:
+1. **David's own recollection** of how far back reliable Mine Falls peregrines go.
+2. **Jarrod's nine-year back catalogue** — dated files, which beat anyone's
+   memory and could establish territory tenure directly.
+
+Territory tenure is exactly what NH Audubon would want alongside a band code,
+and unlike the code it needs no reply from anyone.
+
+---
+
 ## 2026-08-24 (eBird) — the adults are RESIDENT, and the detection claim is still unverified
 
 From David's peregrine list at **Mine Falls Park–Spine Rd. Entrance** (24
