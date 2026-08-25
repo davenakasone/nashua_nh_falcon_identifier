@@ -5,7 +5,7 @@
   the strength of a 25-photo album containing no juvenile. That reasoning was
   wrong, and the correction is recorded below rather than quietly edited out.
 - **first recorded (this project):** 2026-07-22 (`20260722-e5e2cee9`)
-- **last recorded:** 2026-08-15 (photographed in a dead tree, 19:36). Absent 08-23 and 08-24; David reports no sighting since ~2026-08-17. See INTEL.md 2026-08-24.
+- **last recorded:** 2026-08-15 (photographed, dead tree, 19:36) — last CONFIRMED. First confirmed absent 2026-08-23 (both birds photographed, both adult). The 08-16 and 08-22 eBird records logged one unaged bird each. See INTEL.md 2026-08-24.
 - **sex:** unknown. The photographer suspects **female** from size — it is
   already a large bird, and he had the male in view shortly afterward for
   comparison. Juveniles cannot be sexed on plumage.

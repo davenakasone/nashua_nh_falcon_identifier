@@ -16,6 +16,47 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-24 (eBird) — the adults are RESIDENT, and the detection claim is still unverified
+
+From David's peregrine list at **Mine Falls Park–Spine Rd. Entrance** (24
+peregrine-positive checklists, 2025-08-15 → 2026-08-24):
+
+**Peregrines are at this site in every month sampled, including deep winter** —
+2025: Sep 07, Oct 03, Dec 06, Dec 14, Dec 31. 2026: Jan 07, Jan 11, Mar 13, Jun
+05, Jun 25, Jun 28, then near-weekly through July and August.
+
+**This pair does not migrate.** That is a real finding and it changes several
+things in this file:
+- The 2026-02 banded-bird photo is no longer an isolated winter record needing
+  explanation — winter presence is the norm here. It further retires the 08-16
+  worry about a February passer-by.
+- `nashua-01` being "the stable subject" is now supported by a year of
+  occupancy, not just by the general claim that resident adults stay put.
+- Anything anyone ever wants to do with these adults has **no seasonal
+  deadline**, and the window that avoids disturbing a nest is the winter one.
+
+### The denominator is STILL missing
+This list is **peregrine-positive checklists only**. It cannot produce a
+detection rate, because the blank trips are not in it. The standing claim in
+`CLAUDE.md` — *"Detection is ~100% at Mine Falls"* — therefore remains
+**unverified**, and it is load-bearing: it is the reason this project believes
+it can schedule observation freely by time of day. What is needed is the
+**total** Mine Falls checklist count over the same span; 24 positives out of 24
+trips is a remarkable claim, 24 out of 60 is an ordinary one.
+
+### One record that is not what it looks like
+**15 Aug 2026, Plum Island, MA, #1** — same date as the Mine Falls `#2`. This is
+**not** dispersal evidence. It is a different bird at a coastal migration site
+~65 km away, logged on a day the Nashua juvenile was photographed on its own
+territory at 19:36. Noted here so nobody later mistakes it for the fledgling
+turning up down the coast.
+
+(Also confirmed in passing: the two **Forsythe NWR, NJ** checklists — 2025-11-08
+and 2026-01-19 — correspond exactly to the two New Jersey frames identified as
+catalogue contamination. That diagnosis was correct.)
+
+---
+
 ## 2026-08-24 — the juvenile is gone. Last photograph 08-15, not 08-10.
 
 David: *"i am claiming the juvenile got kicked out, haven't seen it for a week,
@@ -41,10 +82,37 @@ above; adult = slate blue-grey above with horizontal barring below.** Unlike
 malar shape or molt gaps, that character is unambiguous and it is why these
 frames could be scored cold, months later, off the album.
 
-### The window
-Photographed **2026-08-15**. David's own last sighting ~**2026-08-17**. Confirmed
-absent 08-23 and 08-24. So the departure window is **08-15 → 08-17**, which is
-tight enough to be worth reporting to NH Audubon as a dispersal date.
+### The window — WIDENED 2026-08-24 after checking eBird
+First written here as **08-15 → 08-17**. David's eBird record forces it open:
+
+| date | eBird count | photographed | juvenile? |
+|---|---|---|---|
+| 2026-08-15 | **#2** | 2 juv + 5 adult | **yes — last confirmed** |
+| 2026-08-16 | #1 | none | **unknown — bird never aged** |
+| 2026-08-22 | #1 | none | **unknown — bird never aged** |
+| 2026-08-23 | #2 | 7 adult | **no — both birds photographed, both adult** |
+| 2026-08-24 | #1 | adult | no |
+
+**Last confirmed present 08-15; first confirmed absent 08-23.** The 08-16 and
+08-22 checklists each logged one bird that was never aged and could have been
+either. David's memory (~08-17) sits at the front of that gap and is the best
+estimate, but the *record* cannot go tighter than an eight-day window.
+
+### The eBird counts cannot close it, and here is the proof
+**2026-08-09: eBird logged `#1`. The photographs from that evening show two
+birds — an adult 19:59–20:16 and the juvenile 20:23–20:26.** The checklist
+undercounts by one on a date where the catalogue has the frames to prove it.
+
+This is the mirror of the caveat already carried on the 07-17 and 07-23 rows
+(*"a 2 may be a pair, an adult with a fledgling, or one bird counted twice"*).
+The inverse is now demonstrated: **a `#1` does not mean one bird was present.**
+An observer who sees an adult, then a juvenile twenty minutes later, and cannot
+be sure they are different birds, correctly logs 1. So the count series
+`2,1,1,2,1` across 08-15→08-24 is **not** evidence of the juvenile leaving.
+Only the aged photographs are.
+
+**Rule for this project: eBird counts are a floor on birds present, never a
+census, and they carry no age information at all.**
 
 ### What the record can and cannot say
 The timing is textbook and supports the claim: weaning was **directly observed**
