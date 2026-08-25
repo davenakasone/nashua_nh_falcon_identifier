@@ -16,6 +16,65 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-24 ⭐ NIGHT ROOST — and the nest search failed for a positioning reason
+
+David: *"seen the birds go there at night. we always missed them because we were
+in the wrong place (along the river)."*
+
+**(Building identified; held in `private/nest/` pending the disclosure call. It is
+a derelict downtown structure OFF the river, not on the candidate list.)**
+
+### A night roost is a much stronger signal than a daytime perch
+A bird sitting on a stack at noon is using a lookout. A pair returning to the
+same structure **every night** is using a roost — and in peregrines the **night
+roost is very often the nest ledge itself or one adjacent to it**, particularly
+outside the breeding season. Combined with what the eBird record already
+established — **this pair is resident year-round, present in every month
+sampled** — a habitual night roost on one downtown building is close to the
+textbook profile of an occupied nest site.
+
+**Every structure on the candidate list was scored on daytime perching.** None of
+them was ever assessed as a roost. That is a category error this file has been
+making since the search began.
+
+### The search failed because of where the observers stood
+*"we always missed them because we were in the wrong place (along the river)."*
+
+The candidates worked so far — Clocktower, 99 Factory St, the millyard stack —
+are all structures **visible from the river**, which is where the group watches.
+The birds were going somewhere else, and **nobody was standing anywhere they
+could see it happen.**
+
+**This is the FOURTH confirmed instance of observer effort or position
+manufacturing a false picture in this project:**
+1. A peer session's zero-dispersal finding — an eBird hotspot-coordinate artifact.
+2. This project's own bearing triangulation.
+3. The checklist time series, whose density tracks David's attention since the
+   band excitement rather than the birds.
+4. **The nest search itself — negative results from the wrong vantage.**
+
+The 2026-07-24 Clocktower inspection is still a valid negative for *that*
+building. But the *search* was never comprehensive; it was a survey of whatever
+could be seen from the riverbank. **Negative results are only as good as the
+sightlines that produced them**, and that qualifier now needs attaching to every
+negative in this file.
+
+### What this makes cheap
+The hard part — *which building* — is answered. What remains is **which face and
+which ledge**, and that needs no access at all:
+- **Watch at dusk from a position with a clear sightline on the building**, not
+  from the river. The large cleared lot immediately west gives an unobstructed
+  view of at least one elevation.
+- **Follow them in.** They will fly to a specific ledge. That converts a
+  four-face roof sweep into one corner.
+- **Then check the facade below that ledge for whitewash**, which is visible from
+  the ground and is the diagnostic sign.
+
+Two evenings of standing in the right spot would likely produce a better-founded
+nest claim than a roof visit made blind.
+
+---
+
 ## 2026-08-24 ⭐ CLOSED — `53/BS` IS "AMOS", AND HE IS A MALE. NH Audubon confirmed.
 
 **The question this project was built to answer is answered.** From the email
