@@ -7,65 +7,51 @@ bands if any, behavior/territory), so group sightings unify into one honest
 record — and feed local efforts (Cornell **eBird**, **NH Audubon** Peregrine
 monitoring) and the Nashua Ink Link story.
 
-## STATUS (updated 2026-08-23)
-- Active file: none — checkpointed. **WAITING ON NH AUDUBON.**
-- **THE BAND WAS PHOTOGRAPHED AT READABLE SCALE, 2026-08-23.** David watched one
-  adult on the radio-tower crossbar for two hours (127 frames, Pixel 10 Pro) and
-  got the shot this project had been chasing since day one: a **bi-colour band,
-  BLACK over GREEN** (eastern US rig), **340–420 px** of band in a native
-  6144×8160 frame, with **four glyph positions resolvable**. Every prior attempt
-  had ~12 px.
-- **CODE CONFIRMED BY THE CURATOR (David, 2026-08-23): `53/BS`.** Written into
-  the catalogue at `confirmed`. Independent project read matches. BUT all four
-  glyphs come from the systematically confusable set (5↔S, 3↔B↔8), so the live
-  candidate space is `53/BS` / `S3/B5` / `53/85` / `S3/BS`. Also: every observer
-  in the chain was primed — NH Audubon's July read went from partial glyphs to a
-  bird they already knew about, and mine knew theirs. **Nobody has verified
-  `53/BS` is even a code deployed in NH.** One reply from Mickayla or Chris
-  collapses the whole set; that is the outstanding action.
-- **Evidence package SENT (David, 2026-08-23):** `Nashua_PEFA_band_20260823.pdf`
-  (6 pp — JPEG-vs-RAW comparison, then 5 frames with callouts, each inset
-  labelled with its native size and enlargement factor) plus the two best
-  full-resolution JPEGs. Held in Drive `_private/.../band_evidence_20260823/`.
-- **Two adults on one date, one banded one not** — banded bird on the crossbar
-  at **17:46 local**, bare-tarsi adult on the clocktower weathervane at **19:47
-  local**. (Corrected 2026-08-24: these were previously written as 21:46/23:47,
-  which are the **UTC** times in the Pixel filenames — `PXL_20260823_214620` is
-  UTC, EXIF is local, EDT is UTC−4. Nobody photographs a falcon at 11:47 PM.)
-  The two are **two hours apart**, so the clock alone does not separate them —
-  but one is banded and the other has bare tarsi, and *that* does. Retires the
-  08-16 worry that the banded bird was a February passer-by.
-- **`nashua-01` is still nameless**, `sex` disputed, Amos linkage **not counted**
-  — per David's standing rule: *no individual ID without a photo of a readable
-  band.* The photo now exists; the read is one confirmation short.
-- **CATALOGUE: 94 photos, 2025-08-15 → 2026-08-23, 18 sightings.** 6 rows
-  `band_visible=yes`, 5 `band_visible=no`. Album originals ingested off the
-  local Drive mount; the New Jersey contamination turned out to be **exactly 2
-  frames** (Forsythe/Brigantine, 443 km) found by coordinates in seconds.
-- **Two hardware findings, both counter-intuitive, both in `docs/id_method.md`:**
-  (1) **Phone RAW is WORSE than the phone JPEG here** — the Pixel DNG is 8.8 MP
-  binned vs the 50 MP JPEG, 2.4× less linear resolution and visibly softer. Do
-  not chase DNGs on a phone. (Dedicated cameras are the opposite — keep asking
-  Jarrod for his A7 IV RAWs.) (2) **Shoot the 5× telephoto, not the main
-  camera** — ~233 px/degree vs 111, so ~2.1× more pixels on the bird despite
-  fewer megapixels. Main camera only in poor light.
-- **Biggest non-equipment lever: go at midday, not dusk.** Detection is ~100% at
-  Mine Falls (David, 2026-08-24: *"i will see a falcon down there anytime i
-  want"*), so peak activity is not needed to *find* the birds — and dusk is what
-  has made every frame in this project soft and backlit.
-- **Do not plan photography off that ~100%.** It answers *should I go* (always)
-  and *must I time it to peak activity* (no). It answers nothing else. The real
-  yields, measured on the catalogue: **39%** of frames can be aged, **23%** tie
-  to an individual, **15%** resolve a tarsus, **6%** read a band — and 5 of those
-  6 are one 3-second burst. Best session ever was 5 usable band frames from 127.
-  **Plan for volume and for the moments a bird stands, steps or mantles**, which
-  is when tarsi appear.
-- **Observer effort is this project's standing confounder** — three strikes now
-  (a peer's dispersal finding, this project's triangulation, and the checklist
-  time series, whose density tracks David's attention since the band excitement
-  rather than the birds). Check it first on any pattern claim.
-- Session-1/2 infrastructure below still current: `photo_intake` (29 tests),
-  CSV schema, `nest_map.py` with bearing triangulation, `PLAYBOOK.md`.
+## STATUS (updated 2026-08-24)
+- Active file: none — checkpointed.
+- **⭐ THE PROJECT'S CORE QUESTION IS ANSWERED. `53/BS` = "AMOS", HATCH YEAR 2017
+  MALE, Brady Sullivan Tower, Manchester, banded May 2017.** Confirmed
+  2026-08-24 by **Christian Martin, NH Audubon, from the banding record** —
+  the independence test this file said was the only thing that would settle it.
+  **Nora Hanke** independently read the raw frames the same morning and got
+  `53` and `S` clean while hedging the middle green glyph — the exact weak spot
+  this file predicted in advance. The sighting is going to the federal **BBL**.
+  Mark Timmerman, in this group, was present at the 2017 banding.
+- **THE SEX IS MALE AND THIS PROJECT WAS WRONG.** David's "that female they
+  banded", and the 08-10 "Mom wouldn't share" reading, were both wrong; the
+  unanimous 2026-07-23 male call was right and this file downgraded it. By
+  elimination the **unbanded clocktower bird is the female**. Five experienced
+  observers sexed this bird by eye over six weeks and most got it wrong —
+  the best argument the project will ever have for its own curator rule.
+- **⚠ A FOURTH BIRD. Nora saw a DIFFERENT banded adult here in March 2026 —
+  "the black band had a definite 9 on it".** `53/BS` has no 9. Consequence: the
+  **February 2026** frame (`20260804-f3001faa`, band visible, code unreadable)
+  has been **UNASSIGNED from nashua-01** — it could be either bird, and slugs
+  merge forward and never split. Next: ask Nora what else she has from March;
+  ask Chris whether a second banded adult is known here.
+- **The juvenile is gone.** Last confirmed **2026-08-15** (photographed), first
+  confirmed absent **08-23** (both birds aged adult). David last saw it ~08-17.
+  Recovered by scoring 22 previously-unassigned frames — the catalogue had said
+  08-10. It is **unbanded**, so it is permanently untraceable.
+- **eBird counts are a floor, never a census, and carry no age.** Proof in-file:
+  08-09 logged `#1`, photographs show an adult *and* the juvenile.
+- **The adults are RESIDENT** — Mine Falls peregrines in every month sampled
+  including Dec/Jan/Mar. No seasonal deadline on anything.
+- **Detection ~100% is for *finding a falcon* and nothing else.** Real catalogue
+  yields: **39%** aged, **23%** individual, **15%** tarsus, **6%** band. Best
+  session ever: 5 usable band frames of 127. Plan for volume, and for the
+  moments a bird stands/steps/mantles — that is when tarsi show.
+- **Observer effort is the standing confounder** — three instances now. Check it
+  first on any pattern claim.
+- **Unanswered in the chain:** Kevin T asked on 08-10 whether to fly his drone
+  (Part 107, prior authorization) to find the nest, and deferred to the experts.
+  **14 days, no reply.** Finding the nest is still the highest-value open item.
+- Hardware, unchanged: phone JPEG > phone DNG; 5× tele writes **full 50 MP**
+  (~458 px/°, double the earlier estimate) — but it is f/2.8 vs the main's
+  f/1.68, so **tele in good light, main camera in poor**.
+- **CATALOGUE: 94 photos, 21 sightings**, 2025-08-15 → 2026-08-23.
+- Session-1/2 infrastructure current: `photo_intake` (29 tests), CSV schema,
+  `nest_map.py`, `PLAYBOOK.md`.
 
 **STATUS discipline:** keep this block current; refresh before every session
 ends ("checkpoint"). A new session must resume cold from STATUS alone. Stale

@@ -1,18 +1,17 @@
 # nashua-01
 
-- **alias:** — ("Amos" reported by the group; the NAME is still not accepted — see
-  Confidence)
-- **status:** established as *a banded adult holding this territory*. **Which
-  bird that is remains unidentified** — see Confidence.
+- **alias:** **"Amos"** — ACCEPTED 2026-08-24. Confirmed by Christian Martin
+  (NH Audubon) direct from the banding record.
+- **status:** **IDENTIFIED.** Banded adult male "Amos", `53/BS`, holding the
+  downtown Nashua territory.
 - **first recorded (this project):** 2026-02 (photo `20260804-f3001faa`)
 - **last recorded:** 2026-07-30
-- **sex:** **DISPUTED — recorded as unknown.** On 2026-07-23 three observers said
-  the banded bird is the male. On 2026-08-10 two of the same people referred to
-  the banded bird as "the banded female" and "the mother". Nobody has ever made a
-  size comparison in one frame. See Confidence.
-- **age class:** adult. (The "hatched 2017, nine years old" claim rode on the
-  Amos identification and falls with it.)
-- **roles:** 2026 — resident breeding adult, downtown Nashua (sex disputed)
+- **sex:** **MALE.** Settled 2026-08-24 by Christian Martin from the banding
+  record. Every "female" call made in this project — 2026-08-10, 2026-08-23 — was
+  wrong; the unanimous 2026-07-23 thread was right. See Confidence.
+- **age class:** **adult, hatch year 2017 — 9 years old.** Withdrawn 2026-08-10
+  as unsourced; **reinstated 2026-08-24 by the bander.**
+- **roles:** 2026 — resident breeding **male**, downtown Nashua
 
 ## Bands
 - **banded:** **yes** — confirmed visually, independent of the code question.
@@ -24,15 +23,21 @@
   **black over green**, and the same message describes reading digits off *the
   black band* and a letter off *the green* — so it should read **B/G**. Worth
   confirming rather than silently rewriting someone's quoted subject line.
-- **read from:** **not read cleanly by anyone yet.** NH Audubon's own account of
-  the read is explicitly tentative: zooming into a photo, "sort of" making out a
-  3 and a 5 on the black band and a "very blurry" S on the green. That is a
-  hypothesis good enough to bet on, not a code read off a frame.
-- **traced:** **not counted.** The reported chain — `53/BS` → "Amos" → hatched
-  and banded 2017 at Brady Sullivan Tower, Manchester → the same male recorded in
-  Nashua previously (NH Audubon, 2026-07-23) — is recorded here as a *hypothesis
-  to test*, not a finding. It rests on an unread code **and** on the banded bird
-  being male, which is now disputed.
+- **read from:** David's 2026-08-23 crossbar frames, 340–420 px of band.
+  Independently read by **Nora Hanke** 2026-08-24 without seeing this project's
+  notes: *"White on black, 53, over white on green ?3 or B and then S"* — she
+  flagged her own uncertainty on the first green glyph, which is exactly the
+  weak spot predicted here in advance. **Confirmed against the banding record by
+  Christian Martin the same morning.**
+- **traced:** **YES — 2026-08-24, by the bander.** Christian Martin, NH Audubon:
+  *"Black over green 53/BS aka 'Amos', now a 9-yr old hatch year 2017 male from
+  Brady Sullivan in Manchester."* Banded **May 2017** as a nestling at Brady
+  Sullivan Tower, Manchester (Chris corrected an initial "May 2024" the same
+  day; 2024 was a different banding session). **Mark Timmerman — in this
+  observation group — was present at the 2017 banding.**
+- **BBL:** Chris Martin has asked Mickayla Johnston to review submitting band
+  reports to the federal Bird Banding Laboratory. This sighting is going into
+  the national record.
 
 ## Stable traits
 - **malar stripe:** —
@@ -47,47 +52,48 @@
 
 ## Confidence
 
-**CONFIRMED — curator ruling, David, 2026-08-23.** His standing rule was *no
-individual identification without a photograph of a readable band.* The
-2026-08-23 frames are that photograph: bi-colour band, **black over green**,
-340–420 px in a native 6144×8160 frame, four glyph positions resolvable across
-several rotations. He reads it as **`53/BS`** and has called it.
+**CONFIRMED — closed 2026-08-24 by NH Audubon.**
 
-`band_code` is now written **on the curator's authority, not on a second
-reader's agreement.** Nobody has checked `53/BS` against NH Audubon's list of
-codes actually deployed in New Hampshire, and until someone does, the read has
-no independent support: every reader in the chain — NH Audubon in July, the
-group's emails since, this project in August — knew the expected answer before
-looking, and all four glyphs sit in the systematically confusable set
-(`5↔S`, `3↔B↔8`). Agreement under those conditions is not evidence.
+The chain is complete and every link is now sourced:
 
-**Where the read is weakest, stated in advance so a correction is cheap:** the
-green segment. Green bands weather worse and run lower paint-to-substrate
-contrast than black, so `B` and `S` are the likelier errors; `3` vs `8` on a worn
-band is the other live failure. If NH Audubon comes back with a code differing
-in the green pair, that is the expected way for this to be wrong, not a
-surprise. The evidence package went to them 2026-08-23.
+1. **Photograph** — David, 2026-08-23, 340–420 px of band on the radio-tower
+   crossbar, black over green, four glyph positions resolvable.
+2. **Independent read** — Nora Hanke, 2026-08-24, from the raw frames:
+   *"White on black, 53, over white on green ?3 or B and then S."* She reached
+   `53` and `S` cleanly and marked her own doubt on the middle green glyph.
+3. **Match to the banding record** — Christian Martin, NH Audubon, same morning:
+   `53/BS` = "Amos", hatch year 2017, male, Brady Sullivan Tower, Manchester,
+   banded May 2017.
 
-### ⚠ OPEN CONTRADICTION — sex versus identity
-David describes this bird as **"that female they banded."** The record does not
-agree with itself on this point and the disagreement is *material*, not clerical:
+**The independence problem this file worried about is resolved.** The concern was
+that every reader knew the expected answer, and that all four glyphs sit in the
+confusable set (`5↔S`, `3↔B↔8`). Two things settle it: Nora's read is *partial
+and hedged* in exactly the place predicted — the green segment, which this file
+named as the weak half **before** her reply arrived — and Chris matched the code
+to a deployed band from the record rather than from the photograph.
 
-| source | sex of the banded bird |
-|---|---|
-| 2026-07-23 thread (three observers, unanimous) | **male** |
-| 2026-08-10, two observers | **female** ("the banded female", "the mother") |
-| 2026-08-23, David | **female** |
-| NH Audubon's account of "Amos" | **male**, hatched Brady Sullivan 2017 |
+### The sex contradiction — RESOLVED, and this project was wrong
+| source | called it | verdict |
+|---|---|---|
+| 2026-07-23 thread, three observers | male | **right** |
+| 2026-08-10, Jarrod + Kevin | female / male (both, contradicting) | mixed |
+| 2026-08-23, David | female | **wrong** |
+| **NH Audubon banding record** | **MALE** | **authoritative** |
 
-**If this bird is female, it is not Amos** — and the hatch year, the natal site
-and the whole Manchester-origin story go with it. `53/BS` would then belong to
-some other bird, or the code is misread, or NH Audubon's Amos record has the sex
-wrong.
+David's *"that female they banded"* was wrong, and so was the 08-10 reading of
+"Mom" refusing to share. **Amos is the male.** By elimination the **unbanded**
+adult on the clocktower weathervane is the **female** — which retroactively
+vindicates Jarrod's 10:01 self-correction on 08-10, even though he arrived at it
+while also calling the banded bird female and thereby ending up with two females
+in one pair.
 
-The code and the sex cannot both be right as currently recorded. `sex` therefore
-stays **unresolved** in the header above even though `band_code` is now
-confirmed, and the question for NH Audubon is two questions:
-**(1) is `53/BS` a code you deployed, and (2) is that bird male or female?**
+**Lesson worth keeping: five experienced observers sexed this bird by eye across
+six weeks and the majority got it wrong.** Peregrine reverse size dimorphism is
+real but useless on a lone perched bird with nothing to compare against. This is
+the strongest possible argument for the curator's own standing rule — *no
+individual ID without a photograph of a readable band* — and it should be quoted
+in `docs/id_method.md` the next time anyone proposes sexing a bird from a single
+frame.
 
 ## Sightings
 - **2026-02** — in flight, both legs banded (`20260804-f3001faa`).

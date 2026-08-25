@@ -16,6 +16,114 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-24 ⭐ CLOSED — `53/BS` IS "AMOS", AND HE IS A MALE. NH Audubon confirmed.
+
+**The question this project was built to answer is answered.** From the email
+chain (archived, gitignored, `private/email/`):
+
+**Christian Martin, NH Audubon, 2026-08-24 08:47:**
+> "Black over green **53/BS aka 'Amos'**, now a 9-yr old **hatch year 2017 male**
+> from Brady Sullivan in Manchester. Banded in May 2017 by Chris Martin…
+> Mickayla, let me know when you want to review submitting band reports to BBL."
+
+(Chris first wrote "May 2024" and **corrected it himself at 12:09** the same day —
+2024 was a different session. He also notes **Mark Timmerman, in this group, was
+present at the 2017 banding.**)
+
+**Nora Hanke, 2026-08-24 08:05, reading the raw frames independently:**
+> "White on black, **53**, over white on green **?3 or B** and then **S**."
+
+### Why this counts as independent, when this file argued it might not
+The standing worry here was that every reader knew the answer in advance and
+that all four glyphs sit in the confusable set (`5↔S`, `3↔B↔8`). Two things
+retire it:
+
+1. **Nora's read is partial and hedged in precisely the predicted place.** This
+   file named the **green segment** as the weak half — lower paint-to-substrate
+   contrast, worse weathering — *before* her reply existed. She got `53` and `S`
+   clean and balked at the middle green glyph. A primed reader produces the
+   expected answer smoothly; an honest one produces exactly this.
+2. **Chris matched the code to the banding record, not to the photograph.**
+   That is a lookup against deployed bands — the independence test this file
+   said was the only thing that would settle it.
+
+### The sex contradiction is resolved, and this project was on the wrong side
+**Amos is MALE.** So:
+- David's *"that female they banded"* — wrong.
+- The 2026-08-10 reading of the hunt (*"the banded female… Mom didn't want to
+  share"*) — wrong on both counts.
+- The unanimous **2026-07-23** thread that called it male — **right all along**,
+  and this file downgraded it.
+- By elimination the **unbanded** clocktower bird is the **female**.
+
+**Five experienced observers sexed this bird by eye over six weeks and the
+majority got it wrong.** Reverse size dimorphism is real and useless on a lone
+perched bird with nothing in frame to compare to. That is the single best
+argument this project will ever have for the curator's own rule — *no individual
+ID without a photograph of a readable band* — and it belongs in
+`docs/id_method.md`.
+
+### Everything downstream that now unlocks
+- `nashua-01` is **identified**: name, sex, hatch year, natal site, band history.
+- The withdrawn "nine years old, hatched 2017" claim is **reinstated**, now
+  sourced to the bander instead of to hearsay.
+- **Territory tenure is partly answered for free**: a 2017 Manchester bird holding
+  downtown Nashua means natal dispersal of ~30 km, and it is worth asking Chris
+  when Amos was first recorded on *this* territory.
+- The sighting is going to the **federal Bird Banding Laboratory**.
+
+---
+
+## 2026-08-24 ⚠ A FOURTH BIRD — Nora saw a DIFFERENT banded adult here in March
+
+Buried in the same message that confirmed the code, and nobody in the thread
+picked it up:
+
+> **"A different bird than I saw there in March, when the black band had a
+> definite 9 on it."** — Nora Hanke, 2026-08-24
+
+**`53/BS` contains no 9.** So a *second banded adult*, carrying a different code,
+was at this site in **March 2026**. That is not Amos and not the unbanded
+female. It is a bird this project has no record of.
+
+### What it puts back in play
+The catalogue's oldest band evidence is **`20260804-f3001faa`, February 2026** —
+Jarrod's in-flight frame showing a silver federal band, **code not resolvable**.
+That frame has been carried under `nashua-01` on the assumption it was the same
+banded adult. **That assumption is now unsafe.** February is one month from
+Nora's March sighting and six months from the first confirmed Amos photograph.
+The February bird could be Amos, could be the "9" bird, and nothing in the frame
+decides it.
+
+### Actions
+1. **Ask Nora directly** what else she has from March — a photo, a fuller code,
+   a date, a perch. She reads bands carefully and hedges honestly; her March
+   observation is the most valuable untapped lead in this file.
+2. **Ask Chris** whether a second banded adult is known on or near this
+   territory, and whether any code with a `9` was deployed in the region.
+3. **Do not merge the February record into `nashua-01`.** Per
+   `individuals/README.md`, slugs merge forward and never split — so wrongly
+   folding February into Amos is a mistake that cannot be cleanly undone later.
+4. **Open a slug for the March bird?** — *curator's call.* The standing rule is
+   no individual ID without a photograph of a readable band, and there is no
+   photograph here, only a careful observer's report. Flagged for David rather
+   than decided unilaterally.
+
+### Also unresolved in the chain, and it is addressed to the group
+Kevin T asked on **2026-08-10** whether to fly his drone (he is Part 107
+licensed, with prior authorization in the area) to look for the nest, explicitly
+deferring to the people who know the birds — *"I don't want to risk stressing the
+birds, provoking a strike."* **Fourteen days later nobody has answered him.**
+Given that finding the nest is this project's highest-value open item, and that
+peregrines are known to strike drones, that question deserves an actual reply
+from Chris or Mickayla rather than silence.
+
+**Two of David's messages to the chain bounced** (Mail Delivery Subsystem,
+08-13 14:03 and 08-24 14:40 — the second carried the Google Photos link). Worth
+confirming the album link actually reached everyone.
+
+---
+
 ## 2026-08-24 — detection is ~100%, and that number has been doing the wrong job
 
 David, on the outstanding denominator question:
