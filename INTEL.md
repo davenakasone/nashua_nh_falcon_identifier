@@ -16,6 +16,78 @@ stay in the gitignored `private/`.
 
 ---
 
+## 2026-08-24 — the juvenile is gone. Last photograph 08-15, not 08-10.
+
+David: *"i am claiming the juvenile got kicked out, haven't seen it for a week,
+used to see it every day."*
+
+**The catalogue was wrong about the last date and it was wrong in his favour.**
+It read *last recorded 2026-08-10* — because **22 frames from 08-09, 08-12 and
+08-15 had been ingested but never scored to an individual.** Scoring them today
+from plumage moves the juvenile's last known appearance **five days later**:
+
+| date | juvenile? | evidence |
+|---|---|---|
+| 2026-08-09 20:23–20:26 | **yes** | 2 frames, with an adult earlier the same evening |
+| 2026-08-10 09:19 | **yes** | chased off the kill — weaning |
+| 2026-08-12 08:44–08:49 | **yes** | 6 frames alone on the crossbar; best juvenile plumage series in the catalogue |
+| **2026-08-15 19:36** | **yes — LAST** | in a dead tree; an adult on the box at 19:45 and 19:49 |
+| 2026-08-23 17:46 / 19:47 | no | two adults |
+| 2026-08-24 19:31–19:52 | no | adult only |
+
+Age was scored on the one plumage character that actually separates them:
+**juvenile = vertical teardrop streaking on a warm buff ground, brown-toned
+above; adult = slate blue-grey above with horizontal barring below.** Unlike
+malar shape or molt gaps, that character is unambiguous and it is why these
+frames could be scored cold, months later, off the album.
+
+### The window
+Photographed **2026-08-15**. David's own last sighting ~**2026-08-17**. Confirmed
+absent 08-23 and 08-24. So the departure window is **08-15 → 08-17**, which is
+tight enough to be worth reporting to NH Audubon as a dispersal date.
+
+### What the record can and cannot say
+The timing is textbook and supports the claim: weaning was **directly observed**
+on 08-10 (adult killed, juvenile tried to join, was driven off, screamed and
+circled) at roughly 8 weeks post-fledge. Departure ~9 weeks post-fledge, mid-to-
+late August, is squarely normal for natal dispersal in the Northeast.
+
+**But absence is not departure, and three explanations fit these observations
+equally well:**
+1. **Dispersed** — left the natal area. David's reading, and the most likely.
+2. **Died.** First-year mortality in peregrines is high; figures of 50–70% in the
+   first year are commonly cited. A bird described as flying "like an idiot",
+   hunting over open water and around city structures, is exactly the profile
+   that collides with something. This possibility is unwelcome and belongs in
+   the record anyway.
+3. **Relocated locally** — still in the area, different perches or hours. Note
+   the observer's own schedule shifted: 08-23 was shot at 17:46, 08-24 at
+   19:31–19:52, while the juvenile's known pattern was the pond and the square
+   chimney at dusk.
+
+**The missing number is the denominator.** "Haven't seen it in a week" carries
+weight in proportion to how many times someone looked. Five negative visits is
+strong; two is nothing. **David's eBird checklists hold that count** — and the
+project's own precedent (the 2026-07-24 negative nest search, logged as a
+sighting with `count=0`) says negative visits get recorded as data.
+
+### What would actually confirm dispersal over mortality
+**An eBird report of a juvenile Peregrine elsewhere in the region in the next few
+weeks.** That is the one observation that separates hypothesis 1 from
+hypothesis 2, and it is checkable — the `ebird_api` client next door in
+`../birds/` already does regional species queries. Worth running against the
+surrounding counties for the rest of August and September.
+
+### The systemic bug this exposed
+**82 of 94 photos in the catalogue carry no individual assignment.** That is why
+a five-day error in the juvenile's last-known date sat in the record unnoticed.
+Ingest captures a photo; it does not score it. Any date claim of the form "last
+seen X" is only as good as the scoring, and the scoring has been the neglected
+half of this pipeline. Also outstanding: an **un-ingested video** from the 08-15
+session (`PXL_20260815_234515843.mp4`) that nobody has reviewed.
+
+---
+
 ## RULING (2026-08-24) — nobody in this group traps anything. Find the nest instead.
 
 Raised in session as a way to settle whether `nashua-03` is one bird. Recorded
@@ -144,6 +216,14 @@ individual with a known origin.
 ---
 
 ## 2026-08-23 (field) — the juvenile has a plucking post, and it is a structure
+
+> **⚠ READ THE 2026-08-24 ENTRY ABOVE FIRST.** Everything below is written in the
+> present tense — "seen it every time I go", "in daily use", "uses every single
+> day". **That period appears to have ENDED around 2026-08-16.** The behaviour
+> described here is real and was observed repeatedly, but it describes roughly
+> mid-July to mid-August 2026, not the current state. The plucking post is still
+> worth finding — the prey remains at its base do not disappear when the bird
+> does.
 
 David, from repeated observation — **"seen it every time I go":**
 

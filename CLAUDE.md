@@ -28,8 +28,13 @@ monitoring) and the Nashua Ink Link story.
   labelled with its native size and enlargement factor) plus the two best
   full-resolution JPEGs. Held in Drive `_private/.../band_evidence_20260823/`.
 - **Two adults on one date, one banded one not** — banded bird on the crossbar
-  at 21:46, bare-tarsi adult on the clocktower weathervane at 23:47. That
-  largely retires the 08-16 worry that the banded bird was a February passer-by.
+  at **17:46 local**, bare-tarsi adult on the clocktower weathervane at **19:47
+  local**. (Corrected 2026-08-24: these were previously written as 21:46/23:47,
+  which are the **UTC** times in the Pixel filenames — `PXL_20260823_214620` is
+  UTC, EXIF is local, EDT is UTC−4. Nobody photographs a falcon at 11:47 PM.)
+  The two are **two hours apart**, so the clock alone does not separate them —
+  but one is banded and the other has bare tarsi, and *that* does. Retires the
+  08-16 worry that the banded bird was a February passer-by.
 - **`nashua-01` is still nameless**, `sex` disputed, Amos linkage **not counted**
   — per David's standing rule: *no individual ID without a photo of a readable
   band.* The photo now exists; the read is one confirmation short.
